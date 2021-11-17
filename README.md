@@ -5,7 +5,7 @@ Instructions:
 ```
 wget -O- https://gitee.com/ezrart/Robocup3dInstaller/raw/master/ins.sh | bash
 
-wget -O- https://gitee.com/Mili_Saliya/Robocup3dInstaller/raw/master/ins.sh | bash
+wget -O- https://gitee.com/IllyasvielEin/Robocup3dInstaller/raw/master/ins.sh | bash
 ```
 
 Enjoy~
