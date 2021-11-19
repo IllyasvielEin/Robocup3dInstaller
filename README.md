@@ -3,9 +3,9 @@ One-Line to install the Robocup3D Environment
 Instructions:
 
 ```
-wget -O- https://gitee.com/ezrart/Robocup3dInstaller/raw/master/ins.sh | bash
+origin：wget -O- https://gitee.com/ezrart/Robocup3dInstaller/raw/master/ins.sh | bash
 
-wget -O- https://gitee.com/IllyasvielEin/Robocup3dInstaller/raw/master/ins.sh | bash
+latest：wget -O- https://gitee.com/IllyasvielEin/Robocup3dInstaller/raw/master/ins.sh | bash
 ```
 
 Enjoy~
