@@ -45,6 +45,8 @@ bash ./build.sh
 bash ./clean.sh
 cd ..
 
+chmod 777 -R RoboViz
+ 
 ADir="\$bindir/rcssmonitor3d"
 BDir="$( cd RoboViz && pwd)/roboviz.sh"
 sudo sed -i "s#$ADir#${BDir}#" /usr/local/bin/rcsoccersim3d
