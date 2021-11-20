@@ -15,12 +15,12 @@ sleep_time=5
 
 edition=${code_name:0:2}
 
-if [ "$code_name" = "20.04" ]
+if [ "${edition}" = "20" ]
 then
     echo "Your ubuntu edition is ${code_name}. Installation 1 will start after ${sleep_time} s."
     sleep ${sleep_time}
     sudo apt install build-essential subversion g++ cmake libfreetype6-dev libode-dev libsdl-dev ruby ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt5-default openjdk-8-jdk -y
-elif [ "$code_name" = "21.04" ]
+elif [ "${edition}" = "21" ]
 then
     #   under design.
     echo "Your ubuntu edition is ${code_name}. Please install the Dependency Library manually."
