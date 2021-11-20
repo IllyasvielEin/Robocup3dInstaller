@@ -12,7 +12,7 @@ mkdir ./.local/Robocup3d -p
 
 cd ./.local/Robocup3d
 
-git clone https://gitee.com/Mili_Saliya/Robocup3dInstaller.git
+git clone https://gitee.com/IllyasvielEin/Robocup3dInstaller.git
 
 cd Robocup3dInstaller
 
