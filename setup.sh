@@ -7,8 +7,6 @@ sudo apt upgrade -y
 
 sudo apt install git -y
 
-git submodule update --init
-
 code_name=$(lsb_release -r --short)
 
 sleep_time=5
@@ -32,6 +30,8 @@ else
     sleep ${sleep_time}
     sudo apt install build-essential subversion cmake make libfreetype6-dev libsdl1.2-dev ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt4-default openjdk-8-jdk -y
 fi
+
+git submodule update --init
 
 sudo apt install autogen automake libtool libtbb-dev -y
 cd ode-tbb || exit
