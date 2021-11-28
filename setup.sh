@@ -19,7 +19,9 @@ if [ "${edition}" = "20" ]
 then
     echo "Your ubuntu edition is ${code_name}. Installation 1 will start after ${sleep_time} s."
     sleep ${sleep_time}
-    sudo apt install build-essential subversion g++ cmake libfreetype6-dev libode-dev libsdl-dev ruby ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt5-default openjdk-8-jdk -y
+    sudo add-apt-repository ppa:rock-core/qt4
+    sudo apt update
+    sudo apt install build-essential subversion g++ cmake libfreetype6-dev libode-dev libsdl-dev ruby ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt4-default openjdk-8-jdk -y
 elif [ "${edition}" = "21" ]
 then
     #   under design.
@@ -39,7 +41,7 @@ make -j$(nproc)
 sudo make install
 cd ..
 
-cd SimSpark"${edition}" || exit
+cd SimSpark || exit
 bash ./clean.sh
 bash ./build.sh
 bash ./clean.sh
