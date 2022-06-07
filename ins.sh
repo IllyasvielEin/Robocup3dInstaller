@@ -2,6 +2,14 @@
 
 echo "Robocup 3D simulation Env installation script START"
 
+sudo apt update
+
+sudo apt-get reinstall apt-transport-https ca-certificates
+
+sudo sed -i 's/cn.archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
+sudo apt install 
+
 sudo apt update  
 
 sudo apt install git -y
