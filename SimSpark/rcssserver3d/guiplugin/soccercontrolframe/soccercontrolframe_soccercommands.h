@@ -114,7 +114,7 @@ public:
      \param mode new play mode to change to
     */
     ChangePlayMode(boost::shared_ptr<GameStateAspect> gameState, TPlayMode mode) :
-      SoccerCommand(SCT_CHANGE_PLAY_MODE), mMode(mode), mGameState(gameState) {}
+      SoccerCommand(SCT_CHANGE_PLAY_MODE), mGameState(gameState), mMode(mode) {}
 
     /*!
      \brief Executes the command. Called by simulation server thread.
@@ -147,7 +147,7 @@ public:
      \param time value to change game time to
     */
     SetTime(boost::shared_ptr<GameStateAspect> gameState, float time) :
-      SoccerCommand(SCT_SET_TIME), mTime(time), mGameState(gameState) {}
+      SoccerCommand(SCT_SET_TIME), mGameState(gameState), mTime(time) {}
 
     /*!
      \brief Executes the command. Called by simulation server thread.
@@ -212,7 +212,7 @@ public:
      \param goals new goal value
     */
     SetTeamGoals(boost::shared_ptr<GameStateAspect> gameState, TTeamIndex team, int goals) :
-      SoccerCommand(SCT_SET_TEAM_GOALS), mTeam(team), mGoals(goals), mGameState(gameState) {}
+      SoccerCommand(SCT_SET_TEAM_GOALS), mGameState(gameState), mTeam(team), mGoals(goals) {}
 
     /*!
      \brief Executes the command. Called by simulation server thread.
@@ -245,7 +245,7 @@ public:
      \param name new name for the team
     */
     SetTeamName(boost::shared_ptr<GameStateAspect> gameState, TTeamIndex team, const QString& name) :
-      SoccerCommand(SCT_SET_TEAM_NAME), mTeam(team), mName(name), mGameState(gameState) {}
+      SoccerCommand(SCT_SET_TEAM_NAME), mGameState(gameState), mTeam(team), mName(name) {}
 
     /*!
      \brief Executes the command. Called by simulation server thread.

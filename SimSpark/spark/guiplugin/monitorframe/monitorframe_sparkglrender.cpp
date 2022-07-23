@@ -156,17 +156,17 @@ weak_ptr<RenderNode> SparkGLRender::pickNode(int pos_x, int pos_y, int width, in
     //Enable Picking
     double pickRange = 0.2;
     mRenderServer->EnablePicking(true, salt::Vector2f(pos_x, pos_y), pickRange);
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " after EnablePicking";
 
     //Render in selection mode
     render(width, height);
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " after Pick-rendering";
 
     //Disable Picking
     mRenderServer->DisablePicking();
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " after DisablePicking";
 
     //Find and return picked node (if any)
@@ -183,7 +183,7 @@ void SparkGLRender::render()
         return;
     }
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " at start of rendering.";
 
     glMatrixMode( GL_PROJECTION );
@@ -192,13 +192,13 @@ void SparkGLRender::render()
     glLoadIdentity();
     glEnable( GL_DEPTH_TEST );
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " before SetViewport";
 
     //Set the camera viewport
     mCamera->SetViewport(0, 0, mWidth, mHeight);
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " before Render";
 
     //Update OpenGLSystem
@@ -207,13 +207,13 @@ void SparkGLRender::render()
     //Render Scene
     mRenderServer->Render(true);
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " after Render";
 
     //Render CustomRender plugins
     mRenderControl->RenderCustom();
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " after rendering";
 }
 

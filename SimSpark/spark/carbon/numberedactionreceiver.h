@@ -87,10 +87,10 @@ public slots:
 
 public:
 
-    bool mEmitSingle; /*!< If true, actionReceived(int) is emitted. */
-    bool mEmitDouble; /*!< If true, actionReceived(int, int) is emitted. */
     int mNumber1; /*!< Number 1 that is sent every time an action is received. */
     int mNumber2; /*!< Number 2 that is sent every time an action is received. */
+    bool mEmitSingle; /*!< If true, actionReceived(int) is emitted. */
+    bool mEmitDouble; /*!< If true, actionReceived(int, int) is emitted. */
 };
 
 #endif //NUMBEREDACTIONRECEIVER_H

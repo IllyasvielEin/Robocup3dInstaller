@@ -24,5 +24,5 @@
 
 void CLASS(FileSystemSTD)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/FileSystem);
+        DEFINE_BASECLASS(zeitgeist/FileSystem)
 }

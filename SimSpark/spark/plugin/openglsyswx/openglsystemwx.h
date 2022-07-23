@@ -49,6 +49,6 @@ public:
     virtual void SwapBuffers();
 };
 
-DECLARE_CLASS(OpenGLSystemWX);
+DECLARE_CLASS(OpenGLSystemWX)
 
 #endif //OPENGLSYSTEMWX_H__

@@ -79,9 +79,9 @@ FUNCTION(FPSController,getAcceleration)
 
 void CLASS(FPSController)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BodyController);
-    DEFINE_FUNCTION(setAcceleration);
-    DEFINE_FUNCTION(getAcceleration);
-    DEFINE_FUNCTION(setHAngle);
-    DEFINE_FUNCTION(setVAngle);
+    DEFINE_BASECLASS(oxygen/BodyController)
+    DEFINE_FUNCTION(setAcceleration)
+    DEFINE_FUNCTION(getAcceleration)
+    DEFINE_FUNCTION(setHAngle)
+    DEFINE_FUNCTION(setVAngle)
 }

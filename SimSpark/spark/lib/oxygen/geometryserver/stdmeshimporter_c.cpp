@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(StdMeshImporter)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/MeshImporter);
+    DEFINE_BASECLASS(oxygen/MeshImporter)
 }

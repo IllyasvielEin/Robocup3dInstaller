@@ -60,6 +60,6 @@ protected:
     
 };
 
-DECLARE_CLASS(HearPerceptor);
+DECLARE_CLASS(HearPerceptor)
 
 #endif // HEARPERCEPTOR_H

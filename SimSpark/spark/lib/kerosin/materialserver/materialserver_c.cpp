@@ -63,8 +63,8 @@ FUNCTION(MaterialServer, resetMaterials)
 
 void CLASS(MaterialServer)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/Node);
-        DEFINE_FUNCTION(initMaterialExporter);
-        DEFINE_FUNCTION(exportAllMaterial);
-        DEFINE_FUNCTION(resetMaterials);
+        DEFINE_BASECLASS(zeitgeist/Node)
+        DEFINE_FUNCTION(initMaterialExporter)
+        DEFINE_FUNCTION(exportAllMaterial)
+        DEFINE_FUNCTION(resetMaterials)
 }

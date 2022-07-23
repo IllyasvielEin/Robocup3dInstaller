@@ -24,6 +24,6 @@
 
 void CLASS(SoccerInput)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/InputItem);
+    DEFINE_BASECLASS(kerosin/InputItem)
 }
 

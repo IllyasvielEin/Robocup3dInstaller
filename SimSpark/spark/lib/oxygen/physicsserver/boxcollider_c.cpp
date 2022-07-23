@@ -89,9 +89,9 @@ FUNCTION(BoxCollider,addSCFreezeJointEffName)
 
 void CLASS(BoxCollider)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/ConvexCollider);
-    DEFINE_FUNCTION(setBoxLengths);
-    DEFINE_FUNCTION(getBoxLength);
-    DEFINE_FUNCTION(getPointDepth);
-    DEFINE_FUNCTION(addSCFreezeJointEffName);
+    DEFINE_BASECLASS(oxygen/ConvexCollider)
+    DEFINE_FUNCTION(setBoxLengths)
+    DEFINE_FUNCTION(getBoxLength)
+    DEFINE_FUNCTION(getPointDepth)
+    DEFINE_FUNCTION(addSCFreezeJointEffName)
 }

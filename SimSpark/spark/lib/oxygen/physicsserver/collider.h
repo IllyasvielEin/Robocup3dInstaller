@@ -175,7 +175,7 @@ protected:
     TColliderNameSet mNotCollideWithSet;
 };
 
-DECLARE_CLASS(Collider);
+DECLARE_CLASS(Collider)
 
 } //namespace oxygen
 

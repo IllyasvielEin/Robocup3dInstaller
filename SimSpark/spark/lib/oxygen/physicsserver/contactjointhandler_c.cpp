@@ -176,15 +176,15 @@ FUNCTION(ContactJointHandler,setContactMu)
 
 void CLASS(ContactJointHandler)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/CollisionHandler);
-  DEFINE_FUNCTION(setContactBounceMode);
-  DEFINE_FUNCTION(setContactBounceValue);
-  DEFINE_FUNCTION(setMinBounceVel);
-  DEFINE_FUNCTION(setContactSoftERPMode);
-  DEFINE_FUNCTION(setContactSoftERP);
-  DEFINE_FUNCTION(setContactSoftCFMMode);
-  DEFINE_FUNCTION(setContactSoftCFM);
-  DEFINE_FUNCTION(setContactSlipMode);
-  DEFINE_FUNCTION(setContactSlip);
-  DEFINE_FUNCTION(setContactMu);
+  DEFINE_BASECLASS(oxygen/CollisionHandler)
+  DEFINE_FUNCTION(setContactBounceMode)
+  DEFINE_FUNCTION(setContactBounceValue)
+  DEFINE_FUNCTION(setMinBounceVel)
+  DEFINE_FUNCTION(setContactSoftERPMode)
+  DEFINE_FUNCTION(setContactSoftERP)
+  DEFINE_FUNCTION(setContactSoftCFMMode)
+  DEFINE_FUNCTION(setContactSoftCFM)
+  DEFINE_FUNCTION(setContactSlipMode)
+  DEFINE_FUNCTION(setContactSlip)
+  DEFINE_FUNCTION(setContactMu)
 }

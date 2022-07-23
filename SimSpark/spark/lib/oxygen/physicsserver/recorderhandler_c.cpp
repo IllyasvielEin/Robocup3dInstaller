@@ -26,6 +26,6 @@ using namespace oxygen;
 
 void CLASS(RecorderHandler)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/CollisionHandler);
+  DEFINE_BASECLASS(oxygen/CollisionHandler)
 }
 

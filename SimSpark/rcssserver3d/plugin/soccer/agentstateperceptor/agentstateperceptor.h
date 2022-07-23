@@ -59,6 +59,6 @@ protected:
     int mSenses;
 };
 
-DECLARE_CLASS(AgentStatePerceptor);
+DECLARE_CLASS(AgentStatePerceptor)
 
 #endif // AGENTSTATEPERCEPTOR_H

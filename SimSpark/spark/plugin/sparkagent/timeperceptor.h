@@ -25,6 +25,11 @@
 #include <oxygen/agentaspect/perceptor.h>
 #include <oxygen/simulationserver/simulationserver.h>
 
+/**
+ * @class TimePerceptor
+ * @brief Perceptor for time.
+ * @ingroup perceptors
+ */
 class TimePerceptor : public oxygen::Perceptor
 {
 public:
@@ -43,6 +48,6 @@ protected:
     boost::shared_ptr<oxygen::SimulationServer> mSimulationServer;
 };
 
-DECLARE_CLASS(TimePerceptor);
+DECLARE_CLASS(TimePerceptor)
 
 #endif //TIMEPERCEPTOR_H

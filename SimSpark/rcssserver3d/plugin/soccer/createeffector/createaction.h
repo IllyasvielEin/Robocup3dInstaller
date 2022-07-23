@@ -35,6 +35,6 @@ public:
   virtual ~CreateAction() {}
 };
 
-}; // namespace oxygen
+} // namespace oxygen
 
 #endif // CREATEACTION_H

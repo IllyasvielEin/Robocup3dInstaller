@@ -74,7 +74,7 @@ protected:
     void ExportMaterial(boost::shared_ptr<Material> material);
 };
 
-DECLARE_CLASS(MaterialServer);
+DECLARE_CLASS(MaterialServer)
 
 } //kerosin
 

@@ -29,16 +29,12 @@ set(monitorframe_FORMS
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### create library ###############
 
 #Meta object compiler wrapping of header files, forms and resources
-QT4_WRAP_CPP(monitorframe_QOBJECT_HEADERS_MOC ${monitorframe_QOBJECT_HEADERS})
-QT4_WRAP_UI(monitorframe_FORMS_HEADERS ${monitorframe_FORMS})
-#QT4_ADD_RESOURCES(monitorframe_RESOURCES_RCC ${monitorframe_RESOURCES})
+qt5_wrap_cpp(monitorframe_QOBJECT_HEADERS_MOC ${monitorframe_QOBJECT_HEADERS})
+qt5_wrap_ui(monitorframe_FORMS_HEADERS ${monitorframe_FORMS})
+#qt5_add_resources(monitorframe_RESOURCES_RCC ${monitorframe_RESOURCES})
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
@@ -61,7 +57,7 @@ add_library(
 target_link_libraries(
   monitorframe
   ${OPENGL_LIBRARIES} 
-  ${QT_LIBRARIES} 
+  ${Qt5Widgets_LIBRARIES} 
   ${spark_gui_libs})
 
 if (NOT APPLE)

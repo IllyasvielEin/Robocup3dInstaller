@@ -68,6 +68,6 @@ protected:
     boost::shared_ptr<GameStateAspect> mGameState;    
 };
 
-DECLARE_CLASS(InternalSoccerRender);
+DECLARE_CLASS(InternalSoccerRender)
 
 #endif //KEROSIN_INTERNALSOCCERRENDER_H

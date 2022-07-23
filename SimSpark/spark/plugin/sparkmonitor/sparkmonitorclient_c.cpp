@@ -82,11 +82,11 @@ FUNCTION(SparkMonitorClient, setPort)
 void
 CLASS(SparkMonitorClient)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
-    DEFINE_FUNCTION(getServer);
-    DEFINE_FUNCTION(setServer);
-    DEFINE_FUNCTION(getPort);
-    DEFINE_FUNCTION(setPort);
-    DEFINE_FUNCTION(setClientTypeTCP);
-    DEFINE_FUNCTION(setClientTypeUDP);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
+    DEFINE_FUNCTION(getServer)
+    DEFINE_FUNCTION(setServer)
+    DEFINE_FUNCTION(getPort)
+    DEFINE_FUNCTION(setPort)
+    DEFINE_FUNCTION(setClientTypeTCP)
+    DEFINE_FUNCTION(setClientTypeUDP)
 }

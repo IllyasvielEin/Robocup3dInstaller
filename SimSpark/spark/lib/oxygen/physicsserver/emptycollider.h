@@ -47,7 +47,7 @@ private:
     static boost::shared_ptr<EmptyColliderInt> mEmptyColliderImp;
 };
 
-DECLARE_CLASS(EmptyCollider);
+DECLARE_CLASS(EmptyCollider)
 
 } //namespace oxygen
 

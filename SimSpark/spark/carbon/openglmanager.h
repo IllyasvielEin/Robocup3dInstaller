@@ -367,12 +367,15 @@ public:
      \param flags flags to describe the widget
     */
     GLHandle(GLWidget* widget, int flags) :
-        mWidget(widget), mFlags(flags){}
+        mWidget(widget),
+        mFlags(flags) {}
     /*!
      \brief Copy constructor.
     */
     GLHandle(const GLHandle& obj) :
-        mWidget(obj.mWidget), mFlags(mFlags){}
+        QObject(),
+        mWidget(obj.mWidget),
+        mFlags(obj.mFlags) {}
     /*!
      \brief Copy operator. Returns reference to the handle.
     */

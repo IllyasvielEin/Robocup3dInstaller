@@ -52,6 +52,6 @@ protected:
 protected:
 };
 
-DECLARE_CLASS(InputSystemWX);
+DECLARE_CLASS(InputSystemWX)
 
 #endif //INPUTSYSTEMWX_H__

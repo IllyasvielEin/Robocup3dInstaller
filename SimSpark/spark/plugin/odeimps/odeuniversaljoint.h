@@ -46,6 +46,6 @@ public:
     float GetAngleRate2(long jointID) const;
 };
 
-DECLARE_CLASS(UniversalJointImp);
+DECLARE_CLASS(UniversalJointImp)
 
 #endif //ODEUNIVERSALJOINT_H

@@ -146,9 +146,9 @@ FUNCTION(StaticMesh,resetMaterials)
 
 void CLASS(StaticMesh)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/RenderNode);
-    DEFINE_FUNCTION(load);
-    DEFINE_FUNCTION(setScale);
+    DEFINE_BASECLASS(kerosin/RenderNode)
+    DEFINE_FUNCTION(load)
+    DEFINE_FUNCTION(setScale)
     DEFINE_FUNCTION(setCastShadows)
     DEFINE_FUNCTION(setUseExternalMesh)
     DEFINE_FUNCTION(setExternalMeshName)

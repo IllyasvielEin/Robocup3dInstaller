@@ -45,6 +45,6 @@ public:
     long CreatePlane();
 };
 
-DECLARE_CLASS(PlaneColliderImp);
+DECLARE_CLASS(PlaneColliderImp)
 
 #endif //ODEPLANECOLLIDER_H

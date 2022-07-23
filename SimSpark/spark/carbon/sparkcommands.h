@@ -31,9 +31,7 @@
 #include <QObject>
 #include <QString>
 #include <QSemaphore>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #include "cutelogger/logger.h"
 
@@ -268,8 +266,8 @@ private:
     //private members
 
     int mWaitCycles; /*!< Number of cycles to wait. */
-    int mWaited; /*!< Amount of cycles waited */
     bool mExclusive; /*!< True for exclusive exxess, false for shared read access. */
+    int mWaited; /*!< Amount of cycles waited */
 };
 
 

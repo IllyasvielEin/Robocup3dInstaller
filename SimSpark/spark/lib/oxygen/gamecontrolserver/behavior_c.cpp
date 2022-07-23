@@ -41,6 +41,6 @@ FUNCTION(Behavior, setCommand)
 
 void CLASS(Behavior)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
-    DEFINE_FUNCTION(setCommand);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
+    DEFINE_FUNCTION(setCommand)
 }

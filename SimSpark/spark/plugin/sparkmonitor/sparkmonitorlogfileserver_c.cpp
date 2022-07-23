@@ -87,10 +87,10 @@ FUNCTION(SparkMonitorLogFileServer, playBackward)
 void
 CLASS(SparkMonitorLogFileServer)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
-    DEFINE_FUNCTION(setFileName);
-    DEFINE_FUNCTION(pauseMode);
-    DEFINE_FUNCTION(stepForward);
-    DEFINE_FUNCTION(stepBackward);
-    DEFINE_FUNCTION(playBackward);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
+    DEFINE_FUNCTION(setFileName)
+    DEFINE_FUNCTION(pauseMode)
+    DEFINE_FUNCTION(stepForward)
+    DEFINE_FUNCTION(stepBackward)
+    DEFINE_FUNCTION(playBackward)
 }

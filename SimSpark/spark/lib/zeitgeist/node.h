@@ -153,7 +153,7 @@ Leaf::FindParentSupportingClass() const
 }
 
 
-DECLARE_CLASS(Node);
+DECLARE_CLASS(Node)
 
 } //namespace zeitgeist;
 

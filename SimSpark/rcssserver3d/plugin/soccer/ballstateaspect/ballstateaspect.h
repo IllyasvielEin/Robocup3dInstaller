@@ -168,6 +168,6 @@ protected:
     float mHalfFieldWidth;
 };
 
-DECLARE_CLASS(BallStateAspect);
+DECLARE_CLASS(BallStateAspect)
 
 #endif // BALLLSTATEASPECT_H

@@ -63,6 +63,6 @@ protected:
     boost::shared_ptr<SoccerRuleAspect> mSoccerRule;
 };
 
-DECLARE_CLASS(PassEffector);
+DECLARE_CLASS(PassEffector)
 
 #endif // PASSEFFECTOR_H

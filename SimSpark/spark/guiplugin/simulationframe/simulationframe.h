@@ -28,9 +28,7 @@
 #include <attachableframe.h>
 #include <simulationtask.h>
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include <vector>
 
 #include "ui_simulationframe.h"
@@ -80,6 +78,8 @@ public:
      \brief Saves current settings to the QSettings object.
     */
     void saveSettings();
+
+    using AttachableFrame::init;
 
 private:
     //private functions

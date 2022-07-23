@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(Generic6DOFJoint)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/Joint);
+        DEFINE_BASECLASS(oxygen/Joint)
 }

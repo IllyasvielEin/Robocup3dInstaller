@@ -50,7 +50,7 @@ FUNCTION(AgentControl, setMultiThreaded)
 
 void CLASS(AgentControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/NetControl);
-    DEFINE_FUNCTION(setSyncMode);
-    DEFINE_FUNCTION(setMultiThreaded);
+    DEFINE_BASECLASS(oxygen/NetControl)
+    DEFINE_FUNCTION(setSyncMode)
+    DEFINE_FUNCTION(setMultiThreaded)
 }

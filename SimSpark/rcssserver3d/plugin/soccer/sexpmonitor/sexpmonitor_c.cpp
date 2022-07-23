@@ -41,5 +41,5 @@ FUNCTION(SexpMonitor,sendRotationMatrix)
 
 void CLASS(SexpMonitor)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/MonitorSystem);
+        DEFINE_BASECLASS(oxygen/MonitorSystem)
 }

@@ -119,7 +119,7 @@ protected:
     boost::shared_ptr<Space> mSpace;
 };
 
-DECLARE_ABSTRACTCLASS(CollisionHandler);
+DECLARE_ABSTRACTCLASS(CollisionHandler)
 
 } //namespace oxygen
 

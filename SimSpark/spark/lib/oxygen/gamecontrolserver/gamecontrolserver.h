@@ -161,7 +161,7 @@ protected:
     std::vector<int> mDisappearedAgent;
 };
 
-DECLARE_CLASS(GameControlServer);
+DECLARE_CLASS(GameControlServer)
 
 } // namespace oxygen
 

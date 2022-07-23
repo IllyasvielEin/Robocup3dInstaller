@@ -47,17 +47,13 @@ protected:
         salt::Vector3f mRelPos; //position relative to perceptor
         //string name; // name of the object
 
-
-        ObjectData& operator=(const ObjectData& rhs)
-        {
-            mObj     = rhs.mObj;
-            mRelPos  = rhs.mRelPos;
-            mTheta   = rhs.mTheta;
-            mPhi     = rhs.mPhi;
-            mDist    = rhs.mDist;
-
-            return *this;
-        }
+        ObjectData() :
+            mObj(),
+            mTheta(0),
+            mPhi(0),
+            mDist(0),
+            mRelPos()
+        {}
 
         int operator==(const ObjectData& rhs) const
         { return mDist == rhs.mDist; }
@@ -278,6 +274,6 @@ protected:
     boost::shared_ptr<AgentState> mAgentState;
 };
 
-DECLARE_CLASS(RestrictedVisionPerceptor);
+DECLARE_CLASS(RestrictedVisionPerceptor)
 
 #endif //VISIONPERCEPTOR_H

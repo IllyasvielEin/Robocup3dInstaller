@@ -140,7 +140,7 @@ protected:
     TNodeCacheMap mNodeCache;
 };
 
-DECLARE_CLASS(SparkMonitor);
+DECLARE_CLASS(SparkMonitor)
 
 #endif // SPARKMONITOR_H__
 

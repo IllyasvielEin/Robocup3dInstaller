@@ -46,12 +46,12 @@ PluginInstantiatorTableModel::~PluginInstantiatorTableModel()
 {
 }
 
-int PluginInstantiatorTableModel::rowCount (const QModelIndex & parent) const
+int PluginInstantiatorTableModel::rowCount ([[maybe_unused]] const QModelIndex & parent) const
 {
     return mInstantiators.size();
 }
 
-int PluginInstantiatorTableModel::columnCount (const QModelIndex & parent) const
+int PluginInstantiatorTableModel::columnCount ([[maybe_unused]] const QModelIndex & parent) const
 {
     return 4;
 }

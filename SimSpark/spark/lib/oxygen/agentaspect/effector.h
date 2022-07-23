@@ -26,42 +26,115 @@
 #include <oxygen/sceneserver/basenode.h>
 #include <oxygen/gamecontrolserver/baseparser.h>
 
+/**
+ * @defgroup effectors Effectors
+ * @brief Effectors are used by agents to manipulate the environment.
+ *
+ * For more details about their implementation please refer to the @ref oxygen::Effector class.
+ *
+ * @todo Add a more detailled description of the Effectors group...
+ */
+
 namespace oxygen
 {
 class ActionObject;
 class AgentAspect;
 
+/**
+ * @class Effector
+ * @brief Base class for all effectors.
+ * @ingroup effectors
+ *
+ * Effectors are used by agents to manipulate the environemnt.
+ * This class serves as a base class for all effectors, providing a generic interface (via the @ref GetActionObject() and @ref Realize() methods) for performing action commands received from agents.
+ * The action command from an agent is proivided as @ref Predicate.
+ * The @ref GetActionObject() method is used to check and convert the @ref Predicate into an effector specific @ref ActionObject.
+ * This @ref ActionObject is then forwarded to the @ref Realize() method and buffered in @ref #mAction for later application.
+ * The actual application / realization of the action in the next simulation cycle then typically happens in the @ref PrePhysicsUpdateInternal() method, which uses the buffered action to manipulate the state of the physical simulation accordingly.
+ *
+ * @todo Document relation of effectors to scene graph.
+ *
+ * Effectors in general can be enabled or disabled.
+ * Only the actions of enabled effectors are actually applied in the next simulation cycle.
+ * If an effector is disabled, it has no effect on the next simulation cycle.
+ * The @ref Enable() and @ref Disable() methods are used to control the activation state of effectors.
+ */
 class OXYGEN_API Effector : public BaseNode
 {
 public:
-    Effector() : BaseNode() {disabled=false;};
+    /** @brief Default constructor. */
+    Effector() : BaseNode()
+    {
+        disabled = false;
+    };
+
+    /** @brief Default destructor. */
     virtual ~Effector() {};
 
-    /** save the ActionObject */
-    virtual bool Realize(boost::shared_ptr<ActionObject> action) ;
+    /** @brief Save the ActionObject for application in the next simulation cycle.
+     *
+     * @param[in,out] action the action to realize in the next simulation cycle
+     * @return @c true if a realization of the provided action is supported by this effector, @c false otherwise
+     */
+    virtual bool Realize(boost::shared_ptr<ActionObject> action);
 
-    /** returns the name of the predicate this effector implements */
+    /** @brief Retrieve the name of the predicate this effector implements.
+     *
+     * @return the effector predicate name
+     */
     virtual std::string GetPredicate() = 0;
 
-    /** constructs an Actionobject, describing a predicate */
+    /** @brief Construct an @ref ActionObject, describing a predicate.
+     *
+     * @param[in] predicate the effector predicate received from the agent
+     * @return An @ref ActionObject describing the action encoded in the predicate
+     */
     virtual boost::shared_ptr<ActionObject>
     GetActionObject(const Predicate& predicate) = 0;
 
+    /** @brief Enable this effector.
+     *
+     * Only the actions of enabled effectors are actually applied in the next simulation cycle.
+     *
+     * @see @ref Disable()
+     */
     void Enable();
+
+    /** @brief Disable this effector.
+     *
+     * Use this method to prevent the application of the current @ref ActionObject in the next simulation cycle.
+     *
+     * @see @ref Enable()
+     */
     void Disable();
 
 protected:
-    /** Returns the AgentAspect this Effector belongs to */
+    /** @brief Retrieve the @ref AgentAspect (agent) this effector belongs to.
+     *
+     * @return the related @ref AgentAspect
+     */
     boost::shared_ptr<AgentAspect> GetAgentAspect();
 
-    /** cache the action here, and then realize it in PrePhysicsUpdateInternal */
+    /** @brief The current @ref ActionObject.
+     *
+     * The current action to an effector is cached here, and then applied / realized in PrePhysicsUpdateInternal().
+     */
     boost::shared_ptr<ActionObject> mAction;
 
-    /** if effector should be disabled, currently used for hinge joints */
+    /** @brief Flag for enabling/disabling the effector.
+     *
+     * @c true if effector is disabled, @c false for enabled.
+     *
+     * Only the actions of enabled effectors are actually applied in the next simulation cycle.
+     * (Currently used for disabling hinge joints.)
+     *
+     * @see @ref Enable()
+     * @see @ref Disable()
+     */
     bool disabled;
 };
 
-DECLARE_ABSTRACTCLASS(Effector);
+DECLARE_ABSTRACTCLASS(Effector)
 
 } // namespace oxygen
 

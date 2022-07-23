@@ -62,19 +62,19 @@ f_inline TYPE gSqrt(const TYPE &v)
 template <class TYPE>
 f_inline TYPE gClamp(TYPE &val, TYPE min, TYPE max)
 {
-    if (val<min) val=min; if (val>max) val=max; return val;
+    return val < min ? min : val > max ? max : val;
 }
 
 template <class TYPE>
 f_inline TYPE gMin(TYPE a, TYPE b)
 {
-    if (a<b) return a; return b;
+    return a < b ? a : b;
 }
 
 template <class TYPE>
 f_inline TYPE gMax(TYPE a, TYPE b)
 {
-    if (a>b) return a; return b;
+    return a > b ? a : b;
 }
 
 template <class TYPE>
@@ -84,19 +84,19 @@ f_inline TYPE gFloor(TYPE a)
 }
 
 template <class TYPE>
-f_inline TYPE   gCeil(TYPE a)
+f_inline TYPE gCeil(TYPE a)
 {
     return ceil(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gAbs(TYPE a)
+f_inline TYPE gAbs(TYPE a)
 {
     return (TYPE)fabs(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gNeg(TYPE a)
+f_inline TYPE gNeg(TYPE a)
 {
     return -a;
 }
@@ -108,37 +108,37 @@ f_inline TYPE gCos(TYPE a)
 }
 
 template <class TYPE>
-f_inline TYPE   gSin(TYPE a)
+f_inline TYPE gSin(TYPE a)
 {
     return (TYPE)sin(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gArcCos(TYPE a)
+f_inline TYPE gArcCos(TYPE a)
 {
     return acos(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gArcSin(TYPE a)
+f_inline TYPE gArcSin(TYPE a)
 {
     return asin(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gArcTan(TYPE a)
+f_inline TYPE gArcTan(TYPE a)
 {
     return atan(a);
 }
 
 template <class TYPE>
-f_inline TYPE   gArcTan2(TYPE a, TYPE b)
+f_inline TYPE gArcTan2(TYPE a, TYPE b)
 {
     return atan2(a, b);
 }
 
 template <class TYPE>
-f_inline TYPE   gPow(TYPE a, TYPE b)
+f_inline TYPE gPow(TYPE a, TYPE b)
 {
     return pow(a, b);
 }
@@ -171,7 +171,7 @@ f_inline TYPE gRadToDeg(TYPE rad)
 }
 
 template <class TYPE>
-f_inline bool   gInRange(const TYPE& val, const TYPE& low, const TYPE& high)
+f_inline bool gInRange(const TYPE& val, const TYPE& low, const TYPE& high)
 {
     return ((val>=low) && (val<=high));
 }

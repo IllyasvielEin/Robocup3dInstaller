@@ -32,6 +32,6 @@ FUNCTION(Node,unlinkChildren)
 
 void CLASS(Node)::DefineClass()
 {
-    DEFINE_FUNCTION(unlinkChildren);
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_FUNCTION(unlinkChildren)
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

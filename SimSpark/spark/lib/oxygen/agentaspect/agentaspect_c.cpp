@@ -27,5 +27,5 @@ using namespace oxygen;
 
 void CLASS(AgentAspect)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Transform);
+    DEFINE_BASECLASS(oxygen/Transform)
 }

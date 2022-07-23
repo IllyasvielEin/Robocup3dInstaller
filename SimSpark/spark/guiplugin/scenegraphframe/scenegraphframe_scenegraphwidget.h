@@ -27,9 +27,7 @@
 
 #include "ui_scenegraphframe_scenegraphwidget.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include <QWidget>
 #include <vector>
 

@@ -45,8 +45,8 @@ FrameAttachmentPoint* FrameAttachmentPoint::createFrameAttachmentPoint(QString n
     switch (type)
     {
     case ATTACHMENT_NONE:               
-        LOG_ERROR() << "Illegal FrameAttachmentType 'NONE'. Using QWidget instead."; 
-        //fall 
+        LOG_ERROR() << "Illegal FrameAttachmentType 'NONE'. Using QWidget instead.";
+        [[fallthrough]];
     case ATTACHMENT_WIDGET:             //fall    
     case ATTACHMENT_FRAME:              //fall    
     case ATTACHMENT_TABWIDGET:          //fall    
@@ -207,7 +207,6 @@ void FrameAttachmentPoint::unattach(AttachableFrame* frame)
             //found frame, remove
 
             //Most of the attachment points handle deletion of the widget by an external source automatically
-            QWidget* widget = (QWidget*)frame;
             switch (mType)
             {
             case ATTACHMENT_NONE:
@@ -422,8 +421,6 @@ ExtendingFrameAttachmentPoint::~ExtendingFrameAttachmentPoint()
 
 bool ExtendingFrameAttachmentPoint::attach(AttachableFrame* frame)
 {
-    int index = 0;
-
     if ((int)mAttachedFrames.size() >= mMaxAttachmentCount)
     {
         LOG_ERROR() << "FrameAttachmentPoint::attach(): cannot attach more than " << mMaxAttachmentCount <<

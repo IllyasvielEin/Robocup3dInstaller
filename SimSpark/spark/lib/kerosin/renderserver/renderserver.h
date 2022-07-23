@@ -146,7 +146,7 @@ protected:
     boost::weak_ptr<RenderNode> mPickedNode;
 };
 
-DECLARE_CLASS(RenderServer);
+DECLARE_CLASS(RenderServer)
 
 } //namespace kerosin
 

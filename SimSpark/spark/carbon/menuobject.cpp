@@ -44,6 +44,8 @@ MenuObject::MenuObject(const QString& name, MenuManager::EMenuObjectType type, M
     mCreator = const_cast<AbstractPlugin*>(creator);
 }
 
+MenuObject::~MenuObject() = default;
+
 MenuManager::EMenuObjectType MenuObject::getType() const
 {
     return mType;

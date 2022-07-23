@@ -91,9 +91,9 @@ FUNCTION(HingeJoint,setAxis)
 
 void CLASS(HingeJoint)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
-    DEFINE_FUNCTION(setAnchor);
-    DEFINE_FUNCTION(getAngle);
-    DEFINE_FUNCTION(getAngleRate);
-    DEFINE_FUNCTION(setAxis);
+    DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
+    DEFINE_FUNCTION(setAnchor)
+    DEFINE_FUNCTION(getAngle)
+    DEFINE_FUNCTION(getAngleRate)
+    DEFINE_FUNCTION(setAxis)
 }

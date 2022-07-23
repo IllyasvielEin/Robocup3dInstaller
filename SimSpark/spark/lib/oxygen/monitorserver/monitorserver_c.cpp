@@ -51,7 +51,7 @@ FUNCTION(MonitorServer,registerMonitorItem)
 
 void CLASS(MonitorServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(registerMonitorSystem);
-    DEFINE_FUNCTION(registerMonitorItem);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(registerMonitorSystem)
+    DEFINE_FUNCTION(registerMonitorItem)
 }

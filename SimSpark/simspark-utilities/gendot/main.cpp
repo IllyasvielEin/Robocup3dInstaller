@@ -92,7 +92,7 @@ void
 printGreeting()
 {
     cout << "zeitgeist gendot version 0.1" << endl
-         << "Universität Koblenz." << endl
+         << "Koblenz University." << endl
          << "Copyright (C) 2004, "
          << "The RoboCup Soccer Server Maintenance Group." << endl;
 }
@@ -151,7 +151,7 @@ main(int argc, char* argv[])
 
         cout << "class " << name << endl;
 
-		boost::shared_ptr<Class> theClass = shared_dynamic_cast<Class>(*iter);
+		boost::shared_ptr<Class> theClass = boost::dynamic_pointer_cast<Class>(*iter);
         if (theClass.get() == 0)
         {
             continue;

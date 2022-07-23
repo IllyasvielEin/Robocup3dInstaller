@@ -101,7 +101,7 @@ private:
     int mChangedMark;
 };
 
-DECLARE_CLASS(Transform);
+DECLARE_CLASS(Transform)
 
 } //namespace oxygen
 #endif //OXYGEN_TRANSFORM_H

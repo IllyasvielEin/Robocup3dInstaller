@@ -23,5 +23,5 @@
 
 void CLASS(WorldImp)::DefineClass()
 {
-    DEFINE_BASECLASS(PhysicsObjectImp);
+    DEFINE_BASECLASS(PhysicsObjectImp)
 }

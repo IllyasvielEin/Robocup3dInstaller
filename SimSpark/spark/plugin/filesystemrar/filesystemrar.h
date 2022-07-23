@@ -70,6 +70,6 @@ protected:
         std::string     mArchiveName;
 };
 
-DECLARE_CLASS(FileSystemRAR);
+DECLARE_CLASS(FileSystemRAR)
 
 #endif //FILESYSTEMRAR_H__

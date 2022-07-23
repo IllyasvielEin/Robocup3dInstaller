@@ -26,6 +26,6 @@ using namespace oxygen;
 
 void CLASS(Ball)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Transform);
+    DEFINE_BASECLASS(oxygen/Transform)
 }
 

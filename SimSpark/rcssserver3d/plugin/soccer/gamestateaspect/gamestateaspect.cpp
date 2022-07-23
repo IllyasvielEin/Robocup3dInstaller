@@ -481,12 +481,13 @@ GameStateAspect::RequestInitOrientation(const TTeamIndex ti) const
 {
     switch ( ti )
     {
-        case TI_LEFT: return -90;
-        break;
-        case TI_RIGHT: return 90;
-        break;
+        case TI_LEFT:
+            return -90;
+        case TI_RIGHT:
+            return 90;
+        default:
+            return 0;
     }
-    return 0;
 }
 
 void

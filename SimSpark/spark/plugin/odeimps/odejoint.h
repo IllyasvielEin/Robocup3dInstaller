@@ -78,9 +78,10 @@ public:
     float GetMaxMotorForce(int idx, long jointID) const;
     void SetParameter(int parameter, float value, long jointID);
     float GetParameter(int parameter, long jointID) const;
+    using PhysicsObjectImp::OnLink;
     void OnLink(long jointID, oxygen::Joint* joint);
 };
 
-DECLARE_CLASS(JointImp);
+DECLARE_CLASS(JointImp)
 
 #endif //ODEJOINT_H

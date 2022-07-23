@@ -31,6 +31,6 @@ public:
     EmptyColliderImp();
 };
 
-DECLARE_CLASS(EmptyColliderImp);
+DECLARE_CLASS(EmptyColliderImp)
 
 #endif //ODEEMPTYCOLLIDER_H

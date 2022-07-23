@@ -62,6 +62,6 @@ protected:
     boost::shared_ptr<oxygen::AgentAspect> mAgentAspect;
 };
 
-DECLARE_CLASS(InitEffector);
+DECLARE_CLASS(InitEffector)
 
 #endif // INITEFFECTOR_H

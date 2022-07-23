@@ -57,37 +57,37 @@ FUNCTION(LogServer,addStream)
     unsigned int pLevel = LogServer::eNone;
     bool found = false;
 
-    if (inPriority.find("eAll") != -1)
+    if (inPriority.find("eAll") != std::string::npos)
     {
         pLevel = LogServer::eAll;
         found = true;
     }
     else
     {
-        if (inPriority.find("eNone") != -1)
+        if (inPriority.find("eNone") != std::string::npos)
         {
             found = true;
         }
 
-        if (inPriority.find("eDebug") != -1)
+        if (inPriority.find("eDebug") != std::string::npos)
         {
             pLevel |= LogServer::eDebug;
             found = true;
         }
 
-        if (inPriority.find("eNormal") != -1)
+        if (inPriority.find("eNormal") != std::string::npos)
         {
             pLevel |= LogServer::eNormal;
             found = true;
         }
 
-        if (inPriority.find("eWarning") != -1)
+        if (inPriority.find("eWarning") != std::string::npos)
         {
             pLevel |= LogServer::eWarning;
             found = true;
         }
 
-        if (inPriority.find("eError") != -1)
+        if (inPriority.find("eError") != std::string::npos)
         {
             pLevel |= LogServer::eError;
             found = true;
@@ -196,12 +196,12 @@ FUNCTION(LogServer,message)
 
 void CLASS(LogServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(addStream);
-    DEFINE_FUNCTION(removeAllStreams);
-    DEFINE_FUNCTION(debug);
-    DEFINE_FUNCTION(normal);
-    DEFINE_FUNCTION(warning);
-    DEFINE_FUNCTION(error);
-    DEFINE_FUNCTION(message);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(addStream)
+    DEFINE_FUNCTION(removeAllStreams)
+    DEFINE_FUNCTION(debug)
+    DEFINE_FUNCTION(normal)
+    DEFINE_FUNCTION(warning)
+    DEFINE_FUNCTION(error)
+    DEFINE_FUNCTION(message)
 }

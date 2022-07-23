@@ -24,5 +24,5 @@ using namespace oxygen;
 
 void CLASS(ParamReader)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
+    DEFINE_BASECLASS(zeitgeist/Node)
 }

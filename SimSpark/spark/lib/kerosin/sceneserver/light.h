@@ -126,7 +126,7 @@ protected:
     CachedPath<OpenGLServer> mOpenGLServer;
 };
 
-DECLARE_CLASS(Light);
+DECLARE_CLASS(Light)
 
 } //namespace kerosin
 

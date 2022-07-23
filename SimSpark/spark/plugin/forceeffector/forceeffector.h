@@ -25,6 +25,11 @@
 #include <oxygen/agentaspect/effector.h>
 #include <oxygen/physicsserver/rigidbody.h>
 
+/**
+ * @class ForceEffector
+ * @brief Simple Effector applying a force to a body in the simulation.
+ * @ingroup effectors
+ */
 class ForceEffector : public oxygen::Effector
 {
     //
@@ -56,6 +61,6 @@ protected:
     boost::shared_ptr<oxygen::RigidBody> mBody;
 };
 
-DECLARE_CLASS(ForceEffector);
+DECLARE_CLASS(ForceEffector)
 
 #endif // FORCEEFFECTOR_H

@@ -112,7 +112,7 @@ protected:
     float mShininess;
 };
 
-DECLARE_CLASS(MaterialSolid);
-};
+DECLARE_CLASS(MaterialSolid)
+}
 
 #endif // KEROSIN_MATERIALSOLID_H

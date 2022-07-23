@@ -26,7 +26,6 @@ target_link_libraries(rcssserver3d
     optimized ${KEROSIN_LIBRARY_RELEASE}
 )
 
-set_target_properties(rcssserver3d PROPERTIES INSTALL_RPATH "${RPATH_DIRECTORIES}")
 install(TARGETS rcssserver3d DESTINATION ${BINDIR})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/rcsoccersim3d.in

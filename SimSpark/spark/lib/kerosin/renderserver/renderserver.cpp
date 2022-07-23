@@ -235,7 +235,6 @@ RenderServer::ProcessPicks()
     int hits = glRenderMode(GL_RENDER);
 
     // if there are hits process them
-    GLuint numberOfNames = 0;
     GLuint minZ = 0xffffffff;
     GLuint *ptrNames = 0;
 
@@ -249,7 +248,6 @@ RenderServer::ProcessPicks()
 
             if ((*ptr) < minZ)
                 {
-                    numberOfNames = names;
                     minZ = *ptr;
                     ptrNames = ptr+2;
                 }

@@ -27,5 +27,5 @@ using namespace oxygen;
 
 void CLASS(ForceResistancePerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

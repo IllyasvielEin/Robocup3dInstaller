@@ -95,7 +95,7 @@ void SparkGLWidget::reset()
 
 void SparkGLWidget::initializeGL()
 {
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
     {
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " Before initialization.";
     }
@@ -114,7 +114,7 @@ void SparkGLWidget::initializeGL()
 
     glShadeModel( GL_SMOOTH );          // Shading
 
-    if (mErr = glGetError())
+    if ((mErr = glGetError()))
     {
         LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " After initialization.";
     }
@@ -132,7 +132,7 @@ void SparkGLWidget::paintGL()
     if (mController->tryAcquireRuntimeAccess(1000, false))
     {
 
-        if (mErr = glGetError())
+        if ((mErr = glGetError()))
             LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " Before rendering.";
 
         mRender->render(size().width(), size().height());
@@ -169,13 +169,13 @@ void SparkGLWidget::mouseDoubleClickEvent(QMouseEvent* e)
         {
             //Make current
             makeCurrent();
-            if (mErr = glGetError())
+            if ((mErr = glGetError()))
                 LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " Before picking.";
 
             //Pick a node and swap buffers
             boost::weak_ptr<kerosin::RenderNode> picked(mRender->pickNode(e->x(), e->y(), size().width(), size().height()));
             swapBuffers();
-            if (mErr = glGetError())
+            if ((mErr = glGetError()))
                 LOG_ERROR() << OpenGLManager::getErrorMessageStd(mErr).c_str() << " After picking.";
 
             boost::shared_ptr<kerosin::RenderNode> locked(picked.lock());

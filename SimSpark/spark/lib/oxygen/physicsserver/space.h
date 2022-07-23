@@ -121,7 +121,7 @@ private:
     static TSpaceIdSet gDisabledInnerCollisionSet;
 };
 
-DECLARE_CLASS(Space);
+DECLARE_CLASS(Space)
 
 } //namespace oxygen
 

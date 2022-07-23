@@ -55,7 +55,7 @@ public:
     virtual void RegisterMaterial(boost::shared_ptr<Material> material) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(MaterialExporter);
+DECLARE_ABSTRACTCLASS(MaterialExporter)
 
 } // end namespace kerosin
 

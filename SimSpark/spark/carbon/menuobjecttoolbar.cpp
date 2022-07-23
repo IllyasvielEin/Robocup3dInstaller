@@ -74,7 +74,7 @@ bool ToolBar::attach()
     else
     {
         QWidget* widget = mCreator->getVisualRepresentation();
-        QWidget* parent = widget->parentWidget();
+        //QWidget* parent = widget->parentWidget();
 
         //Add top bar
         //QVBoxLayout* newLayout = new QVBoxLayout;

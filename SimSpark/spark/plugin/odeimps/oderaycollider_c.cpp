@@ -23,5 +23,5 @@
 
 void CLASS(RayColliderImp)::DefineClass()
 {
-    DEFINE_BASECLASS(ColliderImp);
+    DEFINE_BASECLASS(ColliderImp)
 }

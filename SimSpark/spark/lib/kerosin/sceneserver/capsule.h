@@ -71,7 +71,7 @@ protected:
     float mLength;
 };
 
-DECLARE_CLASS(Capsule);
+DECLARE_CLASS(Capsule)
 
 } //namespace kerosin
 

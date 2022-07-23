@@ -24,5 +24,5 @@ using namespace oxygen;
 
 void CLASS(TimerSystemBoost)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/TimerSystem);
+    DEFINE_BASECLASS(oxygen/TimerSystem)
 }

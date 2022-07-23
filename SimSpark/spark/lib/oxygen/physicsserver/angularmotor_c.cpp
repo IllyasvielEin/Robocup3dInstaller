@@ -151,15 +151,15 @@ FUNCTION(AngularMotor,getAxisAngleRate)
 
 void CLASS(AngularMotor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Joint);
-    DEFINE_FUNCTION(setUserMode);
-    DEFINE_FUNCTION(setEulerMode);
-    DEFINE_FUNCTION(getMode);
-    DEFINE_FUNCTION(setNumAxes);
-    DEFINE_FUNCTION(getNumAxes);
-    DEFINE_FUNCTION(setMotorAxis);
-    DEFINE_FUNCTION(getAxisAnchor);
-    DEFINE_FUNCTION(setAxisAngle);
-    DEFINE_FUNCTION(getAxisAngle);
-    DEFINE_FUNCTION(getAxisAngleRate);
+    DEFINE_BASECLASS(oxygen/Joint)
+    DEFINE_FUNCTION(setUserMode)
+    DEFINE_FUNCTION(setEulerMode)
+    DEFINE_FUNCTION(getMode)
+    DEFINE_FUNCTION(setNumAxes)
+    DEFINE_FUNCTION(getNumAxes)
+    DEFINE_FUNCTION(setMotorAxis)
+    DEFINE_FUNCTION(getAxisAnchor)
+    DEFINE_FUNCTION(setAxisAngle)
+    DEFINE_FUNCTION(getAxisAngle)
+    DEFINE_FUNCTION(getAxisAngleRate)
 }

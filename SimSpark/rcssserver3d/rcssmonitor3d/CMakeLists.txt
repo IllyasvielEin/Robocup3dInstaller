@@ -26,8 +26,6 @@ target_link_libraries(rcssmonitor3d
   optimized ${KEROSIN_LIBRARY_RELEASE}
 )
 
-set_target_properties(rcssmonitor3d PROPERTIES
-    INSTALL_RPATH "${RPATH_DIRECTORIES}")
 install(TARGETS rcssmonitor3d DESTINATION ${BINDIR})
 
 

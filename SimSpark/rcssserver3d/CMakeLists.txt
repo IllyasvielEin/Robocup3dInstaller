@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.8)
 
 project(rcssserver3d CXX C)
-set(PACKAGE_VERSION "0.7.3")
+set(PACKAGE_VERSION "0.7.4")
 
 option(RVDRAW "Enable roboviz drawings" OFF)
 if (RVDRAW)
@@ -27,6 +27,10 @@ if (WIN32)
   endif ("${CMAKE_CXX_COMPILER}" MATCHES "mingw")
 endif (WIN32)
 
+if(POLICY CMP0072)
+  cmake_policy(SET CMP0072 NEW)
+endif()
+
 include(AdditionalSearchPaths)
 
 find_package(Spark REQUIRED)
@@ -37,9 +41,13 @@ find_package(DevIL REQUIRED)
 find_package(ODE REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(Carbon)
-find_package(Qt4 COMPONENTS QtXml QtOpenGl QtGui QtCore)
+find_package(Qt5 COMPONENTS Xml OpenGL Gui Core)
 
 ########## add extra flags ########## 
+# Default to C++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 if(NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Release)
 endif(NOT CMAKE_BUILD_TYPE)
@@ -50,15 +58,14 @@ include_directories(${CMAKE_BINARY_DIR} ${Boost_INCLUDE_DIRS} ${ODE_INCLUDE_DIR}
   ${OXYGEN_INCLUDE_DIR} ${KEROSIN_INCLUDE_DIR})
 
 if (CARBON_FOUND)
-  include(EnableCXX11)
   include_directories(${CARBON_INCLUDE_DIR})
 endif (CARBON_FOUND)
 
 link_directories(${Boost_LIBRARY_DIRS})
 
-if (UNIX)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Woverloaded-virtual")
-endif (UNIX)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic -Woverloaded-virtual)
+endif()
 
 if(WIN32)
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
@@ -72,8 +79,7 @@ set(BINDIR "bin" CACHE PATH "The directory to install binaries into.")
 set(LIBDIR "lib" CACHE PATH "The directory to install libraries into.")
 set(DATADIR "share" CACHE PATH "The directory to install data files into.")
 set(INCLUDEDIR "include" CACHE PATH "The directory to install includes into.")
-set(RPATH_DIRECTORIES ${SPARK_LIB_DIR}
-   "${CMAKE_INSTALL_PREFIX}/${LIBDIR}/${CMAKE_PROJECT_NAME}")
+set(CMAKE_INSTALL_RPATH ${SPARK_LIB_DIR})
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
 mark_as_advanced(BINDIR LIBDIR DATADIR INCLUDEDIR)
@@ -88,6 +94,7 @@ elseif (UNIX)
 else (APPLE)
   set(BUNDLE_PATH ../share/${CMAKE_PROJECT_NAME})
 endif (APPLE)
+set(BUNDLE_LIBRARY_PATH ${CMAKE_INSTALL_PREFIX}/${LIBDIR}/${CMAKE_PROJECT_NAME})
 
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/rcssserver3d_config.h.cmake
        ${CMAKE_CURRENT_BINARY_DIR}/rcssserver3d_config.h)

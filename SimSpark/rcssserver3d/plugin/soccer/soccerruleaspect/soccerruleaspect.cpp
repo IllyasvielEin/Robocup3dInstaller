@@ -51,7 +51,7 @@ SoccerRuleAspect::SoccerRuleAspect() :
     mGoalPauseTime(3),
     mKickInPauseTime(1),
     mHalfTime(2.25 * 60),
-    mDropBallTime(15),
+    mDropBallTime(20),
     mFreeKickDist(9.15),
     mFreeKickMoveDist(15.15),
     mRepelPlayersForKick(false),
@@ -120,7 +120,8 @@ SoccerRuleAspect::SoccerRuleAspect() :
     mPassModeMinOppBallDist(1.0),
     mPassModeDuration(4.0),
     mPassModeScoreWaitTime(10.0),
-    mPassModeRetryWaitTime(3.0)
+    mPassModeRetryWaitTime(3.0),
+    mRng(random_device()())
 {
     mFreeKickPos = Vector3f(0.0,0.0,mBallRadius);
     ResetFoulCounter(TI_LEFT);
@@ -737,7 +738,10 @@ void SoccerRuleAspect::AnalyseChargingFouls()
 #ifdef RVDRAW
             if (mRVSender) {
                 mRVSender->clearStaticDrawings();
-                mRVSender->drawPoint((*asIt)->mCollisionPos.x(), (*asIt)->mCollisionPos.y(), 10, RVSender::PINK);
+                for (auto& cInfo : (*asIt)->GetOppCollisionPosInfoVec())
+                {
+                    mRVSender->drawPoint(cInfo.second.first.x(), cInfo.second.first.y(), 10, RVSender::PINK);
+                }
                 if (mChargingMinCollBallDist > 0) {
                     mRVSender->drawCircle(ballPos.x(), ballPos.y(), mChargingMinCollBallDist, RVSender::ORANGE);
                 }
@@ -822,7 +826,7 @@ void SoccerRuleAspect::AnalyseTouchGroups(TTeamIndex idx, bool fOnlyProcessNewly
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     SoccerBase::TAgentStateList::iterator i = agent_states.begin();
     for (; i != agent_states.end(); ++i)
@@ -855,7 +859,7 @@ void SoccerRuleAspect::AnalyseTouchGroups(TTeamIndex idx, bool fOnlyProcessNewly
 
             // Randomize order of agent states in touch group to remove any bias in order before processing
             SoccerBase::TAgentStateList touchGroupList(touchGroup->begin(), touchGroup->end());
-            random_shuffle(touchGroupList.begin(), touchGroupList.end());
+            shuffle(touchGroupList.begin(), touchGroupList.end(), mRng);
 
             for (SoccerBase::TAgentStateList::iterator agentIt = touchGroupList.begin();
                     agentIt != touchGroupList.end(); ++agentIt)
@@ -1158,7 +1162,7 @@ void SoccerRuleAspect::AnalyseFouls(TTeamIndex idx)
     // Randomize order of agents evaluated
     std::vector<unsigned int> unums(11);
     for (unsigned int i = 0; i < unums.size(); i++) {unums[i] = i+1;}
-    std::random_shuffle(unums.begin(), unums.end());
+    shuffle(unums.begin(), unums.end(), mRng);
 
     for(std::vector<unsigned int>::const_iterator it = unums.begin(); it != unums.end(); ++it)
     {
@@ -1613,7 +1617,7 @@ SoccerRuleAspect::ClearPlayersAutomatic(TTeamIndex idx)
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     salt::Vector3f ballPos = mBallBody->GetPosition();
 
@@ -1671,7 +1675,7 @@ SoccerRuleAspect::ClearPlayers(const salt::Vector3f& pos, float radius,
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     salt::BoundingSphere sphere(pos, radius);
     boost::shared_ptr<oxygen::Transform> agent_aspect;
@@ -1721,7 +1725,7 @@ SoccerRuleAspect::ClearPlayers(const salt::AABB2& box,
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     boost::shared_ptr<oxygen::Transform> agent_aspect;
     SoccerBase::TAgentStateList::const_iterator i;
@@ -1772,7 +1776,7 @@ void SoccerRuleAspect::ClearPlayersBeforeKickOff(TTeamIndex idx)
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     salt::AABB2 box;
     if ( TI_RIGHT == idx ){
@@ -1829,7 +1833,7 @@ SoccerRuleAspect::RepelPlayers(const salt::Vector3f& pos, float radius,
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     boost::shared_ptr<oxygen::Transform> agent_aspect;
     SoccerBase::TAgentStateList::const_iterator i;
@@ -2075,7 +2079,7 @@ SoccerRuleAspect::ClearSelectedPlayers()
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, TI_NONE))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     boost::shared_ptr<oxygen::Transform> agent_aspect;
     SoccerBase::TAgentStateList::const_iterator i;
@@ -3775,7 +3779,7 @@ SoccerRuleAspect::ClearPlayersWithException(const salt::Vector3f& pos,
     if (! SoccerBase::GetAgentStates(*mBallState.get(), agent_states, idx))
         return;
 
-    random_shuffle(agent_states.begin(), agent_states.end());
+    shuffle(agent_states.begin(), agent_states.end(), mRng);
 
     salt::BoundingSphere sphere(pos, radius);
     boost::shared_ptr<oxygen::Transform> agent_aspect;

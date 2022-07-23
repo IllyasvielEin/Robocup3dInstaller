@@ -23,5 +23,5 @@ using namespace std;
 
 void CLASS(SoccerbotBehavior)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Behavior);
+    DEFINE_BASECLASS(oxygen/Behavior)
 }

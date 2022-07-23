@@ -31,7 +31,7 @@ const zeitgeist::ParameterList Predicate::nullParamList;
 
 Predicate::Iterator::Iterator(const ParameterList* l,
                               ParameterList::TVector::const_iterator i)
-    : list(l),iter(i) {};
+    : list(l),iter(i) {}
 
 Predicate::Iterator::Iterator(const ParameterList* l)
     : list(l),iter(l->begin()) {}
@@ -40,7 +40,7 @@ Predicate::Iterator::Iterator(const Predicate& predicate)
     : list(&predicate.parameter), iter(predicate.parameter.begin()) {}
 
 Predicate::Iterator::Iterator()
-    : list(&nullParamList), iter(nullParamList.begin()) {};
+    : list(&nullParamList), iter(nullParamList.begin()) {}
 
 const boost::any& Predicate::Iterator::operator * () const
 {
@@ -135,7 +135,7 @@ Predicate::FindParameter(Iterator& iter, const string& name) const
          list,
          find_if(
                  list->begin(), list->end(),
-                 bind2nd(ParameterName(), name)
+                 bind(ParameterName(), placeholders::_1, name)
                  )
          );
 

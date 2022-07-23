@@ -24,7 +24,7 @@
 #include "frameattachmentpoint.h"
 #include "attachableframe.h"
 
-#include <QtGui>
+#include <QtWidgets>
 
 //--------------------------------------------------------------
 // Static

@@ -49,7 +49,7 @@ FUNCTION(Axis,getSize)
 
 void CLASS(Axis)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
-    DEFINE_FUNCTION(setSize);
-    DEFINE_FUNCTION(getSize);
+    DEFINE_BASECLASS(oxygen/BaseNode)
+    DEFINE_FUNCTION(setSize)
+    DEFINE_FUNCTION(getSize)
 }

@@ -55,6 +55,6 @@ public:
     void DestroyWorld(long worldID);
 };
 
-DECLARE_CLASS(WorldImp);
+DECLARE_CLASS(WorldImp)
 
 #endif //ODEWORLD_H

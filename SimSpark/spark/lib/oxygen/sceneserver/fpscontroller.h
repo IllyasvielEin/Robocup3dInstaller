@@ -141,7 +141,7 @@ protected:
     bool    mDown;
 };
 
-DECLARE_CLASS(FPSController);
+DECLARE_CLASS(FPSController)
 
 } //namespace oxygen
 

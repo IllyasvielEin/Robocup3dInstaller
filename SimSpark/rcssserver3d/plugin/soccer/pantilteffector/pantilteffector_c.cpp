@@ -72,8 +72,8 @@ FUNCTION(PanTiltEffector,setSigma)
 void
 CLASS(PanTiltEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
-    DEFINE_FUNCTION(setSigma);
-    DEFINE_FUNCTION(setMaxPanAngleDelta);
-    DEFINE_FUNCTION(setMaxTiltAngleDelta);
+    DEFINE_BASECLASS(oxygen/Effector)
+    DEFINE_FUNCTION(setSigma)
+    DEFINE_FUNCTION(setMaxPanAngleDelta)
+    DEFINE_FUNCTION(setMaxTiltAngleDelta)
 }

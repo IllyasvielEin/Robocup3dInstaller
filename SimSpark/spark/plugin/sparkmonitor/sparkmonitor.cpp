@@ -245,10 +245,12 @@ void SparkMonitor::DescribeMesh(stringstream& ss, boost::shared_ptr<StaticMesh> 
             }
 
     if (mFullState || mesh->VisibleToggled())
-        if (mesh->IsVisible())
-            ss << " (setVisible 1)";
-        else
-            ss << " (setVisible 0)";
+        {
+            if (mesh->IsVisible())
+                ss << " (setVisible 1)";
+            else
+                ss << " (setVisible 0)";
+        }
         
     if (! mFullState)
       return;

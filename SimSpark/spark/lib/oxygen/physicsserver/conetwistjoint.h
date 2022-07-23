@@ -51,7 +51,7 @@ private:
     static boost::shared_ptr<ConeTwistJointInt> mConeTwistJointImp;
 };
 
-DECLARE_CLASS(ConeTwistJoint);
+DECLARE_CLASS(ConeTwistJoint)
 
 } //namespace oxygen
 

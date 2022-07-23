@@ -46,7 +46,7 @@ void AngularMotorImp::SetModeEulerMode(long jointID){
 int AngularMotorImp::GetMode(long jointID){
     dJointID ODEJoint = (dJointID) jointID;
     int motorMode = dJointGetAMotorMode(ODEJoint);
-    if (motorMode = dAMotorUser) 
+    if (motorMode == dAMotorUser)
         return 0;
     //motor is in Euler mode
     return 1; 

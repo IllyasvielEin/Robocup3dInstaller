@@ -10,9 +10,7 @@
 #include "settings.h"
 #include "ui_setupframe.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #include <QListView>
 #include <QString>

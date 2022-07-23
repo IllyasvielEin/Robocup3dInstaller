@@ -91,6 +91,6 @@ protected:
     unsigned char mMaxTiltAngleDelta;
 };
 
-DECLARE_CLASS(PanTiltEffector);
+DECLARE_CLASS(PanTiltEffector)
 
 #endif // PANTILTEFFECTOR_H

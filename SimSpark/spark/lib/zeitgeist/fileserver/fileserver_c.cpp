@@ -93,8 +93,8 @@ FUNCTION(FileServer,unmount)
 
 void CLASS(FileServer)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/Node);
-        DEFINE_FUNCTION(exist);
-        DEFINE_FUNCTION(mount);
-        DEFINE_FUNCTION(unmount);
+        DEFINE_BASECLASS(zeitgeist/Node)
+        DEFINE_FUNCTION(exist)
+        DEFINE_FUNCTION(mount)
+        DEFINE_FUNCTION(unmount)
 }

@@ -57,7 +57,7 @@ private:
     static boost::shared_ptr<FixedJointInt> mFixedJointImp;
 };
 
-DECLARE_CLASS(FixedJoint);
+DECLARE_CLASS(FixedJoint)
 
 } // namespace oxygen
 

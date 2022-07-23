@@ -65,7 +65,7 @@ protected:
     float mAngularDrag;
 };
 
-DECLARE_CLASS(DragController);
+DECLARE_CLASS(DragController)
 
 } // namespace oxygen
 

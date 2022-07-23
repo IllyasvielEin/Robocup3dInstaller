@@ -59,9 +59,9 @@ FUNCTION(SingleMatNode,setVisible)
 
 void CLASS(SingleMatNode)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/StaticMesh);
-    DEFINE_FUNCTION(setMaterial);
-    DEFINE_FUNCTION(setVisible);
+    DEFINE_BASECLASS(kerosin/StaticMesh)
+    DEFINE_FUNCTION(setMaterial)
+    DEFINE_FUNCTION(setVisible)
 }
 
 

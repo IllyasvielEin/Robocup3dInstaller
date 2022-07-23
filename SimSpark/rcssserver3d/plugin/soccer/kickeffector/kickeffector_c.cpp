@@ -146,12 +146,12 @@ FUNCTION(KickEffector,setAngleRange)
 
 void CLASS(KickEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
-    DEFINE_FUNCTION(setKickMargin);
-    DEFINE_FUNCTION(setForceFactor);
-    DEFINE_FUNCTION(setTorqueFactor);
-    DEFINE_FUNCTION(setSteps);
-    DEFINE_FUNCTION(setNoiseParams);
-    DEFINE_FUNCTION(setMaxPower);
-    DEFINE_FUNCTION(setAngleRange);
+    DEFINE_BASECLASS(oxygen/Effector)
+    DEFINE_FUNCTION(setKickMargin)
+    DEFINE_FUNCTION(setForceFactor)
+    DEFINE_FUNCTION(setTorqueFactor)
+    DEFINE_FUNCTION(setSteps)
+    DEFINE_FUNCTION(setNoiseParams)
+    DEFINE_FUNCTION(setMaxPower)
+    DEFINE_FUNCTION(setAngleRange)
 }

@@ -24,10 +24,8 @@
 
 #include "indexbuffer.h"
 #include <list>
-#ifndef Q_MOC_RUN
 #include <boost/shared_array.hpp>
 #include <boost/shared_ptr.hpp>
-#endif
 #include <string>
 #include <oxygen/oxygen_defines.h>
 

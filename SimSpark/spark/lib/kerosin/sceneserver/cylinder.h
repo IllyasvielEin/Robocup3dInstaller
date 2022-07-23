@@ -69,7 +69,7 @@ protected:
     float mLength;
 };
 
-DECLARE_CLASS(Cylinder);
+DECLARE_CLASS(Cylinder)
 
 } //namespace kerosin
 

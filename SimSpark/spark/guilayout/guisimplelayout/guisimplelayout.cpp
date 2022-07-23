@@ -35,7 +35,7 @@
 // Public
 //--------------------------------------------------------------
 
-GuiSimpleLayout::GuiSimpleLayout(QWidget *parent, Qt::WFlags flags)
+GuiSimpleLayout::GuiSimpleLayout(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     WindowManager* windowManager = Carbon::get()->getWindowManager();

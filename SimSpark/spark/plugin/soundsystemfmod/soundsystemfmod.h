@@ -42,6 +42,6 @@ public:
         kerosin::SoundModule*   CreateModule(kerosin::SoundServer &soundServer);
 };
 
-DECLARE_CLASS(SoundSystemFMOD);
+DECLARE_CLASS(SoundSystemFMOD)
 
 #endif //SOUNDSYSTEMFMOD_H__

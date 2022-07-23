@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(Body)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/PhysicsObject);
+        DEFINE_BASECLASS(oxygen/PhysicsObject)
 }

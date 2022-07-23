@@ -45,6 +45,6 @@ public:
     virtual int EventFilter(const SDL_Event* event);
 };
 
-DECLARE_CLASS(MouseSDL);
+DECLARE_CLASS(MouseSDL)
 
 #endif //MOUSESDL_H__

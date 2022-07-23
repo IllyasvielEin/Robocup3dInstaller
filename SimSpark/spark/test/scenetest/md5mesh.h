@@ -91,6 +91,6 @@ private:
         Channel *mChannels;
 };
 
-DECLARE_CLASS(MD5Mesh);
+DECLARE_CLASS(MD5Mesh)
 
 #endif //ME5MESH_H__

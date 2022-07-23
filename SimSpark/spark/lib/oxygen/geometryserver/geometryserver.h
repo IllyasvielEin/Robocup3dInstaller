@@ -80,7 +80,7 @@ protected:
     TMeshMap mMeshMap;
 };
 
-DECLARE_CLASS(GeometryServer);
+DECLARE_CLASS(GeometryServer)
 
 } //namespace oxygen
 

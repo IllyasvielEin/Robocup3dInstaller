@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(StaticBody)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/Body);
+        DEFINE_BASECLASS(oxygen/Body)
 }

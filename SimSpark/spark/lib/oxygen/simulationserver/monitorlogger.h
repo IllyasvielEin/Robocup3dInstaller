@@ -66,7 +66,7 @@ protected:
     float mFullStateLoggedTime;
 };
 
-DECLARE_CLASS(MonitorLogger);
+DECLARE_CLASS(MonitorLogger)
 
 } // namespace oxygen
 

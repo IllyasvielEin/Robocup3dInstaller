@@ -23,5 +23,5 @@
 void
 CLASS(OpenGLSystemQT)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/OpenGLSystem);
+    DEFINE_BASECLASS(kerosin/OpenGLSystem)
 }

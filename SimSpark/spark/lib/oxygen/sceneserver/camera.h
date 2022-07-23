@@ -144,7 +144,7 @@ protected:
     salt::Matrix mProjectionTransform;
 };
 
-DECLARE_CLASS(Camera);
+DECLARE_CLASS(Camera)
 
 } //namespace kerosin
 

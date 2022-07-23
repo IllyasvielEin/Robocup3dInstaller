@@ -1,3 +1,12 @@
+[0.7.4]
+New changes for the RoboCup 2022 competition:
+
+* Rule Changes:
+    - Increased drop-ball-time from 15 to 20 seconds.
+
+* Bug Fixes:
+    - Fixed drawing of agent collisions for RoboViz.
+
 [0.7.3]
 New changes in 0.7.3:
 

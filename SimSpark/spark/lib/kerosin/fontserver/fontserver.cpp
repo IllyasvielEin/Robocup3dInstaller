@@ -21,9 +21,7 @@
 */
 #include "fontserver.h"
 #include "font.h"
-#ifndef Q_MOC_RUN
 #include <boost/scoped_array.hpp>
-#endif
 #include <salt/fileclasses.h>
 #include <zeitgeist/fileserver/fileserver.h>
 #include <zeitgeist/logserver/logserver.h>

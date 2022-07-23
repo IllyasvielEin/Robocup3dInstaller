@@ -59,7 +59,7 @@ FUNCTION(Line,setEndPoint)
 void
 CLASS(Line)::DefineClass()
 {
-    DEFINE_BASECLASS(SoccerNode);
-    DEFINE_FUNCTION(setBeginPoint);
-    DEFINE_FUNCTION(setEndPoint);
+    DEFINE_BASECLASS(SoccerNode)
+    DEFINE_FUNCTION(setBeginPoint)
+    DEFINE_FUNCTION(setEndPoint)
 }

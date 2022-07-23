@@ -57,6 +57,6 @@ protected:
         std::string     mPath;
 };
 
-DECLARE_CLASS(FileSystemSTD);
+DECLARE_CLASS(FileSystemSTD)
 
 #endif //__FILESYS_STD_H__

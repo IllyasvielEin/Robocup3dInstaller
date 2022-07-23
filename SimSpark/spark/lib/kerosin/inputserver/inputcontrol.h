@@ -141,7 +141,7 @@ protected:
     bool mMouseLook;
 };
 
-DECLARE_CLASS(InputControl);
+DECLARE_CLASS(InputControl)
 
 } // namespace kerosin
 

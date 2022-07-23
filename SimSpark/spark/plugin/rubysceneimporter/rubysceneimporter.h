@@ -145,6 +145,6 @@ protected:
     sexp_mem_t *mSexpMemory;
 };
 
-DECLARE_CLASS(RubySceneImporter);
+DECLARE_CLASS(RubySceneImporter)
 
 #endif // RUBYSCENEIMPORTER_H

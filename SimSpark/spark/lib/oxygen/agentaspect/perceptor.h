@@ -26,40 +26,82 @@
 #include <oxygen/sceneserver/basenode.h>
 #include <oxygen/gamecontrolserver/baseparser.h>
 
+/**
+ * @defgroup perceptors Perceptors
+ * @brief Perceptors are used by agents to sense information from the environment.
+ *
+ * For more details about their implementation please refer to the @ref oxygen::Perceptor class.
+ *
+ * @todo Add a more detailled description of the Perceptors group...
+ */
+
 namespace oxygen
 {
 
+/**
+ * @class Perceptor
+ * @brief Base class for all perceptors.
+ * @ingroup perceptors
+ *
+ * Perceptors are used by agents to sense information from the environment.
+ * This class serves as a base class for all perceptors, providing a generic interface (via the @ref Percept() method) for collecting perceptor information in a @ref PredicateList.
+ *
+ * @todo Document relation of perceptors to scene graph.
+ *
+ * Depending on the actual perceptor, sensor information might be available more or less frequent.
+ * To address this issue, each perceptor provides its own perception interval in which new sensor information is generated.
+ * The @ref GetInterval() and @ref SetInterval() methods are used to access and change the interval cycle of a perceptor.
+ */
 class OXYGEN_API Perceptor : public oxygen::BaseNode
 {
 public:
-
+    /** @brief Default Constructor. */
     Perceptor();
 
-    /*!  This is called by agents to trigger the percept event
-      implemented by this perceptor. The perceptor can return data
-      through the PredicateList which is passed as a parameter.
-      \return true, if valid data is available and false otherwise.
-    */
+    /** @brief Default Destructor. */
+    virtual ~Perceptor() {};
+
+    /** @brief Trigger perception event.
+     *
+     * This is called by agents to trigger the percept event implemented by the perceptor.
+     * The perceptor can return data through the @ref PredicateList which is passed as a parameter.
+     *
+     * @param[in,out] predList the predicate list for storing the newly created perception
+     * @return @c true if valid data is available and @c false otherwise
+     */
     virtual bool Percept(boost::shared_ptr<PredicateList> predList) = 0;
 
-    //! set / change predicate name (for example for debugging purposes)
-    void SetPredicateName(const std::string& my_name);
+    /** @brief Set / change the predicate name.
+     *
+     * (used for example for debugging purposes)
+     *
+     * @param[in] name the new name of the predicate for the perceptor
+     */
+    void SetPredicateName(const std::string& name);
 
-    /** get the interval cycle of the perceptor */
+    /** @brief Retrieve the interval cycle of the perceptor.
+     *
+     * @return the perceptor interval cycle
+     * @see @ref SetInterval()
+     */
     unsigned int GetInterval() const;
 
-    /** set the interval cycle of the perceptor */
+    /** @brief Set the interval cycle of the perceptor.
+     *
+     * @param[in] i the perceptor interval cycle
+     * @see @ref GetInterval()
+     */
     void SetInterval(unsigned int i);
 
 protected:
-    //! the predicate name
+    /** @brief The predicate name of the perceptor. */
     std::string mPredicateName;
 
-    //! the interval cycle of the perceptor
+    /** @brief The interval cycle of the perceptor. */
     unsigned int mInterval;
 };
 
-DECLARE_ABSTRACTCLASS(Perceptor);
+DECLARE_ABSTRACTCLASS(Perceptor)
 
 } // namespace oxygen
 

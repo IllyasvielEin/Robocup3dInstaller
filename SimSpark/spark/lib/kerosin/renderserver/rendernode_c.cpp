@@ -48,7 +48,7 @@ FUNCTION(RenderNode,setVisible)
 
 void CLASS(RenderNode)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
-    DEFINE_FUNCTION(setTransparent);
-    DEFINE_FUNCTION(setVisible);
+    DEFINE_BASECLASS(oxygen/BaseNode)
+    DEFINE_FUNCTION(setTransparent)
+    DEFINE_FUNCTION(setVisible)
 }

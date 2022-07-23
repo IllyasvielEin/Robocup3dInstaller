@@ -65,7 +65,7 @@ protected:
 protected:
 };
 
-DECLARE_ABSTRACTCLASS(OpenGLSystem);
+DECLARE_ABSTRACTCLASS(OpenGLSystem)
 
 } // namespace kerosin
 

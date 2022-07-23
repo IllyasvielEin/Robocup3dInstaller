@@ -23,6 +23,11 @@
 #include <oxygen/agentaspect/jointperceptor.h>
 #include <oxygen/physicsserver/hingejoint.h>
 
+/**
+ * @class HingePerceptor
+ * @brief Perceptor for the hinge joint configuration.
+ * @ingroup perceptors
+ */
 class HingePerceptor : public oxygen::JointPerceptor<oxygen::HingeJoint>
 {
 public:
@@ -38,6 +43,6 @@ protected:
     void InsertAxisTorque(oxygen::Predicate& predicate);
 };
 
-DECLARE_CLASS(HingePerceptor);
+DECLARE_CLASS(HingePerceptor)
 
 #endif //HINGEPERCEPTOR_H

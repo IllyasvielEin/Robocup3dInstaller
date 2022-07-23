@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(SoccerRuleAspect)::DefineClass()
 {
-    DEFINE_BASECLASS(SoccerControlAspect);
+    DEFINE_BASECLASS(SoccerControlAspect)
 }

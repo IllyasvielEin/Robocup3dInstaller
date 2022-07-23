@@ -25,6 +25,11 @@
 #include <oxygen/agentaspect/perceptor.h>
 #include <oxygen/sceneserver/sceneserver.h>
 
+/**
+ * @class PerfectVisionPerceptor
+ * @brief Perceptor representing the result of a perfect camera and image-processing pipeline, detecting known features in the environment.
+ * @ingroup perceptors
+ */
 class PerfectVisionPerceptor : public oxygen::Perceptor
 {
 public:
@@ -49,6 +54,6 @@ private:
     bool mInvertZ;
 };
 
-DECLARE_CLASS(PerfectVisionPerceptor);
+DECLARE_CLASS(PerfectVisionPerceptor)
 
 #endif //PERFECTVISIONPERCEPTOR_H

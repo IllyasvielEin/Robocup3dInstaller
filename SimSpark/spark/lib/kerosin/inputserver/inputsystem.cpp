@@ -21,9 +21,7 @@
 */
 #include "inputsystem.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/thread/locks.hpp>
-#endif
 
 using namespace kerosin;
 using namespace zeitgeist;

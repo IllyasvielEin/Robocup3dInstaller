@@ -31,6 +31,6 @@ public:
     BodyImp();
 };
 
-DECLARE_CLASS(BodyImp);
+DECLARE_CLASS(BodyImp)
 
 #endif //ODEBODY_H

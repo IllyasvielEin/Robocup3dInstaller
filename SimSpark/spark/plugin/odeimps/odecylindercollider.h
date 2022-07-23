@@ -31,6 +31,6 @@ public:
     CylinderColliderImp();
 };
 
-DECLARE_CLASS(CylinderColliderImp);
+DECLARE_CLASS(CylinderColliderImp)
 
 #endif //ODECYLINDERCOLLIDER_H

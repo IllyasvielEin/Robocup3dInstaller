@@ -23,5 +23,5 @@
 
 void CLASS(SingleMatInitEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(InitEffector);
+    DEFINE_BASECLASS(InitEffector)
 }

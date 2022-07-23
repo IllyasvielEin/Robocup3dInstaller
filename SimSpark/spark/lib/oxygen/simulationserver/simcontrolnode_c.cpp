@@ -42,7 +42,7 @@ FUNCTION(SimControlNode, setStep)
 
 void CLASS(SimControlNode)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(setStep);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(setStep)
 }
 

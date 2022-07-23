@@ -45,7 +45,7 @@ public:
     virtual std::string Generate(boost::shared_ptr<PredicateList> input) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(BaseParser);
+DECLARE_ABSTRACTCLASS(BaseParser)
 
 } // namespace oxygen
 

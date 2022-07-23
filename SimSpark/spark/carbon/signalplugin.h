@@ -223,12 +223,15 @@ public:
     */
     virtual ~SignalPlugin();
 
+    using AbstractPlugin::loadData;
     /*!
      \brief Virtual function to signal a plugin to load data from a QSettings save file.
 
      \param data source file
     */
     virtual void loadData(const QSettings& data);
+
+    using AbstractPlugin::saveData;
     /*!
      \brief Virtual function to signal a plugin to save its data to a QSettings save file.
 
@@ -270,7 +273,6 @@ public: signals:
      Although the Gui core does not rely on derived plugins emitting this signal, other plugins might do so.
     */
     void finished();
-    /*!
     /*!
      \brief Should be emitted whenever run() was called and the plugin just started the execution of the run routine.
 

@@ -194,7 +194,6 @@ bool Simulation::initialize(const SimulationSetup& setup)
 bool Simulation::run(bool runTasks)
 {
     int run = 0;
-    int max = mSetup->getTaskDefinitions().size();
 
     if (mTasks.size() == 0)
     {
@@ -303,22 +302,16 @@ bool Simulation::stop(bool stopserver)
         //Count closing tasks
         int not_closed = 0;
         shared_ptr<SimulationTask> first = shared_ptr<SimulationTask>();
-        bool skippingServer = false;
         for (auto it = mTasks.begin(); it != mTasks.end(); it++)
         {
             SimulationTask* task = it->get();
 
             //Wait for all threads. if stopserver is false, do not wait for spark server
             bool isServer = (task->getTaskDefinition().getType() == TaskDefinition::TT_SERVERTHREAD);
-            if (!isServer || stopserver == true)
-            if (task->stateRunning())
+            if ((!isServer || stopserver == true) && task->stateRunning())
             {
                 not_closed++;
                 first = shared_ptr<SimulationTask>(*it);
-            }
-            else
-            {
-                //isServer and stopall == false
             }
         }
         
@@ -730,7 +723,6 @@ bool Simulation::addTask(boost::shared_ptr<TaskDefinition> taskDefinition)
     mTasks.push_back(task);
 
     //Connect task signals
-    const TaskDefinition& definition = task->getTaskDefinition();
     const SimulationTaskMessenger* messenger = task->getMessenger();
     connect(messenger, SIGNAL(executionStateChanged(int, SimulationTask::ETaskExecutionState)), this, SLOT(onTaskStateChanged(int, SimulationTask::ETaskExecutionState)));
 

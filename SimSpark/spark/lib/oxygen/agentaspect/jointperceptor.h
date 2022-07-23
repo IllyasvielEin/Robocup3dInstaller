@@ -25,6 +25,11 @@
 namespace oxygen
 {
 
+/**
+ * @class JointPerceptor
+ * @brief Base class for joint perceptors.
+ * @ingroup perceptors
+ */
 template<typename _JOINT>
 class JointPerceptor : public oxygen::Perceptor
 {

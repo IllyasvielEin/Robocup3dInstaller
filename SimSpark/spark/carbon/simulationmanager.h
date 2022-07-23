@@ -35,9 +35,7 @@
 #include <QStringList>
 #include <QMutex>
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 class ServerThread;
 class SimulationTask;

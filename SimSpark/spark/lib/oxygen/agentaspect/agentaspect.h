@@ -95,7 +95,7 @@ private:
     bool mIsSynced;
 };
 
-DECLARE_CLASS(AgentAspect);
+DECLARE_CLASS(AgentAspect)
 
 } // namespace oxygen
 

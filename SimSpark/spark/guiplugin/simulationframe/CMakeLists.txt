@@ -26,16 +26,12 @@ set(simulationframe_FORMS
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### create library ###############
 
 #Meta object compiler wrapping of header files, forms and resources
-QT4_WRAP_CPP(simulationframe_QOBJECT_HEADERS_MOC ${simulationframe_QOBJECT_HEADERS})
-QT4_WRAP_UI(simulationframe_FORMS_HEADERS ${simulationframe_FORMS})
-#QT4_ADD_RESOURCES(simulationframe_RESOURCES_RCC ${simulationframe_RESOURCES})
+qt5_wrap_cpp(simulationframe_QOBJECT_HEADERS_MOC ${simulationframe_QOBJECT_HEADERS})
+qt5_wrap_ui(simulationframe_FORMS_HEADERS ${simulationframe_FORMS})
+#qt5_add_resources(simulationframe_RESOURCES_RCC ${simulationframe_RESOURCES})
 
 include_directories(
   ${CMAKE_SOURCE_DIR}
@@ -58,7 +54,7 @@ add_library(
 target_link_libraries(
   simulationframe
   ${OPENGL_LIBRARIES} 
-  ${QT_LIBRARIES} 
+  ${Qt5Widgets_LIBRARIES} 
   ${spark_gui_libs})
 
 if (NOT APPLE)

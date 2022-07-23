@@ -60,7 +60,7 @@ private:
     static boost::shared_ptr<RayColliderInt> mRayColliderImp;
 };
 
-DECLARE_CLASS(RayCollider);
+DECLARE_CLASS(RayCollider)
 
 } //namespace oxygen
 

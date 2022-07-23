@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(CollisionHandler)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/BaseNode);
+  DEFINE_BASECLASS(oxygen/BaseNode)
 }

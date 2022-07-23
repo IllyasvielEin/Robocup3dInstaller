@@ -23,6 +23,11 @@
 #include <oxygen/agentaspect/jointeffector.h>
 #include <oxygen/physicsserver/universaljoint.h>
 
+/**
+ * @class UniversalJointEffector
+ * @brief Effector for the universal joint configuration.
+ * @ingroup effectors
+ */
 class UniversalJointEffector : public oxygen::JointEffector<oxygen::UniversalJoint>
 {
 public:
@@ -40,6 +45,6 @@ public:
     GetActionObject(const oxygen::Predicate& predicate);
 };
 
-DECLARE_CLASS(UniversalJointEffector);
+DECLARE_CLASS(UniversalJointEffector)
 
 #endif // UNIVERSALJOINTEFFECTOR_H

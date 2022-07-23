@@ -60,6 +60,6 @@ protected:
     boost::shared_ptr<CollisionPerceptor> mColPercept;
 };
 
-DECLARE_CLASS(PerceptorHandler);
+DECLARE_CLASS(PerceptorHandler)
 
 #endif // PERCEPTORHANDLER_H

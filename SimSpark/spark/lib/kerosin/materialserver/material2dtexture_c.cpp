@@ -72,8 +72,8 @@ FUNCTION(Material2DTexture,setSpecularTexture)
 
 void CLASS(Material2DTexture)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/MaterialSolid);
-    DEFINE_FUNCTION(setDiffuseTexture);
-    DEFINE_FUNCTION(setNormalTexture);
-    DEFINE_FUNCTION(setSpecularTexture);
+    DEFINE_BASECLASS(kerosin/MaterialSolid)
+    DEFINE_FUNCTION(setDiffuseTexture)
+    DEFINE_FUNCTION(setNormalTexture)
+    DEFINE_FUNCTION(setSpecularTexture)
 }

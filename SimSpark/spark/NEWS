@@ -1,3 +1,22 @@
+[0.3.3]
+Finally, a new release of simspark is here! I'm very happy to report that
+agents are now allowed to connect / disconnect in the same simulation frame
+without crashing the server. This change will speed up match setup drametically
+and as a result improve various learning scenarios. In addition to that, Qt4 is
+replaced with Qt5 and RUNPATH support was added.
+
+ - Allow agents to connect / disconnect in the same simulation frame
+  -- Agents are now spawned into a separate spawning area while avoiding
+     collisions with already existing agents. The spawning area is specified by
+     two points (SpawningAreaStart and SpawningAreaStop) in the corresponding
+     ruby script.
+ - Added RUNPATH support (replacing old RPATH logic)
+  -- Added option to specify additional library / bundle locations for concrete
+     simulations.
+ - Default to C++17
+ - Resolved some compiler warnings
+ - Updated from Qt4 to Qt5
+
 [0.3.2]
 Simspark 0.3.2 is ready. It contains a fix for exploding agents.
 

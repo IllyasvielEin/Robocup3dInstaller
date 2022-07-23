@@ -73,6 +73,6 @@ public:
     operator const float*() const { return data.v; }
 };
 
-};
+}
 
 #endif // KEROSIN_GLBASE_H

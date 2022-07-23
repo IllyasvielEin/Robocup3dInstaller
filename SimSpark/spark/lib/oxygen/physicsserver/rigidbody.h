@@ -277,7 +277,7 @@ protected:
     static boost::shared_ptr<RigidBodyInt> mRigidBodyImp;
 };
 
-DECLARE_CLASS(RigidBody);
+DECLARE_CLASS(RigidBody)
 
 } //namespace oxygen
 

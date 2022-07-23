@@ -25,9 +25,9 @@ bool Glyph::LoadGlyph(FT_Face face, unsigned int charCode)
 
 	//printf("Glyph: '%c' %d\n", charCode, face->glyph->bitmap.pitch);
 	//printf("  Res:    %dx%d\n", face->glyph->bitmap.width, face->glyph->bitmap.rows);
-	for(int y=0; y<face->glyph->bitmap.rows; ++y)
+	for(unsigned int y=0; y<face->glyph->bitmap.rows; ++y)
 	{
-		for(int x=0; x<face->glyph->bitmap.width; ++x)
+		for(unsigned int x=0; x<face->glyph->bitmap.width; ++x)
 		{
 			mData[y*mByteWidth + x] = face->glyph->bitmap.buffer[y*face->glyph->bitmap.pitch + x];
 		}

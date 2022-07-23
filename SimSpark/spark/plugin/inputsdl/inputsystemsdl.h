@@ -74,6 +74,6 @@ private:
     boost::shared_ptr<TimerSDL> mTimer;
 };
 
-DECLARE_CLASS(InputSystemSDL);
+DECLARE_CLASS(InputSystemSDL)
 
 #endif //INPUTSYSTEMSDL_H__

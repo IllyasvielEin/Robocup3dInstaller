@@ -26,6 +26,6 @@ using namespace kerosin;
 
 void CLASS(Material)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }
 

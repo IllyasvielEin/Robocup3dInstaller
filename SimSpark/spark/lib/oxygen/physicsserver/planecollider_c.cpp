@@ -82,7 +82,7 @@ FUNCTION(PlaneCollider,getPointDepth)
 
 void CLASS(PlaneCollider)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Collider);
-    DEFINE_FUNCTION(setParams);
-    DEFINE_FUNCTION(getPointDepth);
+    DEFINE_BASECLASS(oxygen/Collider)
+    DEFINE_FUNCTION(setParams)
+    DEFINE_FUNCTION(getPointDepth)
 }

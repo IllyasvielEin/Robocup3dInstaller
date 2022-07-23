@@ -56,7 +56,7 @@ FUNCTION(RubySceneImporter,setUnlinkOnCompleteScenes)
 
 void CLASS(RubySceneImporter)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SceneImporter);
-    DEFINE_FUNCTION(setUnlinkOnCompleteScenes);
-    DEFINE_FUNCTION(enableSceneDictionary);
+    DEFINE_BASECLASS(oxygen/SceneImporter)
+    DEFINE_FUNCTION(setUnlinkOnCompleteScenes)
+    DEFINE_FUNCTION(enableSceneDictionary)
 }

@@ -26,6 +26,6 @@ using namespace oxygen;
 
 void CLASS(MonitorItem)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }
 

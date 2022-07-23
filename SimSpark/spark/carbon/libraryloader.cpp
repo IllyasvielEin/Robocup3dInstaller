@@ -546,6 +546,11 @@ LibraryLoader::LibraryMap::ConstIterator LibraryLoader::findLibraryDefinition(co
     return mLibraries.find(path);
 }
 
+LibraryLoader::LibraryMap::Iterator LibraryLoader::findLibraryDefinition(const QString& path)
+{
+    return mLibraries.find(path);
+}
+
 LibraryLoader::LibraryMap::ConstIterator LibraryLoader::findLibraryDefinition(int id) const
 {
     for (auto it = mLibraries.begin(); it != mLibraries.end(); it++)
@@ -556,7 +561,27 @@ LibraryLoader::LibraryMap::ConstIterator LibraryLoader::findLibraryDefinition(in
     return mLibraries.end();
 }
 
+LibraryLoader::LibraryMap::Iterator LibraryLoader::findLibraryDefinition(int id)
+{
+    for (auto it = mLibraries.begin(); it != mLibraries.end(); it++)
+    {
+        if (it->mId == id)
+            return it;
+    }
+    return mLibraries.end();
+}
+
 LibraryLoader::LibraryMap::ConstIterator LibraryLoader::findLibraryDefinition(const boost::shared_ptr<QLibrary>& lib) const
+{
+    for (auto it = mLibraries.begin(); it != mLibraries.end(); it++)
+    {
+        if (it->mLibrary.get() == lib.get())
+            return it;
+    }
+    return mLibraries.end();
+}
+
+LibraryLoader::LibraryMap::Iterator LibraryLoader::findLibraryDefinition(const boost::shared_ptr<QLibrary>& lib)
 {
     for (auto it = mLibraries.begin(); it != mLibraries.end(); it++)
     {

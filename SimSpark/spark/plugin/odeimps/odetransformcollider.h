@@ -52,6 +52,6 @@ public:
     long CreateTransformCollider();
 };
 
-DECLARE_CLASS(TransformColliderImp);
+DECLARE_CLASS(TransformColliderImp)
 
 #endif //ODECOLLIDER_H

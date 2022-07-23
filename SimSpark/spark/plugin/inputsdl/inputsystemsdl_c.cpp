@@ -24,5 +24,5 @@
 void
 CLASS(InputSystemSDL)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/InputSystem);
+    DEFINE_BASECLASS(kerosin/InputSystem)
 }

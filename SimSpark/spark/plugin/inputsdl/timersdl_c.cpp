@@ -24,5 +24,5 @@
 void
 CLASS(TimerSDL)::DefineClass()
 {
-    DEFINE_BASECLASS(InputDeviceSDL);
+    DEFINE_BASECLASS(InputDeviceSDL)
 }

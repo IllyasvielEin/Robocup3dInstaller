@@ -27,6 +27,11 @@
 #include <kerosin/renderserver/rendercontrol.h>
 #include "imagerender.h"
 
+/**
+ * @class ImagePerceptor
+ * @brief Perceptor representing a camera (receiving raw 2D images).
+ * @ingroup perceptors
+ */
 class ImagePerceptor : public oxygen::Perceptor
 {
 public:
@@ -58,6 +63,6 @@ private:
     base64::Encoder mB64Encoder;
 };
 
-DECLARE_CLASS(ImagePerceptor);
+DECLARE_CLASS(ImagePerceptor)
 
 #endif //IMAGEPERCEPTOR_H

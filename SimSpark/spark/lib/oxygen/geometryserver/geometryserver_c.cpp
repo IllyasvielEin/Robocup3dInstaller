@@ -58,7 +58,7 @@ FUNCTION(GeometryServer,initMeshExporter)
 void
 CLASS(GeometryServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(initMeshImporter);
-    DEFINE_FUNCTION(initMeshExporter);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(initMeshImporter)
+    DEFINE_FUNCTION(initMeshExporter)
 }

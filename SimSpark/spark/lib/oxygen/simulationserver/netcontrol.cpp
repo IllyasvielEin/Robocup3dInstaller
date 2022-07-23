@@ -93,7 +93,7 @@ boost::shared_ptr<Socket> NetControl::CreateSocket(ESocketType type)
                 }
         }
 
-    catch (OpenErr error)
+    catch (const OpenErr& error)
         {
             cerr << "(NetControl) failed to create socket with '"
                  << error.what()
@@ -174,7 +174,7 @@ void NetControl::InitSimulation()
           mSocket->bind(mLocalAddr);
       }
 
-  catch (BindErr error)
+  catch (const BindErr& error)
       {
           GetLog()->Error() << "(NetControl) failed to bind socket with '"
                             << error.what() << "'"
@@ -196,7 +196,7 @@ void NetControl::InitSimulation()
               }
       }
 
-  catch (ListenErr error)
+  catch (const ListenErr& error)
       {
           GetLog()->Error() << "(NetControl) failed to listen on socket with '"
                             << error.what() << "'"
@@ -451,7 +451,7 @@ void NetControl::AcceptTCPConnections()
                             }
                 }
 
-            catch (AcceptErr error)
+            catch (const AcceptErr& error)
                 {
                     GetLog()->Error()
                         << "(NetControl) '" << GetName()

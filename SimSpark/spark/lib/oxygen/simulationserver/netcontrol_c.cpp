@@ -57,9 +57,9 @@ FUNCTION(NetControl, getServerPort)
 
 void CLASS(NetControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
-    DEFINE_FUNCTION(setServerTypeTCP);
-    DEFINE_FUNCTION(setServerTypeUDP);
-    DEFINE_FUNCTION(setServerPort);
-    DEFINE_FUNCTION(getServerPort);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
+    DEFINE_FUNCTION(setServerTypeTCP)
+    DEFINE_FUNCTION(setServerTypeUDP)
+    DEFINE_FUNCTION(setServerPort)
+    DEFINE_FUNCTION(getServerPort)
 }

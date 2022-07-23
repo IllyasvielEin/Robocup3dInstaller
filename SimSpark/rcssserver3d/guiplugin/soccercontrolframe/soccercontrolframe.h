@@ -164,12 +164,12 @@ public:
          \param name name string of the game mode
         */
         GameMode(int index, TPlayMode mode, bool manual, QString name)
-            : mIndex(index), mMode(mode), mName(name), mManual(manual) {}
+            : mIndex(index), mMode(mode), mManual(manual), mName(name) {}
 
-        TPlayMode mMode; /*!< spark game mode id */
-        QString mName; /*!< name string of the game mode */
         int mIndex; /*!< index of the game mode in the combobox */
+        TPlayMode mMode; /*!< spark game mode id */
         bool mManual; /*!< can it be selected by the user */
+        QString mName; /*!< name string of the game mode */
     };
 
 public:

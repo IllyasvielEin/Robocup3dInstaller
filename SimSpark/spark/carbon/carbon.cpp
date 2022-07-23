@@ -57,25 +57,28 @@ boost::shared_ptr<Carbon::CarbonLogControl> Carbon::mCarbonLogControlStatic =
 //--------------------------------------------------------------
 
 Carbon::Carbon(const QApplication& app) :
+    mApplication(app),
+    mWindowManager(0),
+    mMenuManager(0),
+    mPluginManager(0),
+    mSimulationManager(0),
+    mOpenGLManager(0),
+    mCommunicationManager(0),
+    mSettingsDialog(0),
     mSettings(new Settings("guisettings")),
-    mApplication(app)
+    mScriptPath(),
+    mDefaultAgentPort(),
+    mDefaultServerPort(),
+    mLayoutFile(""),
+    mDefaultLayoutFile("guigridlayout"),    //Choosing default Layout. This can be changed before calling initGui()
+    mStartSetup(""),
+    mUseJre(false),
+    mInitialized(false),
+    mClosed(false)
 {
     //Use the static log control object
     mCarbonLogControl = boost::shared_ptr<CarbonLogControl>(Carbon::mCarbonLogControlStatic);
 
-    //Choosing default Layout. This can be changed before calling initGui()
-    mLayoutFile = "";
-    mDefaultLayoutFile = "guigridlayout";
-    mStartSetup = "";
-    mUseJre = false;
-    mInitialized = false;
-    mClosed = false;
-    mWindowManager = 0;
-    mMenuManager = 0;
-    mPluginManager = 0;
-    mSimulationManager = 0;
-    mOpenGLManager = 0;
-    mCommunicationManager = 0;
     mInitialLayoutDirectories.clear();
     mInitialPluginDirectories.clear();
     mInitialSetupDirectories.clear(); //Will be handled by default setup
@@ -464,7 +467,7 @@ bool Carbon::initLogging()
 {
     //Define log message sources
     int source = Logger::defineLogSource("Gui");
-    int sparksource = Logger::defineLogSource("Spark");
+    Logger::defineLogSource("Spark");
 
     //Register 3 global loggers and store log messages before setup initialization
     boost::shared_ptr<CarbonLogControl> control(getLogControl());
@@ -721,14 +724,3 @@ boost::shared_ptr<Carbon::CarbonLogControl> Carbon::getLogControl()
     else
         return Carbon::mCarbonLogControlStatic;
 }
-
-//--------------------------------------------------------------
-// MetaTypes
-//--------------------------------------------------------------
-
-Q_DECLARE_METATYPE(boost::shared_ptr<LogMessage>)
-Q_DECLARE_METATYPE(boost::shared_ptr<SparkProperty::Property>)
-Q_DECLARE_METATYPE(boost::shared_ptr<Topic>)
-Q_DECLARE_METATYPE(SimulationTask::ETaskExecutionState)
-Q_DECLARE_METATYPE(Logger::LogLevel)
-Q_DECLARE_METATYPE(OpenGLManager::EGLStateSignal)

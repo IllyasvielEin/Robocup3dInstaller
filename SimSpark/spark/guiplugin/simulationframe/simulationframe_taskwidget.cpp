@@ -81,7 +81,7 @@ TaskWidget::~TaskWidget()
     
 }
 
-void TaskWidget::mousePressEvent(QMouseEvent * e)
+void TaskWidget::mousePressEvent([[maybe_unused]] QMouseEvent * e)
 {
     mParent->chooseWidget(this);
 }

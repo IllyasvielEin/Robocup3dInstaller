@@ -18,7 +18,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#ifndef RCSS_NET_EXCPETION_HPP
+#ifndef RCSS_NET_EXCEPTION_HPP
 #define RCSS_NET_EXCEPTION_HPP
 
 #include <exception>

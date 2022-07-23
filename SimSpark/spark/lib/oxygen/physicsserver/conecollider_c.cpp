@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(ConeCollider)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/ConvexCollider);
+        DEFINE_BASECLASS(oxygen/ConvexCollider)
 }

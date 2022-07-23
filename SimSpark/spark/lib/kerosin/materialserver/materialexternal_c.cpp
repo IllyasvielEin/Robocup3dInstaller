@@ -43,6 +43,6 @@ FUNCTION(MaterialExternal,setReference)
 
 void CLASS(MaterialExternal)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/MaterialSolid);
-    DEFINE_FUNCTION(setReference);
+    DEFINE_BASECLASS(kerosin/MaterialSolid)
+    DEFINE_FUNCTION(setReference)
 }

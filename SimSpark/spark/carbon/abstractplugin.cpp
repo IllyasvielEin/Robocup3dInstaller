@@ -92,6 +92,16 @@ void AbstractPlugin::setCaption(const QString& caption)
         mPluginDefinition->setCaption(caption);
 }
 
+bool AbstractPlugin::loadData([[maybe_unused]] boost::shared_ptr<QSettings> data)
+{
+    return false;
+}
+
+bool AbstractPlugin::saveData([[maybe_unused]] boost::shared_ptr<QSettings> data) const
+{
+    return false;
+}
+
 bool AbstractPlugin::hasVisualRepresentation() const
 {
     return mHasVisualRepresentation;
@@ -258,10 +268,10 @@ Carbon* AbstractPlugin::getCarbon()
 
 AbstractPluginInstantiator::AbstractPluginInstantiator(int id, const QString& name, const QString& caption, EPluginType type, 
     int maxInstanceCount, const char* library) :
+    mId(id),
     mName(name),
     mDefaultCaption(caption),
     mPluginType(type),
-    mId(id),
     mMaxInstanceCount(maxInstanceCount),
     mLibrary(library)
 {

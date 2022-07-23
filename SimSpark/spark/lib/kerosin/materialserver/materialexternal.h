@@ -52,7 +52,7 @@ protected:
     std::string mName;
 };
 
-DECLARE_CLASS(MaterialExternal);
-};
+DECLARE_CLASS(MaterialExternal)
+}
 
 #endif // KEROSIN_MATERIALEXTERNAL_H

@@ -24,5 +24,5 @@
 void
 CLASS(InputSystemWX)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/InputSystem);
+    DEFINE_BASECLASS(kerosin/InputSystem)
 }

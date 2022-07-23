@@ -125,7 +125,7 @@ private:
     SoundServer& operator=(const SoundServer&);
 };
 
-DECLARE_CLASS(SoundServer);
+DECLARE_CLASS(SoundServer)
 
 } //namespace kerosin
 

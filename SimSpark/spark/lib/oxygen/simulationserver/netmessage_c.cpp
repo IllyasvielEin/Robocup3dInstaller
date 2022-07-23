@@ -24,5 +24,5 @@ using namespace std;
 
 void CLASS(NetMessage)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

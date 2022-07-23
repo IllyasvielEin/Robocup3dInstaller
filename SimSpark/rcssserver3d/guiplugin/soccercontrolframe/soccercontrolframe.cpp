@@ -83,7 +83,7 @@ void SoccerControlFrame::saveClassInfo()
 //--------------------------------------------------------------
 
 SoccerFrameUpdateControl::SoccerFrameUpdateControl(SoccerControlFrame* parent)
-    : mParent(parent), CommandQueue(0)
+    : CommandQueue(0), mParent(parent)
 {
 }
 SoccerFrameUpdateControl::~SoccerFrameUpdateControl()

@@ -55,7 +55,7 @@ public:
     virtual void RegisterMesh(boost::shared_ptr<TriMesh> mesh) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(MeshExporter);
+DECLARE_ABSTRACTCLASS(MeshExporter)
 
 } // end namespace oxygen
 

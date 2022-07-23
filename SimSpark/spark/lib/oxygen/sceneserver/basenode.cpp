@@ -106,8 +106,14 @@ void BaseNode::UpdateCache(bool recursive)
 
 void BaseNode::PrePhysicsUpdate(float deltaTime)
 {
+    // Copy the list of children
+    // The SceneEffector for example updates the cache of some nodes.
+    // This clears the list of children and makes the iterator invalid.
+    // Therefore, we need to iterate over a copy of the list.
+    TLeafList children(mBaseNodeChildren);
+
     // perform update on hierarchy
-    for (TLeafList::iterator i = mBaseNodeChildren.begin(); i!= mBaseNodeChildren.end(); ++i)
+    for (TLeafList::iterator i = children.begin(); i!= children.end(); ++i)
         {
             static_pointer_cast<BaseNode>(*i)->PrePhysicsUpdate(deltaTime);
         }

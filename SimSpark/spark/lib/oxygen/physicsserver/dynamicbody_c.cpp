@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(DynamicBody)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/Body);
+        DEFINE_BASECLASS(oxygen/Body)
 }

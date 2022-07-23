@@ -68,7 +68,7 @@ protected:
     int mFullStateLogged;
 };
 
-DECLARE_CLASS(MonitorControl);
+DECLARE_CLASS(MonitorControl)
 
 } // namespace oxygen
 

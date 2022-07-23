@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(TrainControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
 }

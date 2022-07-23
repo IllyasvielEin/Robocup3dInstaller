@@ -38,6 +38,6 @@ public:
     long CreateBallJoint(long worldID);
 };
 
-DECLARE_CLASS(BallJointImp);
+DECLARE_CLASS(BallJointImp)
 
 #endif //ODEBALLJOINT_H

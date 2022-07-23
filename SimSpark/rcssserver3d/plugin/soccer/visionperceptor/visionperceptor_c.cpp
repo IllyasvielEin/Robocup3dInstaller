@@ -114,10 +114,10 @@ FUNCTION(VisionPerceptor,setStaticSenseAxis)
 
 void CLASS(VisionPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
-    DEFINE_FUNCTION(setNoiseParams);
-    DEFINE_FUNCTION(addNoise);
-    DEFINE_FUNCTION(useRandomNoise);
-    DEFINE_FUNCTION(setSenseMyPos);
-    DEFINE_FUNCTION(setStaticSenseAxis);
+    DEFINE_BASECLASS(oxygen/Perceptor)
+    DEFINE_FUNCTION(setNoiseParams)
+    DEFINE_FUNCTION(addNoise)
+    DEFINE_FUNCTION(useRandomNoise)
+    DEFINE_FUNCTION(setSenseMyPos)
+    DEFINE_FUNCTION(setStaticSenseAxis)
 }

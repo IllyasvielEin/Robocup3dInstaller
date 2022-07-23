@@ -23,5 +23,5 @@
 void
 CLASS(ObjImporter)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/MeshImporter);
+    DEFINE_BASECLASS(oxygen/MeshImporter)
 }

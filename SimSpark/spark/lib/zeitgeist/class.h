@@ -248,7 +248,7 @@ private:
     between class inheriting from leaf and leaf needing class to inherit its
     corresponding class object
 */
-DECLARE_CLASS(Leaf);
+DECLARE_CLASS(Leaf)
 
 } // namespace zeitgeist
 

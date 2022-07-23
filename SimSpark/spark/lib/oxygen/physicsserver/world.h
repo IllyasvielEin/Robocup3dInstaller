@@ -130,8 +130,8 @@ private:
     long mWorldID;
 };
 
-DECLARE_CLASS(World);
+DECLARE_CLASS(World)
 
-};
+}
 
 #endif //OXYGEN_WORLD_H

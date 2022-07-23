@@ -27,7 +27,7 @@ using namespace salt;
 
 void Frustum::Dump() const
 {
-	printf("Frustum %p:\n", this);
+	printf("Frustum %p:\n", (void*)this);
 	for(int i=0; i<6; ++i)
 	{
 		printf("  %d: %f %f %f %f\n", i, mPlanes[i].normal.x(), mPlanes[i].normal.y(), mPlanes[i].normal.z(), mPlanes[i].d);

@@ -47,12 +47,12 @@ SignalPlugin::~SignalPlugin()
 // Protected
 //--------------------------------------------------------------
 
-void SignalPlugin::loadData(const QSettings& data)
+void SignalPlugin::loadData([[maybe_unused]] const QSettings& data)
 {
     LOG_DEBUG() << "No data to load...";
 }
 
-void SignalPlugin::saveData(QSettings& data) const
+void SignalPlugin::saveData([[maybe_unused]] QSettings& data) const
 {
     LOG_DEBUG() << "No data to save...";
 }

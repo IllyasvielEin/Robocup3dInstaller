@@ -152,6 +152,6 @@ protected:
     void PrepareCapsuleTotal(dMass& mass, float total_mass, float radius, float length) const;
 };
 
-DECLARE_CLASS(RigidBodyImp);
+DECLARE_CLASS(RigidBodyImp)
 
 #endif //ODERIGIDBODY_H

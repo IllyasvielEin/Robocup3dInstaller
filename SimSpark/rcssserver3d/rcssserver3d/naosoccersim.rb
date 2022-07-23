@@ -84,7 +84,7 @@ addSoccerVar('BallMass',0.026)
 addSoccerVar('RuleGoalPauseTime', 3.0)
 addSoccerVar('RuleKickInPauseTime', 1.0)
 addSoccerVar('RuleHalfTime', 5.0 * 60)
-addSoccerVar('RuleDropBallTime', 15)   
+addSoccerVar('RuleDropBallTime', 20)
 addSoccerVar('SingleHalfTime', false)
 addSoccerVar('UseOffside', false)
 addSoccerVar('MaxTouchGroupSize', 2)
@@ -195,6 +195,14 @@ end
 # install the TrainerCommandParser to parse commands received from a
 # monitor client
 sparkRegisterMonitorCmdParser 'TrainerCommandParser'
+
+# spawning area
+createVariable("Scene", "SpawningAreaStartX", -0.25)
+createVariable("Scene", "SpawningAreaStartY", -16)
+createVariable("Scene", "SpawningAreaStartZ", 1)
+createVariable("Scene", "SpawningAreaStopX", 0.25)
+createVariable("Scene", "SpawningAreaStopY", -10)
+createVariable("Scene", "SpawningAreaStopZ", 2)
 
 # Load parameters for heterogeneous Nao robots
 run "naorobottypes.rb"

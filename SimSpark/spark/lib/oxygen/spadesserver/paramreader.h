@@ -46,7 +46,7 @@ public:
                                 int argc, const char* const* argv);
 };
 
-DECLARE_CLASS(ParamReader);
+DECLARE_CLASS(ParamReader)
 
 } // namespace oxygen
 

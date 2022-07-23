@@ -50,6 +50,6 @@ FUNCTION(BaseNode,importScene)
 
 void CLASS(BaseNode)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(importScene);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(importScene)
 }

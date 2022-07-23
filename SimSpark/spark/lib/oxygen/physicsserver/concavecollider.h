@@ -47,7 +47,7 @@ private:
     static boost::shared_ptr<ConcaveColliderInt> mConcaveColliderImp;
 };
 
-DECLARE_CLASS(ConcaveCollider);
+DECLARE_CLASS(ConcaveCollider)
 
 } //namespace oxygen
 

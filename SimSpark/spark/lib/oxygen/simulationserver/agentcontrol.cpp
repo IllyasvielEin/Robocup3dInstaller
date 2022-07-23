@@ -56,7 +56,7 @@ void AgentControl::OnLink()
 void AgentControl::ClientConnect(boost::shared_ptr<Client> client)
 {
     // Make sure that there is enough space in sense message cache vector
-    if (client->id >= mClientSenses.size())
+    if (client->id >= (int) mClientSenses.size())
         mClientSenses.resize(client->id+1);
 
     if (mGameControlServer.get() == 0)
@@ -69,16 +69,8 @@ void AgentControl::ClientConnect(boost::shared_ptr<Client> client)
     //Create a new thread and new barrier
     if(mMultiThreads)
     {
-      /**@todo Make this safe! */
-      if(mThreadBarrierNew != NULL)
-        GetLog()->Error()
-            << "(AgentControl) ERROR mThreadBarrierNew!=NULL!"
-            << " Agents connecting/disconnecting in same frame !\n";
-      nThreads++;
-      mThreadBarrierNew = new boost::barrier(nThreads+1);
-      boost::thread* newThread =
-         mThreadGroup.create_thread(boost::bind(&AgentControl::AgentThread,
-                                               this, client));
+        // Collect new clients to start the agent threads later (at once)
+        mNewClients.push_back(client);
     }
 }
 
@@ -147,6 +139,24 @@ void AgentControl::StartCycle()
           WaitMaster(); //wait for threads to finish
         }*/
     } while (!AgentsAreSynced());
+
+    /* TODO Once StartCycle is run in parralel, the following block should be called after NetControl::StartCycle
+       because after exactly one bunch of new threads has been created, we need to call WaitMaster once
+       to ensure that there is only one thread barrier existing again before adding a new bunch of clients.
+       For now, this is okay since the agent threads are not needed yet to run StartCycle. */
+    if (!mNewClients.empty()) {
+        // Create new thread barrier to match the new number of clients
+        const std::lock_guard<std::mutex> lock(mThreadBarrierMutex);
+        nThreads += mNewClients.size();
+        mThreadBarrierNew = new boost::barrier(nThreads+1);
+
+        // Start new agent threads
+        for (boost::shared_ptr<Client> client : mNewClients)
+        {
+            mThreadGroup.create_thread(boost::bind(&AgentControl::AgentThread, this, client));
+        }
+        mNewClients.clear();
+    }
 }
 
 void AgentControl::StartCycle(const boost::shared_ptr<Client> &client,
@@ -313,10 +323,12 @@ bool AgentControl::AgentsAreSynced()
 void AgentControl::AgentThread(const boost::shared_ptr<Client> &client)
 {
   boost::barrier *currentBarrier = mThreadBarrierNew;
+  bool newAgent = true;
 
   while(client->socket->isOpen())
   {
-    WaitSlave(currentBarrier);
+    WaitSlave(currentBarrier, newAgent);
+    newAgent = false;
 
     //StartCycle not parallel:
     //  parser and agentState::addMessage not thread safe.
@@ -353,20 +365,35 @@ void AgentControl::AgentThread(const boost::shared_ptr<Client> &client)
 
     }
 
-    WaitSlave(currentBarrier);
+    WaitSlave(currentBarrier, false);
   }
 
-  nThreads--;
-  if(mThreadBarrierNew != NULL)
-    GetLog()->Error()
-        << "(AgentControl) ERROR mThreadBarrierNew!=NULL!"
-        << " Agents connecting/disconnecting in same frame !\n";
-  mThreadBarrierNew = new boost::barrier(nThreads+1);
+  {
+    const std::lock_guard<std::mutex> lock(mThreadBarrierMutex);
+    nThreads--;
+    if (mThreadBarrierNew != NULL)
+    {
+      // mThreadBarrierNew has been created already by another disconnecting agent
+      // Replace that one
+      delete mThreadBarrierNew;
+    }
+    mThreadBarrierNew = new boost::barrier(nThreads+1);
+  }
+
+  currentBarrier->wait(); // See comment in WaitMaster
+  
+  // Wait for the current barrier, but not for the decreased one
   currentBarrier->wait();
 }
 
 void AgentControl::WaitMaster()
 {
+    // We need an additional wait here, in WaitSlave and at the end of the
+    // AgentThread to ensure that WaitMaster isn't checking the following
+    // condition (mThreadBarrierNew != NULL) before all agent threads were
+    // able to disconnect
+    mThreadBarrier->wait();
+    
     if(mThreadBarrierNew != NULL)
     {
       boost::barrier *oldBarrier = mThreadBarrier;
@@ -380,8 +407,11 @@ void AgentControl::WaitMaster()
       mThreadBarrier->wait();
 }
 
-void AgentControl::WaitSlave(boost::barrier* &currentBarrier)
+void AgentControl::WaitSlave(boost::barrier* &currentBarrier, bool newAgent)
 {
+    if (!newAgent)
+      currentBarrier->wait(); // See comment in WaitMaster
+
     currentBarrier->wait();
     if(currentBarrier != mThreadBarrier)
     {

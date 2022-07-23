@@ -50,7 +50,7 @@ private:
     static boost::shared_ptr<BodyInt> mBodyImp;
 };
 
-DECLARE_CLASS(Body);
+DECLARE_CLASS(Body)
 
 } //namespace oxygen
 

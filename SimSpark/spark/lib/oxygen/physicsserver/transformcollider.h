@@ -60,7 +60,7 @@ private:
     static boost::shared_ptr<TransformColliderInt> mTransformColliderImp;
 };
 
-DECLARE_CLASS(TransformCollider);
+DECLARE_CLASS(TransformCollider)
 
 } //namespace oxygen
 

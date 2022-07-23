@@ -23,5 +23,5 @@
 
 void CLASS(ContactJointHandlerImp)::DefineClass()
 {
-    DEFINE_BASECLASS(ColliderImp);
+    DEFINE_BASECLASS(ColliderImp)
 }

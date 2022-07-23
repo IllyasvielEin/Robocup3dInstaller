@@ -46,7 +46,7 @@ public:
     static boost::shared_ptr<StaticBodyInt> mStaticBodyImp;
 };
 
-DECLARE_CLASS(StaticBody);
+DECLARE_CLASS(StaticBody)
 
 } //namespace oxygen
 

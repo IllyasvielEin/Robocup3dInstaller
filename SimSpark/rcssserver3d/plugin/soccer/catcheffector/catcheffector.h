@@ -99,6 +99,6 @@ private:
     float mBallRadius;
 };
 
-DECLARE_CLASS(CatchEffector);
+DECLARE_CLASS(CatchEffector)
 
 #endif // CATCHEFFECTOR_H

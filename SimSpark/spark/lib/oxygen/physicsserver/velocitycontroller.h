@@ -56,7 +56,7 @@ protected:
     float mMaxVel;
 };
 
-DECLARE_CLASS(VelocityController);
+DECLARE_CLASS(VelocityController)
 
 } // namespace oxygen
 

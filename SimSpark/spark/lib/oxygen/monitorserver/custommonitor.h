@@ -45,6 +45,6 @@ public:
 
 } // namespace oxygen
 
-DECLARE_ABSTRACTCLASS(CustomMonitor);
+DECLARE_ABSTRACTCLASS(CustomMonitor)
 
 #endif // OXYGEN_CUSTOMMONITOR_H

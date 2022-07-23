@@ -74,7 +74,7 @@ private:
     std::list<std::string> selfCollisionFreezeJointEffNames;
 };
 
-DECLARE_CLASS(BoxCollider);
+DECLARE_CLASS(BoxCollider)
 
 } //namespace oxygen
 

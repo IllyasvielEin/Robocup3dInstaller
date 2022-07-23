@@ -44,6 +44,6 @@ public:
     long CreateRay();
 };
 
-DECLARE_CLASS(RayColliderImp);
+DECLARE_CLASS(RayColliderImp)
 
 #endif //ODERAYCOLLIDER_H

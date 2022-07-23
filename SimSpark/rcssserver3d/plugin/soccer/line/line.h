@@ -39,6 +39,6 @@ protected:
   salt::Vector3f mEndPoint;
 };
 
-DECLARE_CLASS(Line);
+DECLARE_CLASS(Line)
 
 #endif // LINE_H

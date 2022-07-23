@@ -45,6 +45,6 @@ FUNCTION(SpadesServer,queueAgents)
 
 void CLASS(SpadesServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(queueAgents);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(queueAgents)
 }

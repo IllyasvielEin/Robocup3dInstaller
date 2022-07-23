@@ -33,9 +33,7 @@
 #include <QDir>
 #include <QMainWindow>
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 /*!
  \brief Class that manages include directories and files for plugin and main window shared libraries.
@@ -445,24 +443,45 @@ private:
     /*!
      \brief Returns iterator in the library map to the specified library.
 
+     \param path absolute path to the library
+     \return iterator to the found position or end() if not found
+    */
+    LibraryMap::Iterator findLibraryDefinition(const QString& path);
+    /*!
+     \brief Returns iterator in the library map to the specified library.
+
      \param id id of the library as returned by addFile()
      \return iterator to the found position or end() if not found
     */
-    LibraryMap::ConstIterator findLibraryDefinition(int id) const;
+    LibraryMap::ConstIterator findLibraryDefinition(int id) const;    
+    /*!
+     \brief Returns iterator in the library map to the specified library.
+
+     \param id id of the library as returned by addFile()
+     \return iterator to the found position or end() if not found
+    */
+    LibraryMap::Iterator findLibraryDefinition(int id);
     /*!
      \brief Returns iterator in the library map to the specified library.
 
      \param lib pointer to the library as contained in the library map accessible by getLibraryMap()
      \return iterator to the found position or end() if not found
     */
-    LibraryMap::ConstIterator findLibraryDefinition(const boost::shared_ptr<QLibrary>& lib) const;
+    LibraryMap::ConstIterator findLibraryDefinition(const boost::shared_ptr<QLibrary>& lib) const;    
+    /*!
+     \brief Returns iterator in the library map to the specified library.
+
+     \param lib pointer to the library as contained in the library map accessible by getLibraryMap()
+     \return iterator to the found position or end() if not found
+    */
+    LibraryMap::Iterator findLibraryDefinition(const boost::shared_ptr<QLibrary>& lib);
     /*!
      \brief Searches and returns iterator to a library specified by name.
 
      \param name base file name (without path and extension) of the library to search for
      \return iterator to the found position, or end() if not found
     */
-    LibraryMap::ConstIterator findLibraryDefinitionByFileName(const QString& name) const;
+    LibraryMap::ConstIterator findLibraryDefinitionByFileName(const QString& name) const;    
 
     /*!
      \brief Adds a single library at the given path to the library map.

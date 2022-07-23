@@ -28,9 +28,7 @@
 #include "sparkpropertydata.h"
 
 #include <map>
-#ifndef Q_MOC_RUN
 #include <boost/weak_ptr.hpp>
-#endif
 #include <QString>
 #include <vector>
 #include <QSemaphore>
@@ -385,18 +383,16 @@ private:
 protected:
     //protected members
 
+    boost::weak_ptr<zeitgeist::Leaf> mLeaf; /*!< Leaf to interact with. */
     ClassDescriptor mClass; /*!< Description for the class the property was created for. Used to identify the corrent PropertyControl.*/
     QString mName;          /*!< Name of the property. Used to identify the corrent PropertyControl function.*/
     QString mCaption;       /*!< Caption of the property. Displayed in the Gui. */
-    QString mStringValue;   /*!< Value of the property as string. */
-    QString mHelp;          /*!< Help string. Used as tooltip in the Gui. */
-    bool mEditable;         /*!< True if property is writeable, false for read-only. */
-
-    boost::weak_ptr<zeitgeist::Leaf> mLeaf; /*!< Leaf to interact with. */
-    QValidator* mValidator; /*!< Validator for string based value change. */
-    PropertyList* mParent;  /*!< Parent property list. Defined externally. */
-
     boost::shared_ptr<Data> mValue;     /*!< Last read value of the property. */
+    bool mEditable;         /*!< True if property is writeable, false for read-only. */
+    QValidator* mValidator; /*!< Validator for string based value change. */
+    QString mHelp;          /*!< Help string. Used as tooltip in the Gui. */
+    PropertyList* mParent;  /*!< Parent property list. Defined externally. */
+    QString mStringValue;   /*!< Value of the property as string. */
     boost::shared_ptr<Data> mTempValue; /*!< Temporary value while write-updating. */
 
 private:

@@ -62,7 +62,7 @@ protected:
     boost::shared_ptr<TriMesh> UnitCylinder();
 };
 
-DECLARE_CLASS(StdMeshImporter);
+DECLARE_CLASS(StdMeshImporter)
 
 } // namespace oxygen
 

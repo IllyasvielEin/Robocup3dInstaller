@@ -27,6 +27,6 @@ using namespace salt;
 
 void CLASS(BodyController)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
+    DEFINE_BASECLASS(oxygen/BaseNode)
 }
 

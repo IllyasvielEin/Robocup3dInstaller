@@ -260,17 +260,13 @@ set(carbon_RESOURCES
 #Additional used libraries
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
-
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
 	
 ########### includes and library creation ###############
 
 #Meta object compiler wrapping of header files, forms and resources
-QT4_WRAP_CPP(carbon_QOBJECT_HEADERS_MOC ${carbon_QOBJECT_HEADERS})
-QT4_WRAP_UI(carbon_FORMS_HEADERS ${carbon_FORMS})
-QT4_ADD_RESOURCES(carbon_RESOURCES_RCC ${carbon_RESOURCES})
+qt5_wrap_cpp(carbon_QOBJECT_HEADERS_MOC ${carbon_QOBJECT_HEADERS})
+qt5_wrap_ui(carbon_FORMS_HEADERS ${carbon_FORMS})
+qt5_add_resources(carbon_RESOURCES_RCC ${carbon_RESOURCES})
 
 include_directories(
 	${CMAKE_SOURCE_DIR}
@@ -294,7 +290,7 @@ target_link_libraries(carbon
 	${FREETYPE_LIBRARIES} 
 	${IL_LIBRARIES}
     ${OPENGL_LIBRARIES} 
-	${QT_LIBRARIES}
+	Qt5::Widgets Qt5::Xml Qt5::OpenGL
 	spark salt zeitgeist oxygen kerosin
 	)
 

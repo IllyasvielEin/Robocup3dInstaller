@@ -66,8 +66,8 @@ FUNCTION(GameStateAspect,setScores)
 
 void CLASS(GameStateAspect)::DefineClass()
 {
-    DEFINE_BASECLASS(SoccerControlAspect);
-    DEFINE_FUNCTION(kickOff);
-    DEFINE_FUNCTION(setTime);
-    DEFINE_FUNCTION(setScores);
+    DEFINE_BASECLASS(SoccerControlAspect)
+    DEFINE_FUNCTION(kickOff)
+    DEFINE_FUNCTION(setTime)
+    DEFINE_FUNCTION(setScores)
 }

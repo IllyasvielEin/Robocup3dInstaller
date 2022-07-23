@@ -43,6 +43,6 @@ FUNCTION(Box,setExtents)
 
 void CLASS(Box)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/SingleMatNode);
-    DEFINE_FUNCTION(setExtents);
+    DEFINE_BASECLASS(kerosin/SingleMatNode)
+    DEFINE_FUNCTION(setExtents)
 }

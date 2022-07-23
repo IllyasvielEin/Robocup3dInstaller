@@ -184,19 +184,19 @@ FUNCTION(Camera,lookAt)
 
 void CLASS(Camera)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
-    DEFINE_FUNCTION(setViewport);
-    DEFINE_FUNCTION(getViewportX);
-    DEFINE_FUNCTION(getViewportY);
-    DEFINE_FUNCTION(getViewportWidth);
-    DEFINE_FUNCTION(getViewportHeight);
-    DEFINE_FUNCTION(setFOV);
-    DEFINE_FUNCTION(getFOV);
-    DEFINE_FUNCTION(setZNear);
-    DEFINE_FUNCTION(adjustZNear);
-    DEFINE_FUNCTION(getZNear);
-    DEFINE_FUNCTION(setZFar);
-    DEFINE_FUNCTION(adjustZFar);
-    DEFINE_FUNCTION(getZFar);
-    DEFINE_FUNCTION(lookAt);
+    DEFINE_BASECLASS(oxygen/BaseNode)
+    DEFINE_FUNCTION(setViewport)
+    DEFINE_FUNCTION(getViewportX)
+    DEFINE_FUNCTION(getViewportY)
+    DEFINE_FUNCTION(getViewportWidth)
+    DEFINE_FUNCTION(getViewportHeight)
+    DEFINE_FUNCTION(setFOV)
+    DEFINE_FUNCTION(getFOV)
+    DEFINE_FUNCTION(setZNear)
+    DEFINE_FUNCTION(adjustZNear)
+    DEFINE_FUNCTION(getZNear)
+    DEFINE_FUNCTION(setZFar)
+    DEFINE_FUNCTION(adjustZFar)
+    DEFINE_FUNCTION(getZFar)
+    DEFINE_FUNCTION(lookAt)
 }

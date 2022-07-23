@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(EmptyCollider)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/Collider);
+        DEFINE_BASECLASS(oxygen/Collider)
 }

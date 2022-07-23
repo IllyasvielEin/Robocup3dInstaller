@@ -25,9 +25,7 @@
 #include <zeitgeist/scriptserver/scriptserver.h>
 #include <oxygen/sceneserver/transform.h>
 #include <oxygen/sceneserver/scenedict.h>
-#ifndef Q_MOC_RUN
 #include <boost/scoped_array.hpp>
-#endif
 #include <sstream>
 
 using namespace zeitgeist;
@@ -878,7 +876,7 @@ bool RubySceneImporter::ParseSwitch(sexp_t* sexp, boost::shared_ptr<oxygen::Base
         return true;
     }
 
-    sexp_t* tmp;
+    sexp_t* tmp = nullptr;
     string value;
     // find the sub list whose header is equal to 'varname',
     // then it's that case.

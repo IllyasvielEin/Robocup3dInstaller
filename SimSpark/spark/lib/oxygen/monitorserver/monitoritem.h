@@ -46,7 +46,7 @@ public:
     virtual void GetPredicates(PredicateList& pList) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(MonitorItem);
+DECLARE_ABSTRACTCLASS(MonitorItem)
 
 } // namespace oxygen
 

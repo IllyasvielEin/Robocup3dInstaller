@@ -23,5 +23,5 @@
 
 void CLASS(Generic6DOFJointImp)::DefineClass()
 {
-    DEFINE_BASECLASS(JointImp);
+    DEFINE_BASECLASS(JointImp)
 }

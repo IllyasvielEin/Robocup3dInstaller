@@ -20,13 +20,15 @@
 */
 
 #include "scene.h"
+#include <zeitgeist/logserver/logserver.h>
+#include <zeitgeist/scriptserver/scriptserver.h>
 
 using namespace boost;
 using namespace oxygen;
 using namespace salt;
 using namespace zeitgeist;
 
-Scene::Scene() : BaseNode(), mModified(false), mModifiedNum(0), mLastCacheUpdate(0)
+Scene::Scene() : BaseNode(), mModified(false), mModifiedNum(0), mLastCacheUpdate(0), mSpawningParametersLoaded(false)
 {
 }
 
@@ -67,4 +69,57 @@ bool Scene::GetModified()
 int Scene::GetModifiedNum()
 {
     return mModifiedNum;
+}
+
+salt::AABB3 Scene::GetSpawningArea()
+{
+    return mSpawningArea;
+}
+
+salt::Vector3f& Scene::GetSpawningOffset()
+{
+    return mSpawningOffset;
+}
+
+salt::Vector3f& Scene::GetNextSpawningPosition()
+{
+    return mNextSpawningPosition;
+}
+
+void Scene::LoadSpawningParameters()
+{
+    if (!mSpawningParametersLoaded)
+    {
+        const boost::shared_ptr<ScriptServer>& script = GetScript();
+        if (script.get() == 0)
+        {
+            GetLog()->Error() << "(Scene) ERROR: cannot get ScriptServer\n";
+            return;
+        }
+
+        salt::Vector3f& minVec = mSpawningArea.minVec;
+        salt::Vector3f& maxVec = mSpawningArea.maxVec;
+
+        bool success = true;
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStartX", minVec[0]);
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStartY", minVec[1]);
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStartZ", minVec[2]);
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStopX", maxVec[0]);
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStopY", maxVec[1]);
+        success &= GetScript()->GetVariable("Scene.SpawningAreaStopZ", maxVec[2]);
+        if (success)
+        {
+            mSpawningParametersLoaded = true;
+
+            mSpawningOffset[0] = 0.0;
+            mSpawningOffset[1] = 0.0;
+            mSpawningOffset[2] = 0.0;
+            mNextSpawningPosition = minVec;
+        }
+        else
+        {
+            GetLog()->Error() << "(Scene) ERROR: unable to get spawning parameters\n";
+            return;
+        }
+    }
 }

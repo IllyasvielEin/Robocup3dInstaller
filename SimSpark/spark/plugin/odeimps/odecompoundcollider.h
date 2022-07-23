@@ -31,6 +31,6 @@ public:
     CompoundColliderImp();
 };
 
-DECLARE_CLASS(CompoundColliderImp);
+DECLARE_CLASS(CompoundColliderImp)
 
 #endif //ODECOMPOUNDCOLLIDER_H

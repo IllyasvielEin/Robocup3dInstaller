@@ -32,16 +32,38 @@ namespace SparkProperty
 
 Property::Property(boost::shared_ptr<zeitgeist::Leaf> leaf, ClassDescriptor descriptor, const QString& name, const QString& caption,
     Data* value, bool editable, QValidator* validator, const QString& help) :
-        mLeaf(leaf), mClass(descriptor), mName(name), mCaption(caption), mValue(value), mEditable(editable),
-        mValidator(validator), mHelp(help), mParent(0), mUpdateFlag(UF_NONE), mValueSemaphore(1)
+        mLeaf(leaf),
+        mClass(descriptor),
+        mName(name),
+        mCaption(caption),
+        mValue(value),
+        mEditable(editable),
+        mValidator(validator),
+        mHelp(help),
+        mParent(0),
+        mStringValue(),
+        mTempValue(),
+        mUpdateFlag(UF_NONE),
+        mValueSemaphore(1)
 {
     createStringValue();
 }
 
 Property::Property(boost::shared_ptr<zeitgeist::Leaf> leaf, ClassDescriptor descriptor, const QString& name, const QString& caption,
     Data* value, const QString& help) :
-        mLeaf(leaf), mClass(descriptor), mName(name), mCaption(caption), mValue(value), mEditable(false),
-        mValidator(0), mHelp(help), mParent(0), mUpdateFlag(UF_NONE), mValueSemaphore(1)
+        mLeaf(leaf),
+        mClass(descriptor),
+        mName(name),
+        mCaption(caption),
+        mValue(value),
+        mEditable(false),
+        mValidator(0),
+        mHelp(help),
+        mParent(0),
+        mStringValue(),
+        mTempValue(),
+        mUpdateFlag(UF_NONE),
+        mValueSemaphore(1)
 {
     createStringValue();
 }

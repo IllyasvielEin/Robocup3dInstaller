@@ -26,6 +26,11 @@
 #include <oxygen/agentaspect/perceptor.h>
 #include <oxygen/physicsserver/rigidbody.h>
 
+/**
+ * @class GyroRatePerceptor
+ * @brief Perceptor representing a raw gyroscope sensor.
+ * @ingroup perceptors
+ */
 class GyroRatePerceptor : public oxygen::Perceptor
 {
 public:
@@ -44,6 +49,6 @@ private:
     boost::shared_ptr<oxygen::RigidBody> mBody;
 };
 
-DECLARE_CLASS(GyroRatePerceptor);
+DECLARE_CLASS(GyroRatePerceptor)
 
 #endif //GYRORATEPERCEPTOR_H

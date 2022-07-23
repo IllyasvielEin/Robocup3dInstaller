@@ -24,5 +24,5 @@
 
 void CLASS(Hinge2Perceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

@@ -23,5 +23,5 @@
 
 void CLASS(AngularMotorImp)::DefineClass()
 {
-    DEFINE_BASECLASS(JointImp);
+    DEFINE_BASECLASS(JointImp)
 }

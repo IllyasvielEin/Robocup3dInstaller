@@ -304,14 +304,13 @@ public:
 
     QString mName;           /*!< Name of the Plugin. Either use this name (unique) or a frametype (more general). */
     QString mCaption;        /*!< Caption for the Plugin. */
-    QString mLibraryName;    /*!< Filename of the library the plugin is included in. (Empty string in case of built-in plugin) */
     EPluginType mPluginType; /*!< Type of the plugin.*/
     QStringList mParameterList;    /*!< List of initialization parameters. */
     QStringList mAttachmentList;   /*!< Priorized list of attachment points. Only used for attachable frame plugins.*/
     EReloadDefinition mReloadDefinition;    /*!< Defines reload behaviour of this plugin. */
-
-    int mId; /*!< Storage for plugin id associated with or created from this setup. */
     bool mIsExtension; /*!< Storage for a flag that signals this definition to be associated with or created from a plugin extension. */
+    int mId; /*!< Storage for plugin id associated with or created from this setup. */
+    QString mLibraryName;    /*!< Filename of the library the plugin is included in. (Empty string in case of built-in plugin) */
 };
 
 #endif //PLUGINDEFINITION_H

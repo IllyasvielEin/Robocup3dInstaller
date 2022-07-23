@@ -31,6 +31,6 @@ public:
     ConeColliderImp();
 };
 
-DECLARE_CLASS(ConeColliderImp);
+DECLARE_CLASS(ConeColliderImp)
 
 #endif //ODECONECOLLIDER_H

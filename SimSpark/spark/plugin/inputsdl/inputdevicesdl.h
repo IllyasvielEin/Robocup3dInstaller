@@ -49,6 +49,6 @@ public:
     virtual int EventFilter(const SDL_Event* event) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(InputDeviceSDL);
+DECLARE_ABSTRACTCLASS(InputDeviceSDL)
 
 #endif //INPUTDEVICESDL_H__

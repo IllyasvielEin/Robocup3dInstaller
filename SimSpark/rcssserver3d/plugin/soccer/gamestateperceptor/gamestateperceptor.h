@@ -78,6 +78,6 @@ protected:
     bool mReportScore;
 };
 
-DECLARE_CLASS(GameStatePerceptor);
+DECLARE_CLASS(GameStatePerceptor)
 
 #endif // GAMESTATEPERCEPTOR_H

@@ -32,9 +32,7 @@
 #include "plugintype.h"
 #include "cutelogger/logger.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #include <vector>
 #include <QString>
@@ -353,7 +351,7 @@ public:
      \param data source file
      \return true if something was loaded
     */
-    virtual bool loadData(boost::shared_ptr<QSettings> data) {return false;}
+    virtual bool loadData(boost::shared_ptr<QSettings> data);
     /*!
      \brief Abstract function to signal a plugin to save its data to a QSettings save file.
 
@@ -363,7 +361,7 @@ public:
      \param data target file
      \return true if something was saved
     */
-    virtual bool saveData(boost::shared_ptr<QSettings> data) const {return false;}
+    virtual bool saveData(boost::shared_ptr<QSettings> data) const;
 
     /*!
      \brief Run function that is called when the plugin is executed by either another plugin, the plugin manager, or when they are executed in another thread.
@@ -618,9 +616,9 @@ protected:
     const int mId;                 /*!< Unique class id of the plugin class. */
     const QString mName;           /*!< Unique name of the plugin class. */
     const QString mDefaultCaption; /*!< Default caption for instances of the plugin class. */
-    const QString mLibrary;        /*!< Library the plugin is included in. Empty for built-in plugins. */
     const EPluginType mPluginType; /*!< Type of the plugin. */
     const int mMaxInstanceCount;   /*!< Maximum amount of instances for this plugin class. */
+    const QString mLibrary;        /*!< Library the plugin is included in. Empty for built-in plugins. */
 };
 
 /*!

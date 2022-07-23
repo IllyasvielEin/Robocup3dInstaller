@@ -49,6 +49,6 @@ public:
     long CreateCapsule();
 };
 
-DECLARE_CLASS(CapsuleColliderImp);
+DECLARE_CLASS(CapsuleColliderImp)
 
 #endif //ODECAPSULECOLLIDER_H

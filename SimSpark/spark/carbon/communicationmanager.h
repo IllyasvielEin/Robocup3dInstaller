@@ -28,9 +28,7 @@
 #include <QObject>
 #include <QStringList>
 #include <QList>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 class Topic;
 class AbstractPlugin;

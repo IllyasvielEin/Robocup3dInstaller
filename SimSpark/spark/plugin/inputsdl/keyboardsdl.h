@@ -61,6 +61,6 @@ protected:
     TSymMap mSymbols;
 };
 
-DECLARE_CLASS(KeyboardSDL);
+DECLARE_CLASS(KeyboardSDL)
 
 #endif //KEYBOARDSDL_H__

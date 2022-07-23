@@ -101,7 +101,7 @@ void DefineSetupDialog::loadFile()
     dialog.setLabelText(QFileDialog::Accept, tr("Ok"));
     dialog.setToolTip(tr("Choose a file to save the setup to."));
     dialog.setViewMode(QFileDialog::Detail);
-    dialog.setFilter(Carbon::get()->getSimulationManager()->getDefaultSetupExtensionText());
+    dialog.setNameFilters(QStringList(Carbon::get()->getSimulationManager()->getDefaultSetupExtensionText()));
     dialog.setDefaultSuffix(Carbon::get()->getSimulationManager()->getDefaultSetupExtensionSuffix());
     dialog.selectFile(info.fileName().compare("") == 0 ? "NewSetup" : info.fileName());
 

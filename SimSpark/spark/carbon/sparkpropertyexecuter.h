@@ -27,9 +27,7 @@
 
 #include "isimcontrol.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include <QObject>
 #include <QSemaphore>
 #include <list>
@@ -147,11 +145,11 @@ private:
 
     PropertyControl* mParent; /*!< Parent property control that contains the set and get functions. */
 
+    QSemaphore mGetSemaphore; /*!< Semaphore for Set-Queue. */
+    QSemaphore mSetSemaphore; /*!< Semaphore for Get-Queue. */
+
     std::list<boost::shared_ptr<Property>> mGetQueue; /*!< Queue of properties to Get-update. */
     std::list<boost::shared_ptr<Property>> mSetQueue; /*!< Queue of properties to Set-update. */
-
-    QSemaphore mSetSemaphore; /*!< Semaphore for Get-Queue. */
-    QSemaphore mGetSemaphore; /*!< Semaphore for Set-Queue. */
 
     int mFailedSetCount; /*!< Amount of failed attempts to access Set-Queue. Resetted after successful attempt. */
     int mFailedGetCount; /*!< Amount of failed attempts to access Set-Queue. Resetted after successful attempt. */

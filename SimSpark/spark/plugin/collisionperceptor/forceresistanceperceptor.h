@@ -70,6 +70,6 @@ protected:
     salt::Vector3f mLastCenter;
 };
 
-DECLARE_CLASS(ForceResistancePerceptor);
+DECLARE_CLASS(ForceResistancePerceptor)
 
 #endif /*FORCERESISTANCEPERCEPTOR_H_*/

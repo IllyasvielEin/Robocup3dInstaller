@@ -87,7 +87,7 @@ private:
     static boost::shared_ptr<PhysicsObjectInt> mPhysicsObjectImp;
 };
 
-DECLARE_ABSTRACTCLASS(PhysicsObject);
+DECLARE_ABSTRACTCLASS(PhysicsObject)
 
 } //namespace oxygen
 

@@ -44,6 +44,6 @@ FUNCTION(BallJoint,setAnchor)
 
 void CLASS(BallJoint)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
-    DEFINE_FUNCTION(setAnchor);
+    DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
+    DEFINE_FUNCTION(setAnchor)
 }

@@ -23,5 +23,5 @@
 
 void CLASS(SliderJointImp)::DefineClass()
 {
-    DEFINE_BASECLASS(Generic6DOFJointImp);
+    DEFINE_BASECLASS(Generic6DOFJointImp)
 }

@@ -25,9 +25,7 @@
 #include <zeitgeist/class.h>
 #include <zeitgeist/leaf.h>
 #include <oxygen/oxygen_defines.h>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include <string>
 
 namespace oxygen
@@ -74,7 +72,7 @@ private:
     boost::shared_ptr<World> mActiveWorld;
 };
 
-DECLARE_CLASS(PhysicsServer);
+DECLARE_CLASS(PhysicsServer)
 
 } //namespace oxygen
 

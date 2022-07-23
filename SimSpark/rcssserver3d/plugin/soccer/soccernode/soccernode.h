@@ -48,6 +48,6 @@ protected:
     boost::shared_ptr<oxygen::Transform> mTransformParent;
 };
 
-DECLARE_CLASS(SoccerNode);
+DECLARE_CLASS(SoccerNode)
 
 #endif // SOCCERNODE_H

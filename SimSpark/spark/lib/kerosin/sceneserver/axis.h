@@ -55,7 +55,7 @@ protected:
     float mSize;
 };
 
-DECLARE_CLASS(Axis);
+DECLARE_CLASS(Axis)
 
 } //namespace kerosin
 #endif //KEROSIN_AXIS_H

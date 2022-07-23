@@ -127,14 +127,14 @@ FUNCTION(World,getContactSurfaceLayer)
 
 void CLASS(World)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/PhysicsObject);
-    DEFINE_FUNCTION(setGravity);
-    DEFINE_FUNCTION(setERP);
-    DEFINE_FUNCTION(getERP);
-    DEFINE_FUNCTION(setCFM);
-    DEFINE_FUNCTION(getCFM);
-    DEFINE_FUNCTION(setAutoDisableFlag);
-    DEFINE_FUNCTION(getAutoDisableFlag);
-    DEFINE_FUNCTION(setContactSurfaceLayer);
-    DEFINE_FUNCTION(getContactSurfaceLayer);
+    DEFINE_BASECLASS(oxygen/PhysicsObject)
+    DEFINE_FUNCTION(setGravity)
+    DEFINE_FUNCTION(setERP)
+    DEFINE_FUNCTION(getERP)
+    DEFINE_FUNCTION(setCFM)
+    DEFINE_FUNCTION(getCFM)
+    DEFINE_FUNCTION(setAutoDisableFlag)
+    DEFINE_FUNCTION(getAutoDisableFlag)
+    DEFINE_FUNCTION(setContactSurfaceLayer)
+    DEFINE_FUNCTION(getContactSurfaceLayer)
 }

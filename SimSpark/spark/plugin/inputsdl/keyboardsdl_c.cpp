@@ -24,5 +24,5 @@
 void
 CLASS(KeyboardSDL)::DefineClass()
 {
-    DEFINE_BASECLASS(InputDeviceSDL);
+    DEFINE_BASECLASS(InputDeviceSDL)
 }

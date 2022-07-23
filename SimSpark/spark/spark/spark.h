@@ -25,9 +25,7 @@
 #endif
 
 #include <string>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include <salt/defines.h>
 
 #ifdef spark_EXPORTS

@@ -26,9 +26,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_array.hpp>
-#endif
 #include <kerosin/kerosin_defines.h>
 
 namespace kerosin

@@ -41,9 +41,7 @@
 #include <deque>
 #include <zeitgeist/node.h>
 #include <kerosin/kerosin_defines.h>
-#ifndef Q_MOC_RUN
 #include <boost/thread/shared_mutex.hpp>
-#endif
 
 namespace kerosin
 {
@@ -97,7 +95,7 @@ private:
     boost::shared_mutex mMutex;
 };
 
-DECLARE_ABSTRACTCLASS(InputSystem);
+DECLARE_ABSTRACTCLASS(InputSystem)
 
 } // namespace kerosin
 

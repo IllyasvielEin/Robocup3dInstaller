@@ -115,7 +115,7 @@ bool Init()
             gSocket.bind(local);
         }
 
-    catch (BindErr error)
+    catch (const BindErr& error)
         {
             cerr << "failed to bind socket with '"
                  << error.what() << "'" << endl;
@@ -130,7 +130,7 @@ bool Init()
             gSocket.connect(server);
         }
 
-    catch (ConnectErr error)
+    catch (const ConnectErr& error)
         {
             cerr << "connection failed with: '"
                  << error.what() << "'" << endl;

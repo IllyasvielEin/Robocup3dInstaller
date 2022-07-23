@@ -174,7 +174,7 @@ protected:
     salt::Vector3f mExternalMeshScale;
 };
 
-DECLARE_CLASS(StaticMesh);
+DECLARE_CLASS(StaticMesh)
 
 } //namespace kerosin
 

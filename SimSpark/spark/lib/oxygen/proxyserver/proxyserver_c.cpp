@@ -42,6 +42,6 @@ FUNCTION(ProxyServer, setCycleLength)
 
 void CLASS(ProxyServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
-    DEFINE_FUNCTION(setCycleLength);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
+    DEFINE_FUNCTION(setCycleLength)
 }

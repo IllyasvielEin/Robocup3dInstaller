@@ -128,7 +128,7 @@ void PropertyExecuter::onCycle()
     {
         mFailedSetCount++;
         mSetWait = 1 + ((mFailedSetCount / 5) * 5);
-        if (mFailedSetCount = 20 || mFailedSetCount > 100)
+        if (mFailedSetCount == 20 || mFailedSetCount > 100)
             LOG_ERROR() << "Could not dequeue set-calls after trying " << mFailedSetCount << " times. Access to PropertyExecuter is locked.";
     }
     else
@@ -174,7 +174,7 @@ void PropertyExecuter::onCycle()
     {
         mFailedGetCount++;
         mGetWait = mSetWait = 1 + ((mFailedGetCount / 5) * 5);
-        if (mFailedGetCount = 20 || mFailedGetCount > 100)
+        if (mFailedGetCount == 20 || mFailedGetCount > 100)
             LOG_ERROR() << "Could not dequeue get-calls after trying " << mFailedGetCount << " times. Access to PropertyExecuter is locked.";
     }
     else

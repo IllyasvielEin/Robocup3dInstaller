@@ -54,6 +54,6 @@ protected:
     unsigned long mLastTicks;
 };
 
-DECLARE_CLASS(TimerSDL);
+DECLARE_CLASS(TimerSDL)
 
 #endif //MOUSESDL_H__

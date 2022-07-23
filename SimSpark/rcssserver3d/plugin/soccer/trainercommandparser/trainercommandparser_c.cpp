@@ -28,5 +28,5 @@
 void
 CLASS(TrainerCommandParser)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

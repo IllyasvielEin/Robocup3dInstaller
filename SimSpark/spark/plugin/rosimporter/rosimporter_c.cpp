@@ -24,7 +24,7 @@
 
 void CLASS(RosImporter)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SceneImporter);
+    DEFINE_BASECLASS(oxygen/SceneImporter)
 }
 
 

@@ -30,6 +30,7 @@
 #define SALT_SHAREDLIBRARY_H
 
 #include "salt_defines.h"
+#include <vector>
 #include <string>
 #include <cstdio>
 
@@ -63,7 +64,7 @@ public:
     ~SharedLibrary()        {       Close();        };
 
     /** opens a sharedLibrary, releasing a previously opened library */
-    bool    Open(const std::string &libName);
+    bool    Open(const std::string &libName, const std::vector<std::string> &libSearchPaths = {});
 
     /**  returns a pointer to the exported function procName of the
      *  library or NULL if the function does not exist.

@@ -30,9 +30,12 @@ using namespace salt;
 boost::shared_ptr<JointInt> Joint::mJointImp;
 
 Joint::Joint() : 
-PhysicsObject(), mJointID(0), 
-mJointMaxSpeed1(0), mJointMaxSpeed2(0), 
-mIsLimitJointMaxSpeed1(false), mIsLimitJointMaxSpeed2(false)
+    PhysicsObject(),
+    mJointID(0),
+    mJointMaxSpeed1(0),
+    mIsLimitJointMaxSpeed1(false),
+    mJointMaxSpeed2(0),
+    mIsLimitJointMaxSpeed2(false)
 {
 
 }
@@ -412,4 +415,11 @@ bool Joint::IsLimitJointMaxSpeed1() const
 bool Joint::IsLimitJointMaxSpeed2() const
 {
     return mIsLimitJointMaxSpeed2;
+}
+
+
+void Joint::SetParameter([[maybe_unused]] int parameter,
+                         [[maybe_unused]] float value)
+{
+    // default implementation does nothing
 }

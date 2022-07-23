@@ -23,5 +23,5 @@
 
 void CLASS(PhysicsObjectImp)::DefineClass()
 {
-    DEFINE_BASECLASS(BaseNode);
+    DEFINE_BASECLASS(BaseNode)
 }

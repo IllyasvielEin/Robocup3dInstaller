@@ -118,7 +118,7 @@ namespace zeitgeist
 
     /** prints the last ruby error to stdout along with a backtrace */
     void RbPrintError();
-};
+}
 
 #endif // ZEITGEIST_RUBYWRAPPER_H
 

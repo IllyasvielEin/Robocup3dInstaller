@@ -70,10 +70,9 @@ int hex2data(short size_v, const char res[])
 
         }
 
-    };
+    }
     return data;
 }
-;
 
 void data2hex(short size_v, const int dat, char res[])
 {
@@ -137,34 +136,29 @@ void data2hex(short size_v, const int dat, char res[])
 
         }
         data /= 16;
-    };
+    }
 
 }
-;
 
 void set_hmdl_time(long time)
 {
     hmdl->time = time;
 }
-;
 
 long get_hmdl_time()
 {
     return hmdl->time;
 }
-;
 
 long get_hmdl_time_inc()
 {
     return hmdl->time_inc;
 }
-;
 
 short get_hmdl_servo_out(int i)
 {
     return cfloat2int(hmdl->positions_to_set[i]);
 }
-;
 
 void write_cfloat(struct c_float *in)
 {
@@ -201,7 +195,7 @@ struct c_f_hex c_float2hex(struct c_float in)
     {
         sign = 1;
         ret.stri[0] = '+';
-    };
+    }
 
     if (in.exponent < 0)
     {
@@ -212,7 +206,7 @@ struct c_f_hex c_float2hex(struct c_float in)
     {
         esign = 1;
         ret.stri[9] = '+';
-    };
+    }
 
     data2hex(8, sign * in.mantisse, &ret.stri[1]);
     /*ret.stri[9]='^';*/
@@ -221,7 +215,6 @@ struct c_f_hex c_float2hex(struct c_float in)
 
     return ret;
 }
-;
 
 struct c_float mult_cc(struct c_float a, struct c_float b)
 {
@@ -250,11 +243,10 @@ struct c_float mult_cc(struct c_float a, struct c_float b)
     {
         c.exponent--;
         c.mantisse = c.mantisse << 1;
-    };
+    }
 
     return c;
 }
-;
 
 int cfloat2int(struct c_float a)
 {
@@ -264,23 +256,15 @@ int cfloat2int(struct c_float a)
     else
     {
         r = -1* ( (-a.mantisse)>>(INT_MAXE-a.exponent));
-    };
+    }
     return r;
-};
+}
 
 struct c_float hex2c_float(const char in[])
 {
     struct c_float ret;
-    short sign, esign;
-    if (in[0] == '-')
-        sign = -1;
-    else if (in[0] == '+')
-        sign = +1;
-
-    if (in[9] == '-')
-        esign = -1;
-    else if (in[9] == '+')
-        esign = +1;
+    short sign = in[0] == '-' ? -1 : 1;
+    short esign = in[9] == '-' ? -1 : 1;
 
     ret.mantisse = sign * hex2data(8, &in[1]);
     ret.exponent = esign * hex2data(2, &in[10]);
@@ -315,7 +299,6 @@ int lo2(int in)
 
     return 0;
 }
-;
 
 struct c_float c_f_sum(struct c_float a[], int size)
 //! sum of size c_floats
@@ -338,7 +321,6 @@ struct c_float c_f_sum(struct c_float a[], int size)
     result.exponent = max + lsize;
     return result;
 }
-;
 
 int c_abs(int in)
 //! absolut value of integer
@@ -348,14 +330,12 @@ int c_abs(int in)
     else
         return -in;
 }
-;
 
 struct c_float c_f_add(struct c_float s1, struct c_float s2)
 //! add 2 c_floats
 {
-    int i, max, lsize;
+    int max = 0;
     struct c_float result;
-    max = 0;
     result.mantisse = 0;
 
     max = s1.exponent;
@@ -380,10 +360,10 @@ struct c_float c_f_add(struct c_float s1, struct c_float s2)
             result.mantisse = result.mantisse << 1;
         else
             result.mantisse = -1* ( (-result.mantisse) <<1);
-        };
+        }
 
         return result;
-    };
+    }
 
 struct c_float mult_c_sinus(struct c_float a, int d)
 //! multiply routine for sinus input c_float * sinus
@@ -412,7 +392,6 @@ struct c_float mult_c_sinus(struct c_float a, int d)
 
     return c;
 }
-;
 
 struct c_float mult_cc_sinus(struct c_float a, struct c_float b, int d)
 //! multiply 2 c_floats with one sinus
@@ -452,10 +431,10 @@ struct c_float mult_cc_sinus(struct c_float a, struct c_float b, int d)
             c.mantisse = c.mantisse << 1;
         else
             c.mantisse = -1* ( (-c.mantisse) <<1);
-        };
+        }
 
         return c;
-    };
+    }
 
 struct c_float set_c_float_zero()
 // returns a c_float = 0
@@ -493,7 +472,7 @@ struct c_float fade_in(struct c_float a, struct c_float b, long t_a, long t_b,
     {
         sign_b = -1;
         b.mantisse = -b.mantisse;
-    };
+    }
 
     if (max_man < b.exponent)
         max_man = b.exponent;
@@ -508,14 +487,13 @@ struct c_float fade_in(struct c_float a, struct c_float b, long t_a, long t_b,
 
     return c;
 }
-;
 
 void motion_machine(unsigned int time)
 /*! interpolation using direct access to the hmdl structure */
 {
 
     int i, k, l;
-    struct c_float y, sine_amp, cos_amp;
+    struct c_float y;
     struct c_float amp;
     struct c_float *coeffs;
 
@@ -575,10 +553,9 @@ void motion_machine(unsigned int time)
                         amp = fade_in(hmdl->mp[k].A_new, set_c_float_zero(),
                             hmdl->mp[k].end_0, hmdl->mp[k].end_1, time);
 
-                    };
-
-                };
-            };
+                    }
+                }
+            }
 
             //amp = hmdl->mp[k].A_curr;
             //if (i==20)
@@ -599,14 +576,13 @@ void motion_machine(unsigned int time)
                 y = c_f_add(y, mult_cc_sinus(amp, coeffs[2* l + 2], cos_fixed(
                     ((time - hmdl->mp[k].offset) * hmdl->mp[k].pp->wlqs_top[l])
                             / hmdl->mp[k].pp->wlqs_bot[l])));
-            };
+            }
 
             hmdl->positions_to_set[i] = c_f_add(y, hmdl->positions_to_set[i]);
 
-        };
-    };
+        }
+    }
 }
-;
 
 int calc_next_timer_value()
 //! wrapper for time
@@ -626,14 +602,12 @@ void eval_set_time_message(const char in[])
     sendMesg("\r\n");
 
 }
-;
 
 void eval_set_alarm_point(const char in[])
 // not implelemented so far
 {
 
 }
-;
 
 void eval_use_pattern_message(const char in[])
 //! PU command
@@ -658,14 +632,12 @@ void eval_use_pattern_message(const char in[])
     hmdl->mp[patternid].active = 1;
 
 }
-;
 
 void eval_use_short_pattern_message(const char in[])
 //! PP command - shorter PU message
 //
 {
-    int patternid, curr;
-    patternid = hex2data(MAX_ID_DIGITS, in);
+    int patternid = hex2data(MAX_ID_DIGITS, in);
 
     hmdl->mp[patternid].start_0 = 0;
     hmdl->mp[patternid].start_1 = 0;
@@ -679,7 +651,6 @@ void eval_use_short_pattern_message(const char in[])
     hmdl->mp[patternid].active = 1;
 
 }
-;
 
 void eval_use_pattern_message_with_end(const char in[])
 //! PY sending a pattern with the ramp end
@@ -710,7 +681,6 @@ void eval_use_pattern_message_with_end(const char in[])
     hmdl->mp[patternid].active = 1;
 
 }
-;
 
 void eval_set_servo_coeff_message(const char in[])
 {
@@ -730,21 +700,18 @@ void eval_set_servo_coeff_message(const char in[])
 
         i++;
         curr += C_FLOAT_LENGTH;
-    };
-
+    }
 }
-;
 
 void eval_set_servo_small_coeff_message(const char in[])
 {
-    int patternid, servoid, coeffid, curr;
+    int patternid, servoid, coeffid;
     patternid = hex2data(MAX_ID_DIGITS, in);
     servoid = hex2data(MAX_ID_DIGITS, &in[MAX_ID_DIGITS]);
     coeffid = hex2data(MAX_ID_DIGITS, &in[2*MAX_ID_DIGITS]);
     hmdl->mp[patternid].pp->sv[servoid].s_position[coeffid]
             = hex2c_float(&in[3*MAX_ID_DIGITS]);
 }
-;
 
 //long long i;
 
@@ -762,14 +729,14 @@ void eval_new_pattern_message(const char in[])
         {
             hmdl->mp[id].pp->sv[j].s_position[i].mantisse = 0;
             hmdl->mp[id].pp->sv[j].s_position[i].exponent = 0;
-        };
+        }
 
     for (i = 0; i < (MAX_COEFFS - 1) / 2; ++i)
     {
         hmdl->mp[id].pp->wlqs_top[i] = 0;
         hmdl->mp[id].pp->wlqs_bot[i] = 1;
 
-    };
+    }
 
     for (i = 0; i < (wp_number - 1) / 2; ++i)
     {
@@ -782,62 +749,59 @@ void eval_new_pattern_message(const char in[])
         // printf ("MC: coeffs top %d bot  %d \n", hmdl->mp[id].pp->wlqs_top[i],
         //    hmdl->mp[id].pp->wlqs_bot[i]);
 
-    };
+    }
 
     /* DEBUG */
     //intf("MC: Setting new pattern for number %d\n", id);
 }
-;
 
 void init_hmdl()
 {
-    int i, j, k, l, p;
-
     /*
      * inititialize HDML structure
      */
 
     /* motion patterns */
-
-    for (i = 0; i < MAX_MPS_IN_RAM; ++i)
+    for (int i = 0; i < MAX_MPS_IN_RAM; ++i)
     {
         hmdl->mp[i].pp = &(hmdl->mpp_in_ram[i]);
         hmdl->mp[i].pp->ID_prop = 8888 + i;
 
-        for (j = 0; j < (MAX_COEFFS - 1) / 2; ++j)
+        for (int j = 0; j < (MAX_COEFFS - 1) / 2; ++j)
         {
             hmdl->mp[i].pp->wlqs_top[j] = 0;
             hmdl->mp[i].pp->wlqs_bot[j] = 1;
-        };
+        }
 
-        for (j = 0; j < MAX_SERVOS; j++)
+        for (int j = 0; j < MAX_SERVOS; j++)
         {
-            for (k = 0; k < MAX_COEFFS; k++)
+            for (int k = 0; k < MAX_COEFFS; k++)
             {
                 hmdl->mp[i].pp->sv[j].s_position[k].mantisse = 0;
                 hmdl->mp[i].pp->sv[j].s_position[k].exponent = 0;
-            };
+            }
 
-        };
+        }
 
-    };
+    }
 
-    /*for (i=MAX_MPS_IN_RAM;i<MAX_MPS;i++)                           // meant for motion patterns in flash
-     hmdl->mp[i].pp = 0x00058000 + 0x00000800*(i-MAX_MPS_IN_RAM);
+    /*for (int i = MAX_MPS_IN_RAM; i < MAX_MPS; i++)                           // meant for motion patterns in flash
+    {
+        hmdl->mp[i].pp = 0x00058000 + 0x00000800 * (i - MAX_MPS_IN_RAM);
+    }
 
-     for (i=0;i<MAX_MPS;++i)
-     {
+    for (int i = 0; i < MAX_MPS; ++i)
+    {
+        hmdl->mp[i].A_old.mantisse = 0;
+        hmdl->mp[i].A_old.exponent = 0;
+        hmdl->mp[i].A_new.mantisse = 0;
+        hmdl->mp[i].A_new.exponent = 0;
 
-     hmdl->mp[i].A_old.mantisse=0;
-     hmdl->mp[i].A_old.exponent=0;
-     hmdl->mp[i].A_new.mantisse=0;
-     hmdl->mp[i].A_new.exponent=0;
-
-     hmdl->mp[i].start_0 = 0;
-     hmdl->mp[i].start_1 = 0;
-     hmdl->mp[i].updated = 0;
-     hmdl->mp[i].active  = 0;
-     };*/// until here
+        hmdl->mp[i].start_0 = 0;
+        hmdl->mp[i].start_1 = 0;
+        hmdl->mp[i].updated = 0;
+        hmdl->mp[i].active  = 0;
+    }*/// until here
 
 
     hmdl->time = 0;
@@ -845,10 +809,10 @@ void init_hmdl()
     hmdl->time_inc = 1;
 
     /* positions to set  */
-    for (p = 0; p < MAX_SERVOS; ++p)
+    for (int i = 0; i < MAX_SERVOS; ++i)
     {
-        hmdl->positions_to_set[p].exponent = 0;
-        hmdl->positions_to_set[p].mantisse = 0;
+        hmdl->positions_to_set[i].exponent = 0;
+        hmdl->positions_to_set[i].mantisse = 0;
     }
 
 }
@@ -872,7 +836,6 @@ void eval_get_current_sine_val(const char in[])
     sendMesg("\r\n");
 
 }
-;
 
 void eval_seq(const char in[])
 {
@@ -925,7 +888,6 @@ void eval_seq(const char in[])
 
     }
 }
-;
 
 struct c_float interpolate_rational_c_float( /*Real amplitude interpolation*/
 int size_c, struct c_float amp, int time, struct c_float coeffs[],
@@ -943,12 +905,11 @@ int size_c, struct c_float amp, int time, struct c_float coeffs[],
 
         y = c_f_add(y, mult_cc_sinus(amp, coeffs[2* l + 2], cos_fixed((time
                 * frequencies_up[l]) / frequencies_bottom[l])));
-    };
+    }
 
     return y;
 
 }
-;
 
 struct c_float interpolate_c_float_phase(
 /*Amplitude is rotational matrix (complex) */
@@ -969,9 +930,8 @@ int size_c, struct c_float amp[], int time, struct c_float coeffs[],
                 = c_f_add(y, mult_c_sinus(sine_amp, sin_fixed(time
                         * frequencies[i])));
         y = c_f_add(y, mult_c_sinus(cos_amp, cos_fixed(time * frequencies[i])));
-    };
+    }
 
     return y;
 }
-;
 

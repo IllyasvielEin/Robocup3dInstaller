@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(ConeTwistJoint)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
+        DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
 }

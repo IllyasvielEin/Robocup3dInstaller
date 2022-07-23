@@ -94,9 +94,9 @@ FUNCTION(RandomServer,exponentialRND)
 void
 CLASS(RandomServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(seed);
-    DEFINE_FUNCTION(uniformRND);
-    DEFINE_FUNCTION(normalRND);
-    DEFINE_FUNCTION(exponentialRND);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(seed)
+    DEFINE_FUNCTION(uniformRND)
+    DEFINE_FUNCTION(normalRND)
+    DEFINE_FUNCTION(exponentialRND)
 }

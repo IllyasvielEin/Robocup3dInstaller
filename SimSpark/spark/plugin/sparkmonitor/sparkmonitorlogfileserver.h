@@ -113,6 +113,6 @@ protected:
     sexp_mem_t *mSexpMemory;
 };
 
-DECLARE_CLASS(SparkMonitorLogFileServer);
+DECLARE_CLASS(SparkMonitorLogFileServer)
 
 #endif // SPARKMONITORLOGFILESERVER_H

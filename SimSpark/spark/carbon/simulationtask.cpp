@@ -63,7 +63,7 @@ SimulationTask* SimulationTask::createSimulationTask(boost::shared_ptr<TaskDefin
             break;
         }
     }
-    catch (SimulationTask::IllegalTaskTypeException e)
+    catch (const SimulationTask::IllegalTaskTypeException& e)
     {
         LOG_ERROR() << e.message() << " : " << e.what();
     }
@@ -85,7 +85,7 @@ int SimulationTask::getNextTaskId()
 //--------------------------------------------------------------
 
 SimulationTask::SimulationTask(boost::shared_ptr<TaskDefinition> definition) :
-    mTaskDefinition(definition), mExecutionSemaphore(1)
+    mExecutionSemaphore(1), mTaskDefinition(definition)
 {
     mId = getNextTaskId();
     mExecutionState = TES_UNDEFINED;

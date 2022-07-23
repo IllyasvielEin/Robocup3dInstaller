@@ -83,7 +83,7 @@ private:
     FT_Library  mFreeTypeLib;
 };
 
-DECLARE_CLASS(FontServer);
+DECLARE_CLASS(FontServer)
 
 } //namespace kerosin
 

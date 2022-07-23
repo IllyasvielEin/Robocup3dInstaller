@@ -56,7 +56,7 @@ private:
     static boost::shared_ptr<SliderJointInt> mSliderJointImp;
 };
 
-DECLARE_CLASS(SliderJoint);
+DECLARE_CLASS(SliderJoint)
 
 } // namespace oxygen
 

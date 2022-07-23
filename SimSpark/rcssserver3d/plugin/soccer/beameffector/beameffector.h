@@ -86,6 +86,6 @@ protected:
     bool mStartAnyFieldPosition;
 };
 
-DECLARE_CLASS(BeamEffector);
+DECLARE_CLASS(BeamEffector)
 
 #endif // BEAMEFFECTOR_H

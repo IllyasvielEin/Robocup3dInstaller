@@ -23,5 +23,5 @@
 
 void CLASS(SoundSystemFMOD)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/Base);
+        DEFINE_BASECLASS(zeitgeist/Base)
 }

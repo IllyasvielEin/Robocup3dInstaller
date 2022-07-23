@@ -60,6 +60,6 @@ public:
     void RemoveFromSpace(long geomID, long spaceID);
 };
 
-DECLARE_CLASS(ColliderImp);
+DECLARE_CLASS(ColliderImp)
 
 #endif //ODECOLLIDER_H

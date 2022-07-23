@@ -67,9 +67,9 @@ FUNCTION(DragController,setAngularDrag)
 
 void CLASS(DragController)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BodyController);
-    DEFINE_FUNCTION(getLinearDrag);
-    DEFINE_FUNCTION(setLinearDrag);
-    DEFINE_FUNCTION(getAngularDrag);
-    DEFINE_FUNCTION(setAngularDrag);
+    DEFINE_BASECLASS(oxygen/BodyController)
+    DEFINE_FUNCTION(getLinearDrag)
+    DEFINE_FUNCTION(setLinearDrag)
+    DEFINE_FUNCTION(getAngularDrag)
+    DEFINE_FUNCTION(setAngularDrag)
 }

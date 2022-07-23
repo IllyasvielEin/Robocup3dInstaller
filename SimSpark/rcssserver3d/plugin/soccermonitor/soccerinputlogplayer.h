@@ -78,6 +78,6 @@ protected:
     boost::shared_ptr<oxygen::FPSController> mFPS;
 };
 
-DECLARE_CLASS(SoccerInputLogPlayer);
+DECLARE_CLASS(SoccerInputLogPlayer)
 
 #endif // SOCCERINPUTLOGPLAYER_H

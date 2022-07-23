@@ -54,7 +54,7 @@ private:
     sexp_mem_t *mSexpMemory;
 };
 
-DECLARE_CLASS(SexpParser);
+DECLARE_CLASS(SexpParser)
 
 
 #endif // SEXPPARSER_H

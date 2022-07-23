@@ -31,9 +31,7 @@
 #include <QAbstractTableModel>
 #include <QMutex>
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include "simulationsetup.h"
 
 class Carbon;

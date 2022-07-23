@@ -65,7 +65,7 @@ public:
 
 };
 
-DECLARE_CLASS(RandomServer);
+DECLARE_CLASS(RandomServer)
 
 } //namespace zeitgeist
 

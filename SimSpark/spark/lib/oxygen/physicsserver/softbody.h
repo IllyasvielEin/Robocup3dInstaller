@@ -46,7 +46,7 @@ public:
     static boost::shared_ptr<SoftBodyInt> mSoftBodyImp;
 };
 
-DECLARE_CLASS(SoftBody);
+DECLARE_CLASS(SoftBody)
 
 } //namespace oxygen
 

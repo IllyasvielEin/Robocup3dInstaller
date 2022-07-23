@@ -44,6 +44,6 @@ public:
 
 } // namespace oxygen
 
-DECLARE_ABSTRACTCLASS(MonitorCmdParser);
+DECLARE_ABSTRACTCLASS(MonitorCmdParser)
 
 #endif // OXYGEN_MONITORCMDPARSER_H

@@ -44,11 +44,14 @@ class SALT_API Vector2f : public TVector2<float, Vector2f>
     //
 public:
     /// Construction/Destruction/Assignment
-    f_inline        Vector2f()                                      : TVector2<float, Vector2f>() { }
+    f_inline        Vector2f()                      : TVector2<float, Vector2f>() { }
     f_inline        Vector2f(float x, float y)      : TVector2<float, Vector2f>(x, y) { }
     explicit        Vector2f(const float *f)        : TVector2<float, Vector2f>() { SetData(f);  }
     f_inline        Vector2f(const Vector2f &v)     : TVector2<float, Vector2f>(v) { }
-    explicit        Vector2f(float f)                       : TVector2<float, Vector2f>() { Fill(f); }
+    explicit        Vector2f(float f)               : TVector2<float, Vector2f>() { Fill(f); }
+
+    // Assignment operator
+    f_inline Vector2f& operator=(const Vector2f &v) = default;
 
     float           GetAngleRad() const
     {
@@ -81,11 +84,14 @@ class SALT_API Vector3f : public TVector3<float, Vector3f>
     //
 public:
     /// Construction/Destruction/Assignment
-    f_inline        Vector3f()                                                      : TVector3<float, Vector3f>() { }
+    f_inline        Vector3f()                              : TVector3<float, Vector3f>() { }
     f_inline        Vector3f(float x, float y, float z)     : TVector3<float, Vector3f>(x, y, z) { }
-    explicit        Vector3f(const float *f)                        : TVector3<float, Vector3f>() { SetData(f);  }
-    f_inline        Vector3f(const Vector3f &v)                     : TVector3<float, Vector3f>(v) { }
-    explicit        Vector3f(float f)                                       : TVector3<float, Vector3f>() { Fill(f); }
+    explicit        Vector3f(const float *f)                : TVector3<float, Vector3f>() { SetData(f);  }
+    f_inline        Vector3f(const Vector3f &v)             : TVector3<float, Vector3f>(v) { }
+    explicit        Vector3f(float f)                       : TVector3<float, Vector3f>() { Fill(f); }
+
+    // Assignment operator
+    f_inline Vector3f& operator=(const Vector3f &v) = default;
 
     f_inline        Vector3f Reflect(const Vector3f &normal)
     {

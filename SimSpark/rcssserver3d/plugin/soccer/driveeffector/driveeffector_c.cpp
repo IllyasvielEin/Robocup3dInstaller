@@ -91,9 +91,9 @@ FUNCTION(DriveEffector,setConsumption)
 void
 CLASS(DriveEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
-    DEFINE_FUNCTION(setForceFactor);
-    DEFINE_FUNCTION(setSigma);
-    DEFINE_FUNCTION(setMaxPower);
-    DEFINE_FUNCTION(setConsumption);
+    DEFINE_BASECLASS(oxygen/Effector)
+    DEFINE_FUNCTION(setForceFactor)
+    DEFINE_FUNCTION(setSigma)
+    DEFINE_FUNCTION(setMaxPower)
+    DEFINE_FUNCTION(setConsumption)
 }

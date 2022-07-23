@@ -53,7 +53,7 @@ protected:
     boost::shared_ptr<RigidBody> mBody;
 };
 
-DECLARE_CLASS(BodyController);
+DECLARE_CLASS(BodyController)
 
 } // namespace oxygen
 

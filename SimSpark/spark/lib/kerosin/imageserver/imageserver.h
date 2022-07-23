@@ -137,7 +137,7 @@ private:
     bool HandleErrors(const std::string& fileName) const;
 };
 
-DECLARE_CLASS(ImageServer);
+DECLARE_CLASS(ImageServer)
 
 } // namespace kerosin
 

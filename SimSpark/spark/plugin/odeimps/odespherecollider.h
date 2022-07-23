@@ -39,6 +39,6 @@ public:
     long CreateSphere();
 };
 
-DECLARE_CLASS(SphereColliderImp);
+DECLARE_CLASS(SphereColliderImp)
 
 #endif //ODESPHERECOLLIDER_H

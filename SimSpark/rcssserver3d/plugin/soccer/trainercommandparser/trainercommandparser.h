@@ -170,6 +170,6 @@ protected:
     std::string mAckString;
 };
 
-DECLARE_CLASS(TrainerCommandParser);
+DECLARE_CLASS(TrainerCommandParser)
 
 #endif // TRAINERCOMMANDPARSER_H

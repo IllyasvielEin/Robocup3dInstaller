@@ -23,6 +23,6 @@
 
 void CLASS(InternalSoccerRender)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/CustomRender);
+    DEFINE_BASECLASS(kerosin/CustomRender)
 }
 

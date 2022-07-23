@@ -26,6 +26,6 @@ using namespace oxygen;
 
 void CLASS(TouchPerceptorHandler)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/ContactJointHandler);
+  DEFINE_BASECLASS(oxygen/ContactJointHandler)
 }
 

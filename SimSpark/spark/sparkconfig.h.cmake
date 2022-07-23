@@ -39,3 +39,5 @@
 #define PACKAGE_NAME "${CMAKE_PROJECT_NAME}"
 
 #define PREFIX "${prefix}"
+
+#define BUNDLE_LIBRARY_PATH "${BUNDLE_LIBRARY_PATH}"

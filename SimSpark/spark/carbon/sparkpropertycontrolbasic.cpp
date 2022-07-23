@@ -497,7 +497,6 @@ bool BasicControl::genJoint(TLeafPtr leaf, const ClassDescriptor& descriptor, TP
     for (int i = 0; i < 2; ++i)
     {
         QString strIdx = "(" + QString::number(i) + ")";
-        const Joint::EBodyIndex idx = static_cast<Joint::EBodyIndex>(i);
 
         list.push_back(shared_ptr<Property>(new Property(leaf, descriptor, "GetFeedbackForce("  + strIdx + ")", QObject::tr("FeedBackForce%1").arg(strIdx),  new DVector3f())));
         list.push_back(shared_ptr<Property>(new Property(leaf, descriptor, "GetFeedbackTorque(" + strIdx + ")", QObject::tr("FeedBackTorque%1").arg(strIdx), new DVector3f())));
@@ -506,7 +505,6 @@ bool BasicControl::genJoint(TLeafPtr leaf, const ClassDescriptor& descriptor, TP
     for (int i = 0; i < 3; ++i)
     {
         QString strIdx = "(" + QString::number(i) + ")";
-        const Joint::EAxisIndex idx = static_cast<Joint::EAxisIndex>(i);
 
         list.push_back(shared_ptr<Property>(new Property(leaf, descriptor, "GetBounce("               + strIdx + ")", QObject::tr("Bounce%1"              ).arg(strIdx), new DFloat())));
         list.push_back(shared_ptr<Property>(new Property(leaf, descriptor, "GetLowStopDeg("           + strIdx + ")", QObject::tr("LowStopDeg%1"          ).arg(strIdx), new DFloat())));

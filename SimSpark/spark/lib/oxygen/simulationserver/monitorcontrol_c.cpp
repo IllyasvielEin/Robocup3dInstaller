@@ -25,5 +25,5 @@ using namespace std;
 
 void CLASS(MonitorControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/NetControl);
+    DEFINE_BASECLASS(oxygen/NetControl)
 }

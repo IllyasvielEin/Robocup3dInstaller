@@ -55,6 +55,8 @@ public:
     */
     MenuObject(const QString& name, MenuManager::EMenuObjectType type, MenuManager::EMenuObjectLocation location, const AbstractPlugin* creator = 0);
 
+    virtual ~MenuObject();
+
     /*!
      \brief Returns object type.
     */

@@ -23,5 +23,5 @@
 
 void CLASS(ConeColliderImp)::DefineClass()
 {
-    DEFINE_BASECLASS(ConvexColliderImp);
+    DEFINE_BASECLASS(ConvexColliderImp)
 }

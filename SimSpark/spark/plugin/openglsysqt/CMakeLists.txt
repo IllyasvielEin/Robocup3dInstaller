@@ -14,15 +14,11 @@ set(openglsystemqt_SOURCES
 #Additional used libraries
 set(QT_USE_QTOPENGL TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### create library ###############
   
 add_library(openglsystemqt MODULE ${openglsystemqt_SOURCES} ${inputqt_HEADERS})
 
-target_link_libraries(openglsystemqt ${QT_LIBRARIES} ${OPENGL_LIBRARIES} ${spark_libs})
+target_link_libraries(openglsystemqt ${Qt5Widgets_LIBRARIES} ${OPENGL_LIBRARIES} ${spark_libs})
 
 if (NOT APPLE)
    set_target_properties(openglsystemqt PROPERTIES VERSION 1.0.0 SOVERSION 0)

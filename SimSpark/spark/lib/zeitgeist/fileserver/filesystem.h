@@ -87,7 +87,7 @@ private:
     FileSystem& operator=(const FileSystem& obj);
 };
 
-DECLARE_ABSTRACTCLASS(FileSystem);
+DECLARE_ABSTRACTCLASS(FileSystem)
 
 } //namespace zeitgeist
 

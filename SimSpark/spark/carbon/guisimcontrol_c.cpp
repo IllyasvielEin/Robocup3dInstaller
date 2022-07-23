@@ -26,5 +26,5 @@
 
 void CLASS(GuiSimControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
 }

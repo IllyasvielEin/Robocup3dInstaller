@@ -28,9 +28,7 @@
 #include <zeitgeist/fileserver/fileserver.h>
 #include <zeitgeist/logserver/logserver.h>
 #include <zeitgeist/core.h>
-#ifndef Q_MOC_RUN
 #include <boost/scoped_ptr.hpp>
-#endif
 
 //------------------------------------------------------------------------------------------------
 // SoundServer implementation

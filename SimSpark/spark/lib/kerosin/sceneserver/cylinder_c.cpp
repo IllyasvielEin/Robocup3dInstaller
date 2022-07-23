@@ -53,8 +53,8 @@ FUNCTION(Cylinder,getLength)
 
 void CLASS(Cylinder)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/SingleMatNode);
-    DEFINE_FUNCTION(setParams);
-    DEFINE_FUNCTION(getRadius);
-    DEFINE_FUNCTION(getLength);
+    DEFINE_BASECLASS(kerosin/SingleMatNode)
+    DEFINE_FUNCTION(setParams)
+    DEFINE_FUNCTION(getRadius)
+    DEFINE_FUNCTION(getLength)
 }

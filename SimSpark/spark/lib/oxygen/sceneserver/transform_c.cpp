@@ -89,8 +89,8 @@ FUNCTION(Transform,setLocalTransform)
 
 void CLASS(Transform)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/BaseNode);
-  DEFINE_FUNCTION(setLocalPos);
-  DEFINE_FUNCTION(setLocalRotation);
-  DEFINE_FUNCTION(setLocalTransform);
+  DEFINE_BASECLASS(oxygen/BaseNode)
+  DEFINE_FUNCTION(setLocalPos)
+  DEFINE_FUNCTION(setLocalRotation)
+  DEFINE_FUNCTION(setLocalTransform)
 }

@@ -44,6 +44,6 @@ FUNCTION(AgentState,setRobotType)
 void
 CLASS(AgentState)::DefineClass()
 {
-    DEFINE_BASECLASS(ObjectState);
-    DEFINE_FUNCTION(setRobotType);
+    DEFINE_BASECLASS(ObjectState)
+    DEFINE_FUNCTION(setRobotType)
 }

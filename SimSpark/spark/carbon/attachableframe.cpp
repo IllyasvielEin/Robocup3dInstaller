@@ -53,7 +53,7 @@ AttachableFrame::~AttachableFrame()
     Carbon::get()->getMenuManager()->cleanEntries(this);
 }
 
-void AttachableFrame::init(const QStringList& parameters)
+void AttachableFrame::init([[maybe_unused]] const QStringList& parameters)
 {
     //do nothing
 }
@@ -62,12 +62,12 @@ void AttachableFrame::init(const QStringList& parameters)
 // Public
 //--------------------------------------------------------------
 
-void AttachableFrame::loadData(const QSettings& data)
+void AttachableFrame::loadData([[maybe_unused]] const QSettings& data)
 {
     LOG_DEBUG() << "No data to load...";
 }
 
-void AttachableFrame::saveData(QSettings& data) const
+void AttachableFrame::saveData([[maybe_unused]] QSettings& data) const
 {
     LOG_DEBUG() << "No data to save...";
 }

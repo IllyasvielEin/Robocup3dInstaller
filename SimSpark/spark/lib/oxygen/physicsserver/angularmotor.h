@@ -128,7 +128,7 @@ private:
     static boost::shared_ptr<AngularMotorInt> mAngularMotorImp;
 };
 
-DECLARE_CLASS(AngularMotor);
+DECLARE_CLASS(AngularMotor)
 
 } // namespace oxygen
 

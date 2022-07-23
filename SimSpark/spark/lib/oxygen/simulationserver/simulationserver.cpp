@@ -25,9 +25,7 @@
 #include <zeitgeist/logserver/logserver.h>
 #include <signal.h>
 #include <algorithm>
-#ifndef Q_MOC_RUN
 #include <boost/bind.hpp>
-#endif
 
 using namespace oxygen;
 using namespace zeitgeist;
@@ -116,8 +114,11 @@ void SimulationServer::Quit()
 bool SimulationServer::WantsToQuit()
 {
     bool allQuit = true;
-    for (auto it = mServers.begin(); it != mServers.end(); it++) 
-        if ((*it)->mExit = false) allQuit = false;
+    for (auto it = mServers.begin(); it != mServers.end(); it++)
+        if ((*it)->mExit == false)
+        {
+            allQuit = false;
+        }
 
     return allQuit;
 }

@@ -23,7 +23,7 @@
 #include <carbon/carbon.h>
 #include <carbon/windowmanager.h>
 
-#include <QtGui/QApplication>
+#include <QtWidgets/QApplication>
 #include <stdio.h>
 #include <iostream>
 #include <QDir>

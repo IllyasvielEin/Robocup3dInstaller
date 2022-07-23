@@ -527,7 +527,6 @@ bool SparkController::tryAcquireRuntimeAccess(int timeout, bool exclusive)
 void SparkController::acquireRuntimeAccess(bool exclusive)
 {
     //Lock exclusive access
-    bool ok = true;
     if (exclusive)
         mExclusiveRuntimeAccessSemaphore.acquire(1);
 

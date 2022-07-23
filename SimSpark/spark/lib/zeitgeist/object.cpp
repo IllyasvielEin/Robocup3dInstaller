@@ -24,9 +24,7 @@
 #include "core.h"
 #include "leaf.h"
 #include <iostream>
-#ifndef Q_MOC_RUN
 #include <boost/version.hpp>
-#endif
 
 using namespace boost;
 using namespace std;

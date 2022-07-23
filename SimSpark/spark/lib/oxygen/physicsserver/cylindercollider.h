@@ -48,7 +48,7 @@ private:
     static boost::shared_ptr<CylinderColliderInt> mCylinderColliderImp;
 };
 
-DECLARE_CLASS(CylinderCollider);
+DECLARE_CLASS(CylinderCollider)
 
 } //namespace oxygen
 

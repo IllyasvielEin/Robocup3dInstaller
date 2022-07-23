@@ -121,6 +121,6 @@ protected:
     ECmdMode mCmdMode;
 };
 
-DECLARE_CLASS(SoccerInput);
+DECLARE_CLASS(SoccerInput)
 
 #endif // SOCCERINPUT_H

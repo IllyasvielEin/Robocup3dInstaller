@@ -26,10 +26,10 @@ LogMessage::LogMessage(const QDateTime& timeStamp, Logger::LogLevel logLevel, co
       mFile(file),
       mFunction(function),
       mMessage(message),
+      mLogLevel(logLevel),
+      mLine(line),
       mMessageSourceId(source)
 {
-  mLogLevel = logLevel;
-  mLine = line;
 }
 
 LogMessage::LogMessage(const LogMessage& ref) 
@@ -44,7 +44,8 @@ LogMessage::LogMessage(const LogMessage& ref)
 }
 
 LogMessage::LogMessage()
-    : mFile(""),
+    : mTimeStamp(),
+      mFile(""),
       mFunction(""),
       mMessage("empty"),
       mLogLevel(Logger::Debug),

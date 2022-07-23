@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(SoccerRuleItem)::DefineClass()
 {
-    DEFINE_BASECLASS(MonitorItem);
+    DEFINE_BASECLASS(MonitorItem)
 }

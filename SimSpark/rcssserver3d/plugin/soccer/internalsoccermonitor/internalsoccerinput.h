@@ -106,6 +106,6 @@ protected:
     TTeamIndex mLastKickOff;
 };
 
-DECLARE_CLASS(InternalSoccerInput);
+DECLARE_CLASS(InternalSoccerInput)
 
 #endif // INTERNALSOCCERINPUT_H

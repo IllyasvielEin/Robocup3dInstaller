@@ -51,16 +51,12 @@ set(soccercontrolframe_FORMS
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### create library ###############
 
 #Meta object compiler wrapping of header files, forms and resources
-QT4_WRAP_CPP(soccercontrolframe_QOBJECT_HEADERS_MOC ${soccercontrolframe_QOBJECT_HEADERS})
-QT4_WRAP_UI(soccercontrolframe_FORMS_HEADERS ${soccercontrolframe_FORMS})
-#QT4_ADD_RESOURCES(soccercontrolframe_RESOURCES_RCC ${soccercontrolframe_RESOURCES})
+qt5_wrap_cpp(soccercontrolframe_QOBJECT_HEADERS_MOC ${soccercontrolframe_QOBJECT_HEADERS})
+qt5_wrap_ui(soccercontrolframe_FORMS_HEADERS ${soccercontrolframe_FORMS})
+#qt5_add_resources(soccercontrolframe_RESOURCES_RCC ${soccercontrolframe_RESOURCES})
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR} 
@@ -81,7 +77,7 @@ add_library(
   ${soccercontrolframe_FORMS_HEADERS})
   #${soccercontrolframe_RESOURCES_RCC})
 
-set(soccercontrolframe_LIBS ${OPENGL_LIBRARIES} ${QT_LIBRARIES})
+set(soccercontrolframe_LIBS ${OPENGL_LIBRARIES} ${Qt5Widgets_LIBRARIES})
 set(soccercontrolframe_DEBUG_LIBS ${spark_gui_debug_libs})
 set(soccercontrolframe_RELEASE_LIBS ${spark_gui_release_libs})
 

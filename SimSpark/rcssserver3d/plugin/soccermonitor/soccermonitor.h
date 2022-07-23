@@ -105,6 +105,6 @@ protected:
     float mFieldWidth;
 };
 
-DECLARE_CLASS(SoccerMonitor);
+DECLARE_CLASS(SoccerMonitor)
 
 #endif // SPARKMONITORCLIENT_H

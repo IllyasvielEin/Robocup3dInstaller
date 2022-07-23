@@ -70,6 +70,6 @@ protected:
     void SetContactMode(int mode, bool set, dSurfaceParameters* ODESurface);
 };
 
-DECLARE_CLASS(ContactJointHandlerImp);
+DECLARE_CLASS(ContactJointHandlerImp)
 
 #endif //ODECONTACTJOINTHANDLER_H

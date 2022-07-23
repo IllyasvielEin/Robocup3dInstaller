@@ -31,6 +31,6 @@ public:
     SoftBodyImp();
 };
 
-DECLARE_CLASS(SoftBodyImp);
+DECLARE_CLASS(SoftBodyImp)
 
 #endif //ODESOFTBODY_H

@@ -36,9 +36,7 @@
 #include "cutelogger/functionappender.h"
 
 #include <map>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #if defined(_MSC_VER)
         // shared library export/import stuff
@@ -387,8 +385,6 @@ public:
 private:
     // private members
 
-    static Carbon *carbon; /*!< Static pointer to active carbon instance. */
-
     const QApplication& mApplication; /*!< Reference to the application. */
 
     WindowManager* mWindowManager;               /*!< WindowManager pointer. */
@@ -414,6 +410,7 @@ private:
     bool mClosed;      /*!< True after close() has been called. */
 
     //Static
+    static Carbon *carbon; /*!< Static pointer to active carbon instance. */
     static QString mUserDataFolder; /*!< Root path for user data. */
 
     //Logging

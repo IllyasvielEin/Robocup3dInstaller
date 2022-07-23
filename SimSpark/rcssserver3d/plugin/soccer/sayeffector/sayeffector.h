@@ -75,6 +75,6 @@ private:
     bool ifText;
 };
 
-DECLARE_CLASS(SayEffector);
+DECLARE_CLASS(SayEffector)
 
 #endif // SAYEFFECTOR_H

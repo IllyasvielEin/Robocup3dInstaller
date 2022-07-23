@@ -144,7 +144,7 @@ bool SimulationProcess::stopProcess()
     return false;
 }
 
-bool SimulationProcess::pauseProcess(bool state)
+bool SimulationProcess::pauseProcess([[maybe_unused]] bool state)
 {
     LOG_INFO() << "Cant pause external process.";
 
@@ -248,7 +248,6 @@ void SimulationProcess::updateFinished(int exitCode, QProcess::ExitStatus exitSt
 
 void SimulationProcess::logError(QProcess::ProcessError)
 {
-    ProcessError err = error();
     LOG_ERROR() << "Process error: " << errorString();
     mError = true;
 }

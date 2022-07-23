@@ -40,7 +40,7 @@ set(BINDIR "bin" CACHE PATH "The directory to install binaries into.")
 set(LIBDIR "lib" CACHE PATH "The directory to install libraries into.")
 set(DATADIR "share" CACHE PATH "The directory to install data files into.")
 set(INCLUDEDIR "include" CACHE PATH "The directory to install includes into.")
-set(RPATH_DIRECTORIES ${SPARK_LIB_DIR})
+set(CMAKE_INSTALL_RPATH ${SPARK_LIB_DIR})
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
 mark_as_advanced(BINDIR LIBDIR DATADIR INCLUDEDIR)

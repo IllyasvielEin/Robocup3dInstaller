@@ -166,6 +166,9 @@ public:
 
     // Operators
 
+    /** Assignment operator */
+    f_inline Matrix& operator=(const Matrix& other) = default;
+
     /** multiplies the matrix with another matrix */
     f_inline const Matrix       operator*(const Matrix &inRHS) const;
 

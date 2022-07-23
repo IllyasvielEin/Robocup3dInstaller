@@ -49,7 +49,7 @@ protected:
     std::string mPredicate;
 };
 
-DECLARE_ABSTRACTCLASS(ActionObject);
+DECLARE_ABSTRACTCLASS(ActionObject)
 
 } // namespace oxygen
 

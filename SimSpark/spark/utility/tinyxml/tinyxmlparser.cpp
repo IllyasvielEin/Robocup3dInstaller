@@ -110,14 +110,17 @@ void TiXmlBase::ConvertUTF32ToUTF8( unsigned long input, char* output, int* leng
 			--output; 
 			*output = (char)((input | BYTE_MARK) & BYTE_MASK); 
 			input >>= 6;
+			[[fallthrough]];
 		case 3:
 			--output; 
 			*output = (char)((input | BYTE_MARK) & BYTE_MASK); 
 			input >>= 6;
+			[[fallthrough]];
 		case 2:
 			--output; 
 			*output = (char)((input | BYTE_MARK) & BYTE_MASK); 
 			input >>= 6;
+			[[fallthrough]];
 		case 1:
 			--output; 
 			*output = (char)(input | FIRST_BYTE_MARK[*length]);
@@ -353,7 +356,7 @@ const char* TiXmlBase::SkipWhiteSpace( const char* p, TiXmlEncoding encoding )
 	}
 	else
 	{
-		while ( *p && IsWhiteSpace( *p ) || *p == '\n' || *p =='\r' )
+		while ( *p && (IsWhiteSpace( *p ) || *p == '\n' || *p =='\r') )
 			++p;
 	}
 

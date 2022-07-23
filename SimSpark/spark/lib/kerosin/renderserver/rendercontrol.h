@@ -69,7 +69,7 @@ protected:
     bool mActive;
 };
 
-DECLARE_CLASS(RenderControl);
+DECLARE_CLASS(RenderControl)
 
 } // namespace kerosin
 

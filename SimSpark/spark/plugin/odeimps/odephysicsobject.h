@@ -38,6 +38,6 @@ public:
     void ConvertRotationMatrix(const oxygen::GenericPhysicsMatrix* matrix, salt::Matrix& rot) const;
 };
 
-DECLARE_CLASS(PhysicsObjectImp);
+DECLARE_CLASS(PhysicsObjectImp)
 
 #endif //ODEPHYSICSOBJECT_H

@@ -43,7 +43,7 @@ public:
     virtual void Bind() = 0;
 };
 
-DECLARE_ABSTRACTCLASS(Material);
+DECLARE_ABSTRACTCLASS(Material)
 
 } //namespace kerosin
 

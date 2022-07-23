@@ -19,9 +19,7 @@
 */
 #include "netmessage.h"
 #include "netbuffer.h"
-#ifndef Q_MOC_RUN
 #include <boost/cstdint.hpp>
-#endif
 #include <rcssnet/socket.hpp>
 
 #ifndef WIN32

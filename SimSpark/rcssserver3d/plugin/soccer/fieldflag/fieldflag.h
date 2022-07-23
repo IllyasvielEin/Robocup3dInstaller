@@ -35,6 +35,6 @@ class FieldFlag : public oxygen::Transform
   virtual ~FieldFlag() {};
 };
 
-DECLARE_CLASS(FieldFlag);
+DECLARE_CLASS(FieldFlag)
 
 #endif // FIELDFLAG_H

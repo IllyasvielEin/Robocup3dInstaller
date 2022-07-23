@@ -32,6 +32,6 @@ public:
     ConeTwistJointImp();
 };
 
-DECLARE_CLASS(ConeTwistJointImp);
+DECLARE_CLASS(ConeTwistJointImp)
 
 #endif //ODECONETWISTJOINT_H

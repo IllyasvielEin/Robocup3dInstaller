@@ -46,6 +46,6 @@ protected:
     boost::shared_ptr<ForceResistancePerceptor> mForceResistancePercept;
 };
 
-DECLARE_CLASS(TouchPerceptorHandler);
+DECLARE_CLASS(TouchPerceptorHandler)
 
 #endif /*TOUCHPERCEPTORHANDLER_H_*/

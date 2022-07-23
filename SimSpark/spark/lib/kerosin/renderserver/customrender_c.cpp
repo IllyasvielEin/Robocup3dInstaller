@@ -24,5 +24,5 @@ using namespace std;
 
 void CLASS(CustomRender)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

@@ -26,9 +26,7 @@
  */
 
 #include <QObject>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 #include "cutelogger/logger.h"
 
@@ -132,11 +130,12 @@ public: signals:
 protected:
     // protected members
 
+    int mType; /*!< User defineable type id for the command. */
+    int mId; /*!< User defineable command id for the command. Is emitted with the executed() signal. */
+
     AbstractCommandQueue* mParentQueue; /*!< Parent command queue the command is queued in. */
     bool mProlonged; /*!< True if the command was skipped and should be executed again. */
 
-    int mType; /*!< User defineable type id for the command. */
-    int mId; /*!< User defineable command id for the command. Is emitted with the executed() signal. */
 };
 
 #endif //ABSTRACtCOMMAND_H

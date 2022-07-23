@@ -24,16 +24,20 @@
 
 #include <oxygen/agentaspect/perceptor.h>
 
-/** \class CollisionPerceptor is used to store collisions as they
-    occur within the scenegraph. It is inteded to be used together
-    with the PerceptorHandler that passes collision information from
-    the physics system on to this perceptor.
-*/
+/**
+ * @class CollisionPerceptor
+ * @brief Perceptor for collisions.
+ * @ingroup perceptors
+ *
+ * The CollisionPerceptor is used to store collisions as they occur within the scenegraph.
+ * It is inteded to be used together with the PerceptorHandler that passes collision information from the physics system on to this perceptor.
+ */
 class CollisionPerceptor : public oxygen::Perceptor
 {
 public:
-    /** \param predicate set "collidees" as a TLeafList as arguments of predicate
-        \return true if data is available
+    /**
+     * @param predicate set "collidees" as a @ref TLeafList as arguments of predicate
+     * @return true if data is available
      */
     virtual bool Percept(boost::shared_ptr<oxygen::PredicateList> predList);
 
@@ -52,6 +56,6 @@ protected:
 
 };
 
-DECLARE_CLASS(CollisionPerceptor);
+DECLARE_CLASS(CollisionPerceptor)
 
 #endif //COLLISIONPERCEPTOR_H

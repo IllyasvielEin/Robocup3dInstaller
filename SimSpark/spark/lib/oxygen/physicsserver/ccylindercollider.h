@@ -76,7 +76,7 @@ protected:
     virtual bool ConstructInternal();
 };
 
-DECLARE_CLASS(CCylinderCollider);
+DECLARE_CLASS(CCylinderCollider)
 
 } //namespace oxygen
 

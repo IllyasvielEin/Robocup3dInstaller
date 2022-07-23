@@ -36,6 +36,7 @@
 #define OXYGEN_SCENE_H
 
 #include <oxygen/oxygen_defines.h>
+#include <salt/bounds.h>
 #include "basenode.h"
 
 namespace oxygen
@@ -71,6 +72,15 @@ public:
 
     /** return he modification count at the last update */
     int GetLastCacheUpdate();
+
+    salt::AABB3 GetSpawningArea();
+
+    salt::Vector3f& GetSpawningOffset();
+
+    salt::Vector3f& GetNextSpawningPosition();
+
+    /* load the spawning parameters */
+    void LoadSpawningParameters();
 protected:
     void UpdateCacheInternal();
 
@@ -82,9 +92,21 @@ protected:
     
     /** the modification count at the last update */
     int mLastCacheUpdate;
+
+    /* the area in which to spawn new agents */
+    salt::AABB3 mSpawningArea;
+
+    /* offset to describe how far to place the next agent away from the last spawned agent */
+    salt::Vector3f mSpawningOffset;
+
+    /* the position to spawn the next agent to */
+    salt::Vector3f mNextSpawningPosition;
+private:
+    /* indicates if the spawning parameters have already been loaded */
+    bool mSpawningParametersLoaded;
 };
 
-DECLARE_CLASS(Scene);
+DECLARE_CLASS(Scene)
 
 } //namespace oxygen
 #endif //OXYGEN_SCENE_H

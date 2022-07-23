@@ -24,7 +24,7 @@
 
 void CLASS(AgentCollisionHandler)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/CollisionHandler);
+  DEFINE_BASECLASS(oxygen/CollisionHandler)
 }
 
 

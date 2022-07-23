@@ -27,5 +27,5 @@ using namespace salt;
 
 void CLASS(TransformCollider)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Collider);
+    DEFINE_BASECLASS(oxygen/Collider)
 }

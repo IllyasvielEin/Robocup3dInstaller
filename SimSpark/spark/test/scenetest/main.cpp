@@ -145,8 +145,6 @@ static float processInput()
 */
 static void renderFrame(float deltaTime)
 {
-        static float t = 0.0f;
-
 #if 0 // as it used to be before the split
         shared_ptr<SceneServer> sceneServer = static_pointer_cast<SceneServer>(gContext->Get("/sys/server/scene"));
         if (sceneServer.get() != NULL)

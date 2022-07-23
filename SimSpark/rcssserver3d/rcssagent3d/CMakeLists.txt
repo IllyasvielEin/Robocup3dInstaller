@@ -33,6 +33,4 @@ target_link_libraries(rcssagent3d
     optimized ${KEROSIN_LIBRARY_RELEASE}
 )
 
-set_target_properties(rcssagent3d PROPERTIES
-    INSTALL_RPATH "${RPATH_DIRECTORIES}")
 install(TARGETS rcssagent3d DESTINATION ${BINDIR})

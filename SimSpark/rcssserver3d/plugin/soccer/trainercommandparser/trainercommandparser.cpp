@@ -635,7 +635,7 @@ void TrainerCommandParser::ParseKillCommand(const oxygen::Predicate & predicate)
       specified = false;
 
     string team;
-    TTeamIndex idx;
+    TTeamIndex idx = TI_NONE;
     Predicate::Iterator teamParam(predicate);
 
     // extract side
@@ -735,7 +735,7 @@ void TrainerCommandParser::ParseReposCommand(const oxygen::Predicate & predicate
     }
 }
 
-void TrainerCommandParser::ParseKillSimCommand(const oxygen::Predicate & predicate)
+void TrainerCommandParser::ParseKillSimCommand([[maybe_unused]] const oxygen::Predicate & predicate)
 {
     mSimServer->Quit();
 }

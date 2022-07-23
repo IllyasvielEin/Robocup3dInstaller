@@ -23,16 +23,12 @@ set(guisimplelayout_FORMS
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### create library ###############
 
 #Meta object compiler wrapping of header files, forms and resources
-QT4_WRAP_CPP(guisimplelayout_QOBJECT_HEADERS_MOC ${guisimplelayout_QOBJECT_HEADERS})
-QT4_WRAP_UI(guisimplelayout_FORMS_HEADERS ${guisimplelayout_FORMS})
-#QT4_ADD_RESOURCES(guisimplelayout_RESOURCES_RCC ${guisimplelayout_RESOURCES})
+qt5_wrap_cpp(guisimplelayout_QOBJECT_HEADERS_MOC ${guisimplelayout_QOBJECT_HEADERS})
+qt5_wrap_ui(guisimplelayout_FORMS_HEADERS ${guisimplelayout_FORMS})
+#qt5_add_resources(guisimplelayout_RESOURCES_RCC ${guisimplelayout_RESOURCES})
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR} 
@@ -54,7 +50,7 @@ add_library(
 target_link_libraries(
   guisimplelayout
   ${OPENGL_LIBRARIES} 
-  ${QT_LIBRARIES} 
+  ${Qt5Widgets_LIBRARIES} 
   ${spark_gui_libs})
 
 if (NOT APPLE)

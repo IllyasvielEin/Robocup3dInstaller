@@ -23,9 +23,7 @@
 #define ROSIMPORTER_H
 
 #include <map>
-#ifndef Q_MOC_RUN
 #include <boost/shared_array.hpp>
-#endif
 #include <salt/matrix.h>
 #include <oxygen/sceneserver/sceneimporter.h>
 #include <oxygen/geometryserver/trimesh.h>
@@ -429,6 +427,6 @@ protected:
     TRosJointStack mJointStack;
 };
 
-DECLARE_CLASS(RosImporter);
+DECLARE_CLASS(RosImporter)
 
 #endif // ROSIMPORTER_H

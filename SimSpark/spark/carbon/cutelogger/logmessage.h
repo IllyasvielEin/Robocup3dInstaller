@@ -54,12 +54,12 @@ public:
     LogMessage();
 
 public:
-    QString mMessage; /*!< Log message. */
     QDateTime mTimeStamp; /*!< Timestamp at which the message was thrown. */
-    Logger::LogLevel mLogLevel; /*!< Log level of the message. */
     std::string mFile; /*!< File the message originated from. */
-    int mLine; /*!< Line of the file the message originated from. */
     std::string mFunction; /*!< Name of the function the message originated from. */
+    QString mMessage; /*!< Log message. */
+    Logger::LogLevel mLogLevel; /*!< Log level of the message. */
+    int mLine; /*!< Line of the file the message originated from. */
     unsigned int mMessageSourceId; /*!< Source id of the source the message originated from. Sources can be specified in the Logger. */
 };
 

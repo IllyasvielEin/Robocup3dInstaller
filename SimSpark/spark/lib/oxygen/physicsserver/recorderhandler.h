@@ -106,7 +106,7 @@ protected:
     TCollisionSet mCollisionSet;
 };
 
-    DECLARE_CLASS(RecorderHandler);
+    DECLARE_CLASS(RecorderHandler)
 
 } //namespace oxygen
 

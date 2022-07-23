@@ -54,7 +54,7 @@ private:
     unsigned long mLastTicks;
 };
 
-DECLARE_CLASS(TimerSystemSDL);
+DECLARE_CLASS(TimerSystemSDL)
 
 } // namespace oxygen
 

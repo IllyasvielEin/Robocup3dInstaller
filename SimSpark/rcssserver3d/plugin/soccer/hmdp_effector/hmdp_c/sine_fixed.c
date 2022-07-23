@@ -107,4 +107,3 @@ int sin_fixed(int deg)
 {
     return cos_fixed(deg + 500);
 }
-;

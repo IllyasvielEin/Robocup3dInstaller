@@ -24,5 +24,5 @@
 
 void CLASS(TimePerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

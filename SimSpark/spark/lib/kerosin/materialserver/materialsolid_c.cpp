@@ -159,12 +159,12 @@ FUNCTION(MaterialSolid,setShininess)
 
 void CLASS(MaterialSolid)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/Material);
-    DEFINE_FUNCTION(setAmbient);
-    DEFINE_FUNCTION(setDiffuse);
-    //    DEFINE_FUNCTION(setDiffuseVal);
-    DEFINE_FUNCTION(setSpecular);
-    DEFINE_FUNCTION(setEmission);
-    DEFINE_FUNCTION(setDepthCheck);
-    DEFINE_FUNCTION(setShininess);
+    DEFINE_BASECLASS(kerosin/Material)
+    DEFINE_FUNCTION(setAmbient)
+    DEFINE_FUNCTION(setDiffuse)
+    //    DEFINE_FUNCTION(setDiffuseVal)
+    DEFINE_FUNCTION(setSpecular)
+    DEFINE_FUNCTION(setEmission)
+    DEFINE_FUNCTION(setDepthCheck)
+    DEFINE_FUNCTION(setShininess)
 }

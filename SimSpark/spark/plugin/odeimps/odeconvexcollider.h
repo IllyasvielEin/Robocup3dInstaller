@@ -31,6 +31,6 @@ public:
     ConvexColliderImp();
 };
 
-DECLARE_CLASS(ConvexColliderImp);
+DECLARE_CLASS(ConvexColliderImp)
 
 #endif //ODECONVEXCOLLIDER_H

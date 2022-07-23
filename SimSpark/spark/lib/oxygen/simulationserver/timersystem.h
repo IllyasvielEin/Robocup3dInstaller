@@ -52,7 +52,7 @@ public:
     virtual void Finalize() {}
 };
 
-DECLARE_ABSTRACTCLASS(TimerSystem);
+DECLARE_ABSTRACTCLASS(TimerSystem)
 
 } // namespace oxygen
 

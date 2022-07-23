@@ -111,6 +111,9 @@ void Core::Construct(const boost::weak_ptr<Core>& self)
 {
     mSelf = self;
 
+    // setup default library search paths
+    mLibraryLocations.push_back(BUNDLE_LIBRARY_PATH + salt::RFile::Sep());
+
     // setup the node class
     mNodeClass.reset(new CLASS(Node));
     BindClass(mNodeClass);
@@ -283,6 +286,11 @@ bool Core::RegisterClassObject(Class *classObject, const std::string &subDir)
     return RegisterClassObject(boost::shared_ptr<Class>(classObject), subDir);
 }
 
+void Core::AddLibraryLocation(const std::string &path)
+{
+	mLibraryLocations.push_back(path + salt::RFile::Sep());
+}
+
 bool Core::ImportBundle(const std::string& bundleName)
 {
     TBundleMap::const_iterator iter = mBundles.find(bundleName);
@@ -293,7 +301,7 @@ bool Core::ImportBundle(const std::string& bundleName)
         }
 
     boost::shared_ptr<SharedLibrary> bundle(new SharedLibrary());
-    if (!bundle->Open(bundleName))
+    if (!bundle->Open(bundleName, mLibraryLocations))
         {
             mLogServer->Error() << "(Core) ERROR: Could not open '"
                                 << bundleName << "'" << endl;

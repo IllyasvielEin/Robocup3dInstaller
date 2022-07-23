@@ -47,7 +47,7 @@ private:
     static boost::shared_ptr<ConeColliderInt> mConeColliderImp;
 };
 
-DECLARE_CLASS(ConeCollider);
+DECLARE_CLASS(ConeCollider)
 
 } //namespace oxygen
 

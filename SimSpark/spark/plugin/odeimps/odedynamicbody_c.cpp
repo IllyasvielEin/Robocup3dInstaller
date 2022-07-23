@@ -23,5 +23,5 @@
 
 void CLASS(DynamicBodyImp)::DefineClass()
 {
-    DEFINE_BASECLASS(BodyImp);
+    DEFINE_BASECLASS(BodyImp)
 }

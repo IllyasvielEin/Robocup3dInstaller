@@ -42,6 +42,6 @@ public:
         kerosin::SoundModule*   CreateModule(kerosin::SoundServer &soundServer);
 };
 
-DECLARE_CLASS(SoundSystemBASS);
+DECLARE_CLASS(SoundSystemBASS)
 
 #endif //SOUNDSYSTEMBASS_H__

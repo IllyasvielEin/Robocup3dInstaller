@@ -99,7 +99,7 @@ bool NetClient::Connect()
             mSocket->bind(local);
         }
 
-    catch (BindErr error)
+    catch (const BindErr& error)
         {
             GetLog()->Error()
                 << "(NetClient) '" << GetName()
@@ -116,7 +116,7 @@ bool NetClient::Connect()
             mSocket->connect(server);
         }
 
-    catch (ConnectErr error)
+    catch (const ConnectErr& error)
         {
             GetLog()->Error()
                 << "(NetClient) '" << GetName()

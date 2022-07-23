@@ -103,7 +103,7 @@ protected:
     boost::shared_array<char> mBuffer;
 };
 
-DECLARE_CLASS(NetClient);
+DECLARE_CLASS(NetClient)
 
 } // namespace oxygen
 

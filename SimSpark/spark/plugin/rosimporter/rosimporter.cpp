@@ -44,9 +44,7 @@
 #include <kerosin/sceneserver/capsule.h>
 #include <kerosin/sceneserver/staticmesh.h>
 #include <kerosin/renderserver/renderserver.h>
-#ifndef Q_MOC_RUN
 #include <boost/scoped_array.hpp>
-#endif
 
 using namespace salt;
 using namespace zeitgeist;
@@ -63,7 +61,9 @@ static const string S_VISUAL("visual_");
 static const string S_MACRO("macro_");
 static const string S_UNNAMED("<unnamed>");
 
+#ifdef WIN32
 #pragma warning(disable: 4244)
+#endif
 
 // --- RosImporter::TVertexList
 
@@ -284,8 +284,6 @@ boost::shared_ptr<Transform> RosImporter::CreateTransform(boost::shared_ptr<Base
 
     ApplyTransform(transform, trans);
     parent->AddChildReference(transform);
-
-    Vector3f pos = transform->GetWorldTransform().Pos();
 
     return transform;
 }

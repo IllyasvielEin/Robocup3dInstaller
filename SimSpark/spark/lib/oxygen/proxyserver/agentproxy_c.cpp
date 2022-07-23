@@ -26,5 +26,5 @@ using namespace std;
 
 void CLASS(AgentProxy)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
+    DEFINE_BASECLASS(zeitgeist/Node)
 }

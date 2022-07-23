@@ -41,6 +41,6 @@ public:
     float GetTorque(long jointID) const;
 };
 
-DECLARE_CLASS(HingeJointImp);
+DECLARE_CLASS(HingeJointImp)
 
 #endif //ODEHINGEJOINT_H

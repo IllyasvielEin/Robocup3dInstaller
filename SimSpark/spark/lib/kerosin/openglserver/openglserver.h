@@ -113,7 +113,7 @@ protected:
     boost::shared_ptr<OpenGLSystem> mGLSystem;
 };
 
-DECLARE_CLASS(OpenGLServer);
+DECLARE_CLASS(OpenGLServer)
 
 } //namespace kerosin
 

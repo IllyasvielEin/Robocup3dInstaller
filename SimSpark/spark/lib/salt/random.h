@@ -22,10 +22,8 @@
 #ifndef SALT_RANDOM_H
 #define SALT_RANDOM_H
 
-#ifndef Q_MOC_RUN
 #include <boost/random.hpp>
 #include <boost/version.hpp>
-#endif
 #include "salt_defines.h"
 
 namespace salt
@@ -54,13 +52,11 @@ public:
     { static RandomEngine the_instance; return the_instance; }
 private:
     RandomEngine() : boost::mt19937() {}
-    RandomEngine(const RandomEngine&) { assert(false); }
+    RandomEngine(const RandomEngine&) = delete;
 };
 
 #if (defined(BOOST_VERSION) && (BOOST_VERSION >= 103100))
-#ifndef Q_MOC_RUN
 #include <boost/random/variate_generator.hpp>
-#endif
 
 /** This random number generator should be used to produce
  *  uniformly distributed random numbers.

@@ -21,6 +21,8 @@
 #include "simspark.h"
 
 #include "carbon.h"
+#include "openglmanager.h"
+#include "guisimcontrol.h"
 #include <zeitgeist/fileserver/fileserver.h>
 #include <zeitgeist/zeitgeist.h>
 #include <oxygen/simulationserver/simulationserver.h>
@@ -30,9 +32,6 @@
 #include <kerosin/renderserver/rendercontrol.h>
 #include <kerosin/inputserver/inputcontrol.h>
 #include <kerosin/kerosin.h>
-
-#include "openglmanager.h"
-#include "guisimcontrol.h"
 
 #include "cutelogger/logstream.h"
 
@@ -80,16 +79,18 @@ std::string SimSpark::RubyValue::toString() const
 //--------------------------------------------------------------
 
 SimSpark::SimSpark(const std::string& sparkScriptsPath, const std::string& sparkScript, const std::string& scriptPath, const std::vector<std::string>& additionalScripts) :
-        mState(SSS_PREINIT),
         Spark(sparkScriptsPath),
         mScriptPath(scriptPath),
         mSparkScript(sparkScript),
         mSparkScriptsPrefix(sparkScriptsPath),
-        mAdditionalScripts(additionalScripts)
+        mAdditionalScripts(additionalScripts),
+        mResourceLocations(),
+        mLogStreams(),
+        mReset(false),
+        mRunExecuted(false),
+        mReady(false),
+        mState(SSS_PREINIT)
 {
-    mReset = false;
-    mRunExecuted = false;
-    mReady = false;
 }
 
 SimSpark::~SimSpark()
@@ -415,7 +416,6 @@ int SimSpark::ExecuteRunScripts()
     for (auto it = mScriptValues.begin(); it != mScriptValues.end(); it++)
     {
         std::stringstream command;
-        bool isString = (it->second.mType == RVT_STRING);
         command << "$" << it->first << " = " << it->second.toString();
         LOG_INFO() << "Setting script variable: " << command.str().c_str();
         scriptServer->Eval(command.str());

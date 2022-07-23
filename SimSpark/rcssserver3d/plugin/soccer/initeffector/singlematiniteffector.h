@@ -39,6 +39,6 @@ protected:
     virtual void PrePhysicsUpdateInternal(float deltaTime);
 };
 
-DECLARE_CLASS(SingleMatInitEffector);
+DECLARE_CLASS(SingleMatInitEffector)
 
 #endif // SINGLEMATINITEFFECTOR_H

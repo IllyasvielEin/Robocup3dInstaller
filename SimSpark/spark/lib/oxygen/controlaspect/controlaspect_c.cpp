@@ -27,5 +27,5 @@ using namespace oxygen;
 
 void CLASS(ControlAspect)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
+    DEFINE_BASECLASS(oxygen/BaseNode)
 }

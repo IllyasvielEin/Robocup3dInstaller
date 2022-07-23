@@ -83,8 +83,8 @@ FUNCTION(SceneServer,initSceneImporter)
 
 void CLASS(SceneServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(createScene);
-    DEFINE_FUNCTION(setActiveScene);
-    DEFINE_FUNCTION(initSceneImporter);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(createScene)
+    DEFINE_FUNCTION(setActiveScene)
+    DEFINE_FUNCTION(initSceneImporter)
 }

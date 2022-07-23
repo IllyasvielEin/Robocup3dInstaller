@@ -45,7 +45,7 @@ public:
     virtual void Render() = 0;
 };
 
-DECLARE_ABSTRACTCLASS(CustomRender);
+DECLARE_ABSTRACTCLASS(CustomRender)
 
 } //namespace kerosin
 

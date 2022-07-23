@@ -40,39 +40,39 @@ SimulationSetup::SimulationSetup(QString name, QString filename, bool reloadall,
     mFileName(filename),
     mRemoveAll(removeall),
     mReloadAll(reloadall),
+    mDontSave(false),
     mAddPlugins(addlist),
     mRemovePlugins(removelist),
     mTaskDefinitions(tasklist),
     mSaved(saved)
 {
-    mDontSave = false;
 }
 
-SimulationSetup::SimulationSetup(QString name, QString filename, bool reloadall, bool removeall, bool saved)
+SimulationSetup::SimulationSetup(QString name, QString filename, bool reloadall, bool removeall, bool saved) :
+    mName(name),
+    mFileName(filename),
+    mRemoveAll(removeall),
+    mReloadAll(reloadall),
+    mDontSave(false),
+    mAddPlugins(),
+    mRemovePlugins(),
+    mTaskDefinitions(),
+    mSaved(saved)
 {
-    mName = name;
-    mFileName = filename;
-    mRemoveAll = removeall;
-    mReloadAll = removeall;
-    mSaved = saved;
-    mDontSave = false;
-
-    mTaskDefinitions.clear();
-    mAddPlugins.clear();
-    mRemovePlugins.clear();
 }
 
 SimulationSetup::SimulationSetup(const SimulationSetup& source) :
+    QObject(),
     mName(source.mName),
     mFileName(source.mFileName),
     mRemoveAll(source.mRemoveAll),
     mReloadAll(source.mReloadAll),
-    mTaskDefinitions(source.mTaskDefinitions),
+    mDontSave(false),
     mAddPlugins(source.mAddPlugins),
     mRemovePlugins(source.mRemovePlugins),
+    mTaskDefinitions(source.mTaskDefinitions),
     mSaved(source.mSaved)
 {
-    mDontSave = false;
 }
 
 SimulationSetup& SimulationSetup::operator=(const SimulationSetup& source)
@@ -89,18 +89,17 @@ SimulationSetup& SimulationSetup::operator=(const SimulationSetup& source)
     return *this;
 }
 
-SimulationSetup::SimulationSetup()
+SimulationSetup::SimulationSetup() :
+    mName(""),
+    mFileName(""),
+    mRemoveAll(false),
+    mReloadAll(false),
+    mDontSave(false),
+    mAddPlugins(),
+    mRemovePlugins(),
+    mTaskDefinitions(),
+    mSaved(false)
 {
-    mName = "";
-    mFileName = "";
-    mRemoveAll = false;
-    mReloadAll = false;
-    mSaved = false;
-    mDontSave = false;
-
-    mTaskDefinitions.clear();
-    mAddPlugins.clear();
-    mRemovePlugins.clear();
 }
 
 SimulationSetup::~SimulationSetup()

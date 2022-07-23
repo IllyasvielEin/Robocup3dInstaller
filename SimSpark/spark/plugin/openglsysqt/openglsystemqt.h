@@ -49,6 +49,6 @@ public:
     virtual void SwapBuffers();
 };
 
-DECLARE_CLASS(OpenGLSystemQT);
+DECLARE_CLASS(OpenGLSystemQT)
 
 #endif //OPENGLSYSTEMQT_H__

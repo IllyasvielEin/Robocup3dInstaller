@@ -207,12 +207,15 @@ public:
     */
     virtual ~Plugin();
 
+    using AbstractPlugin::loadData;
     /*!
      \brief Virtual function to signal a plugin to load data from a QSettings save file.
 
      \param data source file
     */
     virtual void loadData(QSettings& data);
+
+    using AbstractPlugin::saveData;
     /*!
      \brief Virtual function to signal a plugin to save its data to a QSettings save file.
     */

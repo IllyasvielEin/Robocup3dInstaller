@@ -143,6 +143,6 @@ private:
     double mSigmaPhiMid;
 };
 
-DECLARE_CLASS(KickEffector);
+DECLARE_CLASS(KickEffector)
 
 #endif // KICKEFFECTOR_H

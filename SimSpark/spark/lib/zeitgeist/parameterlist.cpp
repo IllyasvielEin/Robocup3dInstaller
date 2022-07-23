@@ -365,7 +365,7 @@ namespace
   
   const salt::Matrix matrix;
   const boost::any anyDummyMatrix(matrix);
-};
+}
 
 
 

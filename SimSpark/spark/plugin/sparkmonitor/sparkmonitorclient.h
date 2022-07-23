@@ -77,6 +77,6 @@ protected:
     sexp_mem_t *mSexpMemory;
 };
 
-DECLARE_CLASS(SparkMonitorClient);
+DECLARE_CLASS(SparkMonitorClient)
 
 #endif // SPARKMONITORCLIENT_H

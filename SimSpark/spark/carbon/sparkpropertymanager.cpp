@@ -36,7 +36,7 @@ namespace SparkProperty
 //--------------------------------------------------------------
 
 PropertyManager::PropertyManager(PropertyList* parent, shared_ptr<SparkController> controller) :
-    mParent(parent), mSparkController(controller)
+    mSparkController(controller), mParent(parent)
 {
 }
 

@@ -39,6 +39,6 @@ protected:
     virtual void PrePhysicsUpdateInternal(float deltaTime);
 };
 
-DECLARE_CLASS(StaticMeshInitEffector);
+DECLARE_CLASS(StaticMeshInitEffector)
 
 #endif // STATIC_MESH_INIT_EFFECTOR_H

@@ -63,8 +63,8 @@ FUNCTION(InputControl,setFPSController)
 
 void CLASS(InputControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
-    DEFINE_FUNCTION(setAdvanceTime);
-    DEFINE_FUNCTION(getAdvanceTime);
-    DEFINE_FUNCTION(setFPSController);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
+    DEFINE_FUNCTION(setAdvanceTime)
+    DEFINE_FUNCTION(getAdvanceTime)
+    DEFINE_FUNCTION(setFPSController)
 }

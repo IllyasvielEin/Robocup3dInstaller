@@ -32,6 +32,6 @@ public:
     void SetFixed(long jointID);
 };
 
-DECLARE_CLASS(FixedJointImp);
+DECLARE_CLASS(FixedJointImp)
 
 #endif //ODEFIXEDJOINT_H

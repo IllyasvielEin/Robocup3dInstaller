@@ -144,7 +144,7 @@ protected:
     GenericSurfaceParameter* mSurfaceParameter;
 };
 
-DECLARE_CLASS(ContactJointHandler);
+DECLARE_CLASS(ContactJointHandler)
 
 } //namespace oxygen
 

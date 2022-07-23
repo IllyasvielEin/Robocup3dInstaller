@@ -31,6 +31,6 @@ public:
     ConcaveColliderImp();
 };
 
-DECLARE_CLASS(ConcaveColliderImp);
+DECLARE_CLASS(ConcaveColliderImp)
 
 #endif //ODECONCAVECOLLIDER_H

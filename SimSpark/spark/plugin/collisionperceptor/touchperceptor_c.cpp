@@ -27,5 +27,5 @@ using namespace oxygen;
 
 void CLASS(TouchPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(CollisionPerceptor);
+    DEFINE_BASECLASS(CollisionPerceptor)
 }

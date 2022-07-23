@@ -23,9 +23,7 @@
 #include "abstractplugin.h"
 #include "topic.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/make_shared.hpp>
-#endif
 
 using namespace boost;
 

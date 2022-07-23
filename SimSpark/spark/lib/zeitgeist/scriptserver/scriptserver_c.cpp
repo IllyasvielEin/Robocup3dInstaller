@@ -32,6 +32,6 @@ FUNCTION(ScriptServer,updateCachedAllNodes)
 
 void CLASS(ScriptServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
-    DEFINE_FUNCTION(updateCachedAllNodes);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
+    DEFINE_FUNCTION(updateCachedAllNodes)
 }

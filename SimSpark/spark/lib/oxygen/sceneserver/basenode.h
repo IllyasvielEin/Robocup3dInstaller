@@ -151,7 +151,7 @@ protected:
     TLeafList mBaseNodeChildren;
 };
 
-DECLARE_CLASS(BaseNode);
+DECLARE_CLASS(BaseNode)
 
 } //namespace oxygen
 #endif //OXYGEN_BASENODE_H

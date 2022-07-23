@@ -20,9 +20,7 @@
 #ifndef KEROSIN_INPUTITEM_H
 #define KEROSIN_INPUTITEM_H
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 #include "inputserver.h"
 #include <zeitgeist/leaf.h>
 #include <kerosin/kerosin_defines.h>
@@ -46,7 +44,7 @@ public:
     virtual void ProcessInput(const Input& input) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(InputItem);
+DECLARE_ABSTRACTCLASS(InputItem)
 
 } // namespace kerosin
 

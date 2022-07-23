@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 3.8)
 
 project(simspark CXX C)
-set(PACKAGE_VERSION "0.3.2")
+set(PACKAGE_VERSION "0.3.3")
 
 ########## check for headerfiles/libraries ##########
 include(CheckIncludeFile) 
@@ -48,6 +48,10 @@ if (WIN32)
   endif (${CMAKE_CXX_COMPILER} MATCHES "mingw")
 endif (WIN32)
 
+if(POLICY CMP0072)
+  cmake_policy(SET CMP0072 NEW)
+endif()
+
 include(AdditionalSearchPaths)
 
 find_package(Ruby REQUIRED)
@@ -58,7 +62,7 @@ find_package(wxWidgets COMPONENTS gl base core)
 find_package(ODE REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(SDL REQUIRED)
-find_package(Qt4 COMPONENTS QtGui QtCore QtXml QtOpenGl)
+find_package(Qt5 COMPONENTS Gui Core Xml OpenGL)
 find_package(FMOD)
 find_package(ZLIB)
 set(HAVE_IL_IL_H 1)
@@ -103,7 +107,10 @@ if (WIN32)
 endif (WIN32)
  
 ########## add extra flags ########## 
-include(EnableCXX11)
+# Default to C++17
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 if(NOT CMAKE_BUILD_TYPE)
   set (CMAKE_BUILD_TYPE Release)
 endif(NOT CMAKE_BUILD_TYPE)
@@ -112,14 +119,15 @@ add_definitions(-DHAVE_CONFIG_H ${ODE_CFLAGS})
 include_directories(${CMAKE_BINARY_DIR} ${Boost_INCLUDE_DIRS} ${ODE_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
-if (UNIX)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Woverloaded-virtual")
-endif (UNIX)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -Wpedantic -Woverloaded-virtual)
+endif()
 
 set(BINDIR "bin" CACHE PATH "The directory to install binaries into.")
 set(LIBDIR "lib" CACHE PATH "The directory to install libraries into.")
 set(DATADIR "share" CACHE PATH "The directory to install data files into.")
 set(INCLUDEDIR "include" CACHE PATH "The directory to install includes into.")
+set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/${LIBDIR}/${CMAKE_PROJECT_NAME}")
 set(CMAKE_SHARED_MODULE_PREFIX "")
 
 set(CARBON_LAYOUT_LIB_DIR ${LIBDIR}/guilayout CACHE PATH "The directory to install carbon gui layout libraries into.")
@@ -192,6 +200,7 @@ endif (CMAKE_BUILD_TYPE STREQUAL "Debug")
 
 
 ########## generate configuration file ##########
+set(BUNDLE_LIBRARY_PATH ${CMAKE_INSTALL_PREFIX}/${LIBDIR}/${CMAKE_PROJECT_NAME})
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/sparkconfig.h.cmake
     ${CMAKE_CURRENT_BINARY_DIR}/sparkconfig.h)
 

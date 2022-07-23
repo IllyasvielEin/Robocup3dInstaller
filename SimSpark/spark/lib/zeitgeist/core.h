@@ -24,12 +24,11 @@
 
 #include <string>
 #include <list>
+#include <vector>
 #include <map>
 #include <set>
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
 #include <boost/weak_ptr.hpp>
-#endif
 #include "zeitgeist_defines.h"
 
 namespace salt
@@ -241,6 +240,11 @@ public:
      */
     bool RegisterClassObject(Class *classObject, const std::string &subDir);
 
+    /** adds a library search path
+     * \param path the path to add
+     */
+    void AddLibraryLocation(const std::string &path);
+
     /** imports a bundle, i.e. registers classes contained inside
      *  a plugin to the framework.
      * \param bundleName is the filneName of the bundle
@@ -380,6 +384,9 @@ private:
 
     //! the internal node lookup cache
     TPathCache mPathCache;
+
+    /** a list of library locations */
+    std::vector<std::string> mLibraryLocations;
 };
 
 } //namespace zeitgeist

@@ -27,5 +27,5 @@ using namespace zeitgeist;
 
 void CLASS(Scene)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/BaseNode);
+        DEFINE_BASECLASS(oxygen/BaseNode)
 }

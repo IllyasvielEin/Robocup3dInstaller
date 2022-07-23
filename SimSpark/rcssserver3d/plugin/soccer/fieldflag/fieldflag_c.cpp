@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(FieldFlag)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Transform);
+    DEFINE_BASECLASS(oxygen/Transform)
 }

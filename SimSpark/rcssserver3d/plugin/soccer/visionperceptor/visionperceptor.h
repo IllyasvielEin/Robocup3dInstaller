@@ -44,6 +44,14 @@ protected:
         float mDist;  // distance between perceptor and object
         salt::Vector3f mRelPos;
 
+        ObjectData() :
+            mObj(),
+            mTheta(0),
+            mPhi(0),
+            mDist(0),
+            mRelPos()
+        {}
+
         ObjectData& operator=(const ObjectData& rhs)
         {
             mObj     = rhs.mObj;
@@ -177,6 +185,6 @@ protected:
     boost::shared_ptr<AgentState> mAgentState;
 };
 
-DECLARE_CLASS(VisionPerceptor);
+DECLARE_CLASS(VisionPerceptor)
 
 #endif //VISIONPERCEPTOR_H

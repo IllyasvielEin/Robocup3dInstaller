@@ -22,5 +22,5 @@
 
 void CLASS(UniversalJointPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

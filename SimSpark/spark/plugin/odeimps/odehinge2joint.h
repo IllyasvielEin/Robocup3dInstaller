@@ -41,6 +41,6 @@ public:
     float GetAngleRate2(long jointID);
 };
 
-DECLARE_CLASS(Hinge2JointImp);
+DECLARE_CLASS(Hinge2JointImp)
 
 #endif //ODEHINGE2JOINT_H

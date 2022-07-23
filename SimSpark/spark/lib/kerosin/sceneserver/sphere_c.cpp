@@ -42,6 +42,6 @@ FUNCTION(Sphere,setRadius)
 
 void CLASS(Sphere)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/SingleMatNode);
-    DEFINE_FUNCTION(setRadius);
+    DEFINE_BASECLASS(kerosin/SingleMatNode)
+    DEFINE_FUNCTION(setRadius)
 }

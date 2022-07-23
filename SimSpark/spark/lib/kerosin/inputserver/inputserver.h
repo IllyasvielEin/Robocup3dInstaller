@@ -180,7 +180,7 @@ private:
     TBindMap mBindings;
 };
 
-DECLARE_CLASS(InputServer);
+DECLARE_CLASS(InputServer)
 
 } // kerosin
 

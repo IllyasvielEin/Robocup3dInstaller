@@ -46,7 +46,7 @@ private:
     static boost::shared_ptr<ConvexColliderInt> mConvexColliderImp;
 };
 
-DECLARE_ABSTRACTCLASS(ConvexCollider);
+DECLARE_ABSTRACTCLASS(ConvexCollider)
 
 } //namespace oxygen
 

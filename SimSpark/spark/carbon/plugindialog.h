@@ -249,6 +249,7 @@ public:
     */
     virtual void keyPressEvent(QKeyEvent *event);
 
+    using QTableView::selectedIndexes;
     /*!
      \brief Returns a list of all selected model indices.
     */

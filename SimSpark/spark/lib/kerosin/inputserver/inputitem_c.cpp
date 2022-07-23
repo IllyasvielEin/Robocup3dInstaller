@@ -24,5 +24,5 @@ using namespace std;
 
 void CLASS(InputItem)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

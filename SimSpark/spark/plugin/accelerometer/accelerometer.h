@@ -24,6 +24,11 @@
 #include <oxygen/agentaspect/perceptor.h>
 #include <oxygen/physicsserver/rigidbody.h>
 
+/**
+ * @class Accelerometer
+ * @brief Perceptor representing an accelerometer sensor.
+ * @ingroup perceptors
+ */
 class Accelerometer : public oxygen::Perceptor {
 public:
     Accelerometer();
@@ -44,6 +49,6 @@ private:
     salt::Vector3f mLastVel;
 };
 
-DECLARE_CLASS(Accelerometer);
+DECLARE_CLASS(Accelerometer)
 
 #endif //ACCELEROMETER_H

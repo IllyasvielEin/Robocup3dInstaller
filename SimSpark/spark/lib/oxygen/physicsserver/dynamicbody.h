@@ -47,7 +47,7 @@ private:
     static boost::shared_ptr<DynamicBodyInt> mDynamicBodyImp;
 };
 
-DECLARE_CLASS(DynamicBody);
+DECLARE_CLASS(DynamicBody)
 
 } //namespace oxygen
 

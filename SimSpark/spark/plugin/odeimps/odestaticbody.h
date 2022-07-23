@@ -31,6 +31,6 @@ public:
     StaticBodyImp();
 };
 
-DECLARE_CLASS(StaticBodyImp);
+DECLARE_CLASS(StaticBodyImp)
 
 #endif //ODESTATICBODY_H

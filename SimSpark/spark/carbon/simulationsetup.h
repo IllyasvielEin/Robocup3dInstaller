@@ -453,13 +453,13 @@ private:
 
     QString mName;     /*!< Internal name of the setup. (not unique!) */
     QString mFileName; /*!< Absolute filepath for the setup. (unique)*/
-    TTaskDefinitions mTaskDefinitions;  /*!< List of definitions for tasks to load. */
+    bool mRemoveAll;   /*!< If true, all plugins that are not in add list will be removed. */
+    bool mReloadAll;   /*!< If true, all plugins that are not removed will be reloaded. */
+    bool mDontSave;    /*!< If true, the setup wont be saved and there will be no MessageBoxes out of the SimulationManager asking to save. */
     TPluginDefinitions mAddPlugins;     /*!< List of definitions for Plugins to load. */
     TPluginDefinitions mRemovePlugins;  /*!< List of definitions for Plugins to unload. */
-    bool mReloadAll;   /*!< If true, all plugins that are not removed will be reloaded. */
-    bool mRemoveAll;   /*!< If true, all plugins that are not in add list will be removed. */
+    TTaskDefinitions mTaskDefinitions;  /*!< List of definitions for tasks to load. */
     bool mSaved;       /*!< True when the setup has been saved to a file in its actual state. Set to false whenever a value is changed. Has to be set externally.*/
-    bool mDontSave;    /*!< If true, the setup wont be saved and there will be no MessageBoxes out of the SimulationManager asking to save. */
 };
 
 #endif //SIMULATIONSETUP_H

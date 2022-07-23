@@ -358,7 +358,6 @@ AbstractPlugin* PluginManager::reloadPlugin(AbstractPlugin& plugin, PluginDefini
     LOG_DEBUG() << "Reloading plugin with id " << plugin.getPluginId() << " (" << plugin.getCaption() << ").";
 
     //Store data
-    int classId = plugin.getClassId();
     QString className = plugin.getClassName();
     QString caption = plugin.getCaption();
     EPluginType pluginType = plugin.getPluginType();
@@ -749,8 +748,6 @@ std::vector<AbstractPlugin*> PluginManager::findPlugins(const QString& name, con
                    (searchType    ? ", type "    : ", any type"   ) + (searchType    ? QString("%1").arg(type).toStdString().c_str() : "");
     LOG_DEBUG() << "Searching Plugins with: " << description;*/
 
-    int count = 0;
-    TPluginMap::iterator pos =  mPluginMap.end();
     for (auto it = mPluginMap.begin(); it != mPluginMap.end(); it++)
     {
         bool matches = true;
@@ -839,7 +836,6 @@ bool PluginManager::declareExtensionPlugin(int pluginId, bool extension, bool up
         //Find extension in extension list
         bool found = false;
         int index = 0;
-        int id = 0;
         for (auto it = mExtensions->getAddPlugins().begin(); it != mExtensions->getAddPlugins().end(); it++)
         {
             if (it->get()->getId() == plugin->getPluginId())
@@ -880,7 +876,6 @@ void PluginManager::notifyDestruction(int pluginId)
     LOG_DEBUG() << "Plugin with id " << pluginId << " got deleted. Removing from manager.";
 
     //Search class of the plugin from the instance list
-    int classId = 0;
     for (TPluginInstanceMap::iterator it = mPluginInstanceMap.begin(); it != mPluginInstanceMap.end(); it++)
     {
         std::map<int, int>::iterator pos = it->second.find(pluginId);
@@ -1302,14 +1297,12 @@ void PluginManager::updateSetting(QString name)
     if (mSettings->beginGroup("gui_PluginManager", true)) //lock
     {
         mIncludePathsMutex.lock();
-        bool unknown = false;
         loaded = true;
 
         if      (name.compare("mPluginPaths") == 0) mPluginIncludeDirectories = mSettings->value(name, mPluginIncludeDirectories).toStringList();
         else if (name.compare("mPluginFiles") == 0) mPluginIncludeFiles       = mSettings->value(name, mPluginIncludeFiles).toStringList();
         else
         {
-            unknown = true;
             loaded = false;
         }
 
@@ -1471,12 +1464,12 @@ PluginTableModel::~PluginTableModel()
 {
 }
 
-int PluginTableModel::rowCount (const QModelIndex & parent) const
+int PluginTableModel::rowCount ([[maybe_unused]] const QModelIndex & parent) const
 {
     return mPlugins.size();
 }
 
-int PluginTableModel::columnCount (const QModelIndex & parent) const
+int PluginTableModel::columnCount ([[maybe_unused]] const QModelIndex & parent) const
 {
     return COLUMN_COUNT;
 }

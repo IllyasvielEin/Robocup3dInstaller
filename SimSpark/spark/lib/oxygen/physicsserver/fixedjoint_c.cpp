@@ -33,6 +33,6 @@ FUNCTION(FixedJoint, setFixed)
 
 void CLASS(FixedJoint)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
-    DEFINE_FUNCTION(setFixed);
+    DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
+    DEFINE_FUNCTION(setFixed)
 }

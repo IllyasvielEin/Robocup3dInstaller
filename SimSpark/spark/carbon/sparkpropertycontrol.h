@@ -209,10 +209,9 @@ protected:
     //protected members
 
     PropertyManager* mParent; /*!< Parent property manager. */
-    boost::shared_ptr<SparkController> mSparkController; /*!< SparkController to interact with. */
-    boost::shared_ptr<PropertyExecuter> mExecuter; /*!< Executer which calls the read and write update functions. */
-
     QString mName; /*!< Name of the PropertyControl. */
+    boost::shared_ptr<PropertyExecuter> mExecuter; /*!< Executer which calls the read and write update functions. */
+    boost::shared_ptr<SparkController> mSparkController; /*!< SparkController to interact with. */
 };
 
 } //namespace SparkProperty

@@ -73,13 +73,12 @@ PluginDefinition::PluginDefinition(const QString& name, const QString& caption, 
     mName(name),
     mCaption(caption),
     mPluginType(plugintype),
-    mReloadDefinition(reloaddefinition),
     mParameterList(parameters),
-    mAttachmentList(attachments)
+    mAttachmentList(attachments),
+    mReloadDefinition(reloaddefinition),
+    mIsExtension(false),
+    mId(-1)
 {
-    mIsExtension = false;
-    mId = -1;
-
     if (plugintype != PT_FRAME && attachments.size() > 0)
     {
         LOG_WARNING() << "Attachment points only available for attachable frame plugins.";
@@ -88,6 +87,7 @@ PluginDefinition::PluginDefinition(const QString& name, const QString& caption, 
 }
 
 PluginDefinition::PluginDefinition(const PluginDefinition& obj) :
+    QObject(),
     mName            (obj.mName),
     mCaption         (obj.mCaption),
     mPluginType      (obj.mPluginType),

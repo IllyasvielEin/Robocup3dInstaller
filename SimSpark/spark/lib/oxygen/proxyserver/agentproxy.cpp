@@ -77,13 +77,13 @@ void AgentProxy::Start(boost::shared_ptr<rcss::net::Socket> agentSocket,
             &AgentProxy::ServerConnectionHandler, this);
         return;
     }
-    catch (BindErr error)
+    catch (const BindErr& error)
     {
         GetLog()->Error() << "(AgentProxy) '" << GetName()
                 << "' failed to bind socket with '" << error.what() << "'"
                 << endl;
     }
-    catch (ConnectErr error)
+    catch (const ConnectErr& error)
     {
         GetLog()->Error() << "(AgentProxy) '" << GetName()
                 << "' connection failed with: '" << error.what() << "'" << endl;

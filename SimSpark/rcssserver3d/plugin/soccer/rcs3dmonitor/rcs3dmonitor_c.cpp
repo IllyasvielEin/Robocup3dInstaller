@@ -24,6 +24,6 @@
 void
 CLASS(RCS3DMonitor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseParser);
+    DEFINE_BASECLASS(oxygen/BaseParser)
 }
 

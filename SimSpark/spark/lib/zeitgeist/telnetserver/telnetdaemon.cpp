@@ -1,9 +1,7 @@
 #include "telnetdaemon.h"
 #include "telnetserver.h"
 #include "telnetsession.h"
-#ifndef Q_MOC_RUN
 #include <boost/thread/thread.hpp>
-#endif
 #include <iostream>
 
 using namespace zeitgeist;

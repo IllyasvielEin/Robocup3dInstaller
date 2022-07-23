@@ -167,17 +167,17 @@ FUNCTION(SimulationServer, setMaxStepsPerCyle)
 
 void CLASS(SimulationServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(quit);
-    DEFINE_FUNCTION(initControlNode);
-    DEFINE_FUNCTION(initTimerSystem);
-    DEFINE_FUNCTION(getTime);
-    DEFINE_FUNCTION(resetTime);
-    DEFINE_FUNCTION(setSimStep);
-    DEFINE_FUNCTION(getSimStep);
-    DEFINE_FUNCTION(setAutoTimeMode);
-    DEFINE_FUNCTION(getAutoTimeMode);
-    DEFINE_FUNCTION(setMultiThreads);
-    DEFINE_FUNCTION(setAdjustSpeed);
-    DEFINE_FUNCTION(setMaxStepsPerCyle);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(quit)
+    DEFINE_FUNCTION(initControlNode)
+    DEFINE_FUNCTION(initTimerSystem)
+    DEFINE_FUNCTION(getTime)
+    DEFINE_FUNCTION(resetTime)
+    DEFINE_FUNCTION(setSimStep)
+    DEFINE_FUNCTION(getSimStep)
+    DEFINE_FUNCTION(setAutoTimeMode)
+    DEFINE_FUNCTION(getAutoTimeMode)
+    DEFINE_FUNCTION(setMultiThreads)
+    DEFINE_FUNCTION(setAdjustSpeed)
+    DEFINE_FUNCTION(setMaxStepsPerCyle)
 }

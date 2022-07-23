@@ -57,6 +57,6 @@ private:
     boost::shared_ptr<AgentState> mAgentState;
 };
 
-    DECLARE_CLASS(AgentCollisionHandler);
+DECLARE_CLASS(AgentCollisionHandler)
 
 #endif // AGENTCOLLISIONHANDLER_H

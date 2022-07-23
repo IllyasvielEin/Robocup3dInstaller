@@ -59,7 +59,7 @@ private:
     static boost::shared_ptr<BallJointInt> mBallJointImp;
 };
 
-DECLARE_CLASS(BallJoint);
+DECLARE_CLASS(BallJoint)
 
 } // namespace oxygen
 

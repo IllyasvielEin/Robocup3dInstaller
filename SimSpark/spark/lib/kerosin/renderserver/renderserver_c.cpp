@@ -29,5 +29,5 @@ using namespace zeitgeist;
 void
 CLASS(RenderServer)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/BaseRenderServer);
+    DEFINE_BASECLASS(kerosin/BaseRenderServer)
 }

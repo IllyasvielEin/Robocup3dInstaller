@@ -64,8 +64,9 @@ bool LogFrame::mFirstConsole = true;
 //--------------------------------------------------------------
 
 LogFrame::LogFrame() :
-      mSettings(getCarbon()->getSettings()),
-      IMessageReceiver(true) //IMessageReceiver with queued message receiving, since our virtual receiveMessage() function must only be called by the owning thread
+      IMessageReceiver(true), //IMessageReceiver with queued message receiving, since our virtual receiveMessage() function must only be called by the owning thread
+      ui(),
+      mSettings(getCarbon()->getSettings())
 {
     //------------------------
     //Layout & Design

@@ -24,5 +24,5 @@
 void
 CLASS(InputSystemQt)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/InputSystem);
+    DEFINE_BASECLASS(kerosin/InputSystem)
 }

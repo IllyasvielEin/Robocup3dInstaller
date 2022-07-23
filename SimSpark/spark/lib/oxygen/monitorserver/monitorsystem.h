@@ -68,7 +68,7 @@ public:
     virtual void ParseMonitorMessage(const std::string& /* data */) = 0;
 };
 
-DECLARE_ABSTRACTCLASS(MonitorSystem);
+DECLARE_ABSTRACTCLASS(MonitorSystem)
 
 } // namespace oxygen
 

@@ -23,5 +23,5 @@
 
 void CLASS(StaticMeshInitEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(InitEffector);
+    DEFINE_BASECLASS(InitEffector)
 }

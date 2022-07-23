@@ -50,6 +50,6 @@ void SettingsWidget::updateSettings()
 
 void SettingsWidget::updateSetting(QString name)
 {
-    LOG_WARNING() << "UpdateSetting(QString) called on base class. This function only has effect if a derived SettingsWidget reimplements it.";
+    LOG_WARNING() << "UpdateSetting(QString) called on base class with setting name: \"" << name << "\". This function only has effect if a derived SettingsWidget reimplements it.";
 }
 

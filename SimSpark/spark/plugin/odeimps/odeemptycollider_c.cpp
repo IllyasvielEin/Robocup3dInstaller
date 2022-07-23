@@ -23,5 +23,5 @@
 
 void CLASS(EmptyColliderImp)::DefineClass()
 {
-    DEFINE_BASECLASS(ColliderImp);
+    DEFINE_BASECLASS(ColliderImp)
 }

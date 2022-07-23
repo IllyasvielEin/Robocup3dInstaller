@@ -24,5 +24,5 @@
 
 void CLASS(FileSystemRAR)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/FileSystem);
+        DEFINE_BASECLASS(zeitgeist/FileSystem)
 }

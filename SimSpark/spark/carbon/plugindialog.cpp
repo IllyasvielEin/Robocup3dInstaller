@@ -428,7 +428,6 @@ void PluginDialog::deletePlugin()
     {
         //Single deletion
         PluginManager* manager = Carbon::get()->getPluginManager();
-        EPluginType type = mChosenPlugin->getPluginType();
 
         QMessageBox messageBox;
         messageBox.setText(QString(tr("Do you really want to delete plugin '%1'? %2"))

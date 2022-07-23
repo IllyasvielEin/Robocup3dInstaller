@@ -33,7 +33,7 @@ using namespace salt;
 
 #ifdef WIN32
 
-bool SharedLibrary::Open(const std::string &libName)
+bool SharedLibrary::Open(const std::string &libName, [[maybe_unused]] const std::vector<std::string> &libSearchPaths)
 {
         if (mLibHandle)
         {
@@ -69,7 +69,7 @@ void SharedLibrary::Close()
 #else
 
 bool
-SharedLibrary::Open(const std::string &libName)
+SharedLibrary::Open(const std::string &libName, const std::vector<std::string> &libSearchPaths)
 {
     if (mLibHandle)
     {
@@ -80,7 +80,17 @@ SharedLibrary::Open(const std::string &libName)
 #endif
     mLibHandle = ::dlopen((libName + ".so").c_str(), RTLD_LAZY);
 
-   // old code
+    // search for shared library in library search paths in case the library was not loaded successfully
+    std::vector<std::string>::const_iterator it = libSearchPaths.begin();
+    while (mLibHandle == 0 && it != libSearchPaths.end())
+    {
+#if INIT_DEBUG
+        std::cerr << "(SharedLibrary) Checking Library path: " << (*it) << std::endl;
+#endif
+        mLibHandle = ::dlopen(((*it) + libName + ".so").c_str(), RTLD_LAZY);
+        ++it;
+    }
+
     if (mLibHandle == 0)
     {   // we didn't find the plugin, so we try again...
         /* mainly to work with MacOS bundles, so that plugins can be located like this:
@@ -93,48 +103,6 @@ SharedLibrary::Open(const std::string &libName)
               --plugins/ < - plugins live here - >
         */
         mLibHandle = ::dlopen((RFile::BundlePath() + "Contents/plugins/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    // if we didn't find the plugin try usr/local/lib[64]
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/local/lib/simspark/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/local/lib64/simspark/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/local/lib/rcssserver3d/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/local/lib64/rcssserver3d/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    // if we still didn't find the plugin try usr/lib[64]
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/lib/simspark/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/lib64/simspark/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/lib/rcssserver3d/" + libName + ".so").c_str(), RTLD_LAZY);
-    }
-    
-    if (mLibHandle == 0)
-    {
-        mLibHandle = ::dlopen(("/usr/lib64/rcssserver3d/" + libName + ".so").c_str(), RTLD_LAZY);
     }
     
     if (mLibHandle == 0)

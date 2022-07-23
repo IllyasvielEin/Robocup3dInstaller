@@ -910,7 +910,7 @@ void SetupFrame::loadTaskEntry(int type, QLineEdit* target)
         QFileInfo foundInfo(dialog.selectedFiles().at(0));
         QString saveName;
         if ((type == 0 && mSimulationManager->hasExecutable(foundInfo.fileName())) || 
-             type != 0 && mSimulationManager->hasScript(foundInfo.fileName()))
+             (type != 0 && mSimulationManager->hasScript(foundInfo.fileName())))
             saveName = foundInfo.fileName();
         else
             saveName = foundInfo.absoluteFilePath();
@@ -1632,7 +1632,6 @@ void SetupFrame::updateSetupListDisplay()
     mReactToChangeSetup = true;
 
     //Choose old setup again and add "unsaved" info
-    int i = 0;
     int pos = -1;
     for (auto it = mSetupList.begin(); it != mSetupList.end(); it++)
     {
@@ -2713,14 +2712,16 @@ void SetupFrame::editTaskListEntry(QListWidgetItem* item)
     checkTaskListEntry(item);
 
     if (ui.tasksAdditionalListList->currentItem() == item)
-    if ( item->textColor() == QColor(Qt::red))
     {
-        //Save it, but send a warning before changing
-        mChosenTaskListEntryIllegal = true;
-    }
-    else
-    {
-        mChosenTaskListEntryIllegal = false;
+        if (item->textColor() == QColor(Qt::red))
+        {
+            //Save it, but send a warning before changing
+            mChosenTaskListEntryIllegal = true;
+        }
+        else
+        {
+            mChosenTaskListEntryIllegal = false;
+        }
     }
 
     mReactToEditTaskListEntry = true;

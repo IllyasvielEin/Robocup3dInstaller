@@ -54,6 +54,6 @@ protected:
     boost::shared_ptr<GameStateAspect> mGameState;
 };
 
-DECLARE_CLASS(GameTimePerceptor);
+DECLARE_CLASS(GameTimePerceptor)
 
 #endif // GAMESTATEPERCEPTOR_H

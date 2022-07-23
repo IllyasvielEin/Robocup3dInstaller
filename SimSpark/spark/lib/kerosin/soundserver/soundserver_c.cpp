@@ -116,10 +116,10 @@ FUNCTION(SoundServer,playEffect)
 
 void CLASS(SoundServer)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/Leaf);
-        DEFINE_FUNCTION(init);
-        DEFINE_FUNCTION(getCPU);
-        DEFINE_FUNCTION(playStream);
-        DEFINE_FUNCTION(playModule);
-        DEFINE_FUNCTION(playEffect);
+        DEFINE_BASECLASS(zeitgeist/Leaf)
+        DEFINE_FUNCTION(init)
+        DEFINE_FUNCTION(getCPU)
+        DEFINE_FUNCTION(playStream)
+        DEFINE_FUNCTION(playModule)
+        DEFINE_FUNCTION(playEffect)
 }

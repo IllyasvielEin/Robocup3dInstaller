@@ -108,9 +108,17 @@ TaskDefinition::TaskDefinition(TaskDefinition::ETaskType type, const QString& na
     mFirstList = firstList;
 }
 
-TaskDefinition::TaskDefinition(const TaskDefinition& obj)
+TaskDefinition::TaskDefinition(const TaskDefinition& obj) :
+    QObject(),
+    mType(obj.mType),
+    mName(obj.mName),
+    mFirst(obj.mFirst),
+    mSecond(obj.mSecond),
+    mThird(obj.mThird),
+    mFirstList(obj.mFirstList),
+    mSecondList(obj.mSecondList),
+    mPriority(obj.mPriority)
 {
-    *this = obj;
 }
 
 TaskDefinition::TaskDefinition()

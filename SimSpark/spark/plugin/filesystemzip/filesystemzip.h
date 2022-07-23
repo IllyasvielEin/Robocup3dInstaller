@@ -164,6 +164,6 @@ protected:
     TEntryMap  mEntryMap;
 };
 
-DECLARE_CLASS(FileSystemZIP);
+DECLARE_CLASS(FileSystemZIP)
 
 #endif // FILESYSTEMZIP_H__

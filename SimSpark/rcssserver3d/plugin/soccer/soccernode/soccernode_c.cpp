@@ -29,5 +29,5 @@ using namespace std;
 void
 CLASS(SoccerNode)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
+    DEFINE_BASECLASS(oxygen/BaseNode)
 }

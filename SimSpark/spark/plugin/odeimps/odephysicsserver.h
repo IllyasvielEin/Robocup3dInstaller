@@ -36,6 +36,6 @@ public:
     void InitEngine();
 };
 
-DECLARE_CLASS(PhysicsServerImp);
+DECLARE_CLASS(PhysicsServerImp)
 
 #endif //ODEPHYSICSSERVER_H

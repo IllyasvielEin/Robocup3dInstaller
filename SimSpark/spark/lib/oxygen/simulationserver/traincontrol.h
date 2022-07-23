@@ -112,7 +112,7 @@ protected:
     int mNextClientId;
 };
 
-DECLARE_CLASS(TrainControl);
+DECLARE_CLASS(TrainControl)
 
 } // namespace oxygen
 

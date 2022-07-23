@@ -55,6 +55,6 @@ protected:
     boost::shared_ptr<SoccerInput> mInput;
 };
 
-DECLARE_CLASS(SoccerRender);
+DECLARE_CLASS(SoccerRender)
 
 #endif //KEROSIN_SOCCERRENDER_H

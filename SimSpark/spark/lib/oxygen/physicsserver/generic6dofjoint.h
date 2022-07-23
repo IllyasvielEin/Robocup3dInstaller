@@ -47,7 +47,7 @@ private:
     static boost::shared_ptr<Generic6DOFJointInt> mGeneric6DOFJointImp;
 };
 
-DECLARE_ABSTRACTCLASS(Generic6DOFJoint);
+DECLARE_ABSTRACTCLASS(Generic6DOFJoint)
 
 } //namespace oxygen
 

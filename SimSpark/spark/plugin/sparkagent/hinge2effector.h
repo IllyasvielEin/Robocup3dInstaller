@@ -25,6 +25,11 @@
 #include <oxygen/agentaspect/jointeffector.h>
 #include <oxygen/physicsserver/hinge2joint.h>
 
+/**
+ * @class Hinge2Effector
+ * @brief Effector for the hinge2 joint configuration.
+ * @ingroup effectors
+ */
 class Hinge2Effector : public oxygen::JointEffector<oxygen::Hinge2Joint>
 {
 public:
@@ -42,6 +47,6 @@ public:
     GetActionObject(const oxygen::Predicate& predicate);
 };
 
-DECLARE_CLASS(Hinge2Effector);
+DECLARE_CLASS(Hinge2Effector)
 
 #endif // HINGE2EFFECTOR_H

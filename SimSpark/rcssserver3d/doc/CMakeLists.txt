@@ -1,19 +1,12 @@
 add_subdirectory(users)
 
 find_package(Doxygen)
-find_package(Perl)
 
 if (DOXYGEN_DOT_EXECUTABLE)
   set(HAVE_DOT "YES")
 else (DOXYGEN_DOT_EXECUTABLE)
   set(HAVE_DOT "NO")
 endif (DOXYGEN_DOT_EXECUTABLE)
-
-if (PERL_FOUND)
-  set(PERL ${PERL_EXECUTABLE})
-else (PERL_FOUND)
-  set(PERL "perl")
-endif (PERL_FOUND)
 
 if (DOXYGEN_EXECUTABLE)
   # variables needed by Doxyfile.in
@@ -32,6 +25,5 @@ if (DOXYGEN_EXECUTABLE)
 endif (DOXYGEN_EXECUTABLE)
 
 add_custom_target(comment ALL echo '***'
-  COMMAND echo '*** To \(re-\)build the Doxygen API documentation, use \"make
-doc\"'
+  COMMAND echo '*** To \(re-\)build the Doxygen API documentation, use \"make doc\"'
   COMMAND echo '***')

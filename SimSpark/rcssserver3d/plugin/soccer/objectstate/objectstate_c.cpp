@@ -61,7 +61,7 @@ FUNCTION(ObjectState,setID)
 void
 CLASS(ObjectState)::DefineClass()
 {
-    DEFINE_BASECLASS(SoccerNode);
-    DEFINE_FUNCTION(setPerceptName);
-    DEFINE_FUNCTION(setID);
+    DEFINE_BASECLASS(SoccerNode)
+    DEFINE_FUNCTION(setPerceptName)
+    DEFINE_FUNCTION(setID)
 }

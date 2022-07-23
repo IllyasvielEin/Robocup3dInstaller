@@ -21,9 +21,7 @@
 #include "topic.h"
 #include "topicregistration.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/make_shared.hpp>
-#endif
 
 using namespace boost;
 
@@ -32,7 +30,7 @@ using namespace boost;
 //--------------------------------------------------------------
 
 Topic::Topic(CommunicationManager* manager, const QString& name)
-    : mName(name), mManager(manager)
+    : mManager(manager), mName(name)
 {
 }
 

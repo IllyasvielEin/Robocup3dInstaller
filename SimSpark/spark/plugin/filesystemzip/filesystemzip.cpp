@@ -24,17 +24,14 @@
 #include <zeitgeist/logserver/logserver.h>
 #include <string.h>
 #include <zlib.h>
-#ifndef Q_MOC_RUN
 #include <boost/regex.hpp>
-#endif
 
 #ifndef HAVE_STRUPR
 #include <ctype.h>
 char*
 strupr( char* s1 )
 {
-    int i;
-    for (i=0; i<strlen(s1); ++i)
+    for (size_t i=0; i<strlen(s1); ++i)
         {
             s1[i] = toupper(s1[i]);
         }

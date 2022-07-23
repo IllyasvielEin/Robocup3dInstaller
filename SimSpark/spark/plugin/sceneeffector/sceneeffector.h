@@ -23,7 +23,13 @@
 #define SCENEEFFECTOR_H
 
 #include <oxygen/agentaspect/effector.h>
+#include <oxygen/physicsserver/space.h>
 
+/**
+ * @class SceneEffector
+ * @brief Effector for importing scene graphs (e.g. robot models) into the simulation.
+ * @ingroup effectors
+ */
 class SceneEffector : public oxygen::Effector
 {
     //
@@ -43,8 +49,16 @@ public:
 protected:
     /** realizes the action described by the ActionObject */
     virtual void PrePhysicsUpdateInternal(float deltaTime);
+
+    virtual void OnLink();
+private:
+    /* increments nextSpawningPosition according to spawningOffset for the given scene */
+    void IncrementNextSpawningPosition(boost::shared_ptr<oxygen::Scene> scene);
+
+    /* calculates the bounding box of a space node */
+    salt::AABB3 GetAgentBoundingBox(boost::shared_ptr<oxygen::Space> space);
 };
 
-DECLARE_CLASS(SceneEffector);
+DECLARE_CLASS(SceneEffector)
 
 #endif // SCENEEFFECTOR_H

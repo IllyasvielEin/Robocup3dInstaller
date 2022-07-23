@@ -47,12 +47,12 @@ Plugin::~Plugin()
 // Protected
 //--------------------------------------------------------------
 
-void Plugin::loadData(QSettings& data)
+void Plugin::loadData([[maybe_unused]] QSettings& data)
 {
     LOG_DEBUG() << "No data to load...";
 }
 
-void Plugin::saveData(QSettings& data)
+void Plugin::saveData([[maybe_unused]] QSettings& data)
 {
     LOG_DEBUG() << "No data to save...";
 }

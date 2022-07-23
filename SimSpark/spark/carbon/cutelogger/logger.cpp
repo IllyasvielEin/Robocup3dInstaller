@@ -116,7 +116,7 @@ private:
 
 // Forward declarations
 static void cleanupLoggerPrivate();
-static void qtLoggerMessageHandler(QtMsgType type, const char* msg);
+static void qtLoggerMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 
 /**
  * \brief LoggerPrivate implements the public interface of the Logger class with the Singleton pattern.
@@ -149,7 +149,7 @@ public:
         {
             QWriteLocker locker(&mSelfLock);
             mSelf = new LoggerPrivate;
-            qInstallMsgHandler(qtLoggerMessageHandler);
+            qInstallMessageHandler(qtLoggerMessageHandler);
             qAddPostRoutine(cleanupLoggerPrivate);
             result = mSelf;
         }
@@ -278,7 +278,7 @@ public:
     */
     void write(Logger::LogLevel logLevel, const char* file, int line, const char* function, unsigned int source, const char* message)
     {
-        write(logLevel, file, line, function, source, QString::fromAscii(message));
+        write(logLevel, file, line, function, source, QString::fromLatin1(message));
     }
 
     /*!
@@ -416,7 +416,7 @@ static void cleanupLoggerPrivate()
     LoggerPrivate::mSelf = 0;
 }
 
-static void qtLoggerMessageHandler(QtMsgType type, const char* msg)
+static void qtLoggerMessageHandler(QtMsgType type, const QMessageLogContext &context, const QString &msg)
 {
     switch (type)
     {
@@ -431,6 +431,8 @@ static void qtLoggerMessageHandler(QtMsgType type, const char* msg)
             break;
         case QtFatalMsg:
             LOG_FATAL(msg);
+            break;
+        default:
             break;
     }
 }

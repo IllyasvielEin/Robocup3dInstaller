@@ -77,6 +77,6 @@ protected:
                         TObjMatValueVector & matVector); 
 };
 
-DECLARE_CLASS(ObjImporter);
+DECLARE_CLASS(ObjImporter)
 
 #endif // OBJIMPORTER_H

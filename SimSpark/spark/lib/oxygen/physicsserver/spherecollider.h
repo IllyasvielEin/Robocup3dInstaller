@@ -60,7 +60,7 @@ private:
     static boost::shared_ptr<SphereColliderInt> mSphereColliderImp;
 };
 
-DECLARE_CLASS(SphereCollider);
+DECLARE_CLASS(SphereCollider)
 
 } //namespace oxygen
 

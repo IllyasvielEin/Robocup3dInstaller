@@ -114,7 +114,7 @@ protected:
     std::string             mHostName;
 };
 
-    DECLARE_CLASS(TelnetServer);
+    DECLARE_CLASS(TelnetServer)
 
 }
 

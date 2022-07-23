@@ -25,10 +25,8 @@
 #include <sparkconfig.h>
 #endif
 
-#ifndef Q_MOC_RUN
 #include <boost/cstdint.hpp>
 #include <boost/shared_ptr.hpp>
-#endif
 #include "rcssnet3D_defines.h"
 #include "addr.hpp"
 

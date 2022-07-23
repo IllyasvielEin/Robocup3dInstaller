@@ -120,6 +120,6 @@ protected:
     int mCycle;
 };
 
-DECLARE_CLASS(SoccerbotBehavior);
+DECLARE_CLASS(SoccerbotBehavior)
 
 #endif // SOCCERBOTBEHAVIOR_H

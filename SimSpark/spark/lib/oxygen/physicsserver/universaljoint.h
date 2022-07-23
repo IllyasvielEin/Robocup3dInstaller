@@ -81,7 +81,7 @@ private:
     static boost::shared_ptr<UniversalJointInt> mUniversalJointImp;
 };
 
-DECLARE_CLASS(UniversalJoint);
+DECLARE_CLASS(UniversalJoint)
 
 } // namespace oxygen
 

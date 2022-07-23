@@ -25,5 +25,5 @@ using namespace oxygen;
 
 void CLASS(Accelerometer)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

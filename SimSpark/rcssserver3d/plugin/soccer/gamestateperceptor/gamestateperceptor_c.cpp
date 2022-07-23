@@ -28,5 +28,5 @@ using namespace oxygen;
 void
 CLASS(GameStatePerceptor)::DefineClass()
 {
-  DEFINE_BASECLASS(oxygen/Perceptor);
+  DEFINE_BASECLASS(oxygen/Perceptor)
 }

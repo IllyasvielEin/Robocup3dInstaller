@@ -35,6 +35,6 @@ public:
 
 };
 
-DECLARE_CLASS(TouchPerceptor);
+DECLARE_CLASS(TouchPerceptor)
 
 #endif //TOUCHPERCEPTOR_H

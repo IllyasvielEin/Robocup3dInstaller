@@ -23,5 +23,5 @@
 
 void CLASS(SoundSystemBASS)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/Base);
+        DEFINE_BASECLASS(zeitgeist/Base)
 }

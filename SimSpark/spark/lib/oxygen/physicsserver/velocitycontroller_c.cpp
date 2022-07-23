@@ -46,7 +46,7 @@ FUNCTION(VelocityController,getMaxVelocity)
 
 void CLASS(VelocityController)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BodyController);
-    DEFINE_FUNCTION(setMaxVelocity);
-    DEFINE_FUNCTION(getMaxVelocity);
+    DEFINE_BASECLASS(oxygen/BodyController)
+    DEFINE_FUNCTION(setMaxVelocity)
+    DEFINE_FUNCTION(getMaxVelocity)
 }

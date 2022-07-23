@@ -104,7 +104,7 @@ protected:
     CachedPath<kerosin::OpenGLServer> mOpenGLServer;
 };
 
-DECLARE_CLASS(Material2DTexture);
-};
+DECLARE_CLASS(Material2DTexture)
+}
 
 #endif // KEROSIN_MATERIAL2DTEXTURE_H

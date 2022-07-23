@@ -67,6 +67,6 @@ protected:
     std::string mScenePath;
 };
 
-DECLARE_ABSTRACTCLASS(SoccerControlAspect);
+DECLARE_ABSTRACTCLASS(SoccerControlAspect)
 
 #endif // SOCCERCONTROLASPECT_H

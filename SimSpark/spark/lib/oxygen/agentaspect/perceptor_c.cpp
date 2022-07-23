@@ -60,7 +60,7 @@ FUNCTION(Perceptor, setInterval)
 void
 CLASS(Perceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
-    DEFINE_FUNCTION(setPredicateName);
-    DEFINE_FUNCTION(setInterval);
+    DEFINE_BASECLASS(oxygen/BaseNode)
+    DEFINE_FUNCTION(setPredicateName)
+    DEFINE_FUNCTION(setInterval)
 }

@@ -31,6 +31,6 @@ public:
     Generic6DOFJointImp();
 };
 
-DECLARE_CLASS(Generic6DOFJointImp);
+DECLARE_CLASS(Generic6DOFJointImp)
 
 #endif //ODEGENERIC6DOFJOINT_H

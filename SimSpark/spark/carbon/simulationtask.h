@@ -31,9 +31,7 @@
 #include "taskdefinition.h"
 #include "carbon.h"
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 class ThreadState;
 class SimulationThread;
@@ -113,16 +111,16 @@ protected:
         /*!
            \brief Returns the error message.
          */
-        virtual QString message()
+        virtual QString message() const
         {
             return (hasMessage? mMessage + " " : "") + QString("Illegal thread definition: ") + TaskDefinition::getTypeString(mType) + QString(" Expected type: ") +
                     TaskDefinition::getTypeString(mExpectedType);
         }
 
     private:
+        const QString mMessage; /*!< Error message. */
         const TaskDefinition::ETaskType mType;         /*!< Type received. */
         const TaskDefinition::ETaskType mExpectedType; /*!< Type expected. */
-        const QString mMessage; /*!< Error message. */
         bool hasMessage;        /*!< True if there is a message. */
     };
 
@@ -324,9 +322,9 @@ protected:
 private:
     // private members
 
-    SimulationTaskMessenger* mMessenger;                /*!< Messenger who receives and sends signals for the task. */
     boost::shared_ptr<TaskDefinition> mTaskDefinition;  /*!< Definition of the task. */
     ETaskExecutionState mExecutionState;                /*!< Current execution state of the task. */
+    SimulationTaskMessenger* mMessenger;                /*!< Messenger who receives and sends signals for the task. */
     int mId;                                            /*!< Id of the task, specified by the owning Simulation. */
 };
 

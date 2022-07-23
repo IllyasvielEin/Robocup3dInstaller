@@ -48,6 +48,6 @@ FUNCTION(PerfectVisionPerceptor,setInversion)
 void
 CLASS(PerfectVisionPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
-    DEFINE_FUNCTION(setInversion);
+    DEFINE_BASECLASS(oxygen/Perceptor)
+    DEFINE_FUNCTION(setInversion)
 }

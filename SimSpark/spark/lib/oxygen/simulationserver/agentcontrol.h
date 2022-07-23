@@ -20,12 +20,11 @@
 #ifndef OXYGEN_AGENTCONTROL_H
 #define OXYGEN_AGENTCONTROL_H
 
+#include <mutex>
 #include "netcontrol.h"
 #include <oxygen/oxygen_defines.h>
 #include <oxygen/gamecontrolserver/gamecontrolserver.h>
-#ifndef Q_MOC_RUN
 #include <boost/thread/barrier.hpp>
-#endif
 
 namespace oxygen
 {
@@ -84,8 +83,11 @@ protected:
     void WaitMaster();
 
     /** called in an agent thread to wait for the master thread to signal
-     * a new task */
-    void WaitSlave(boost::barrier* &currentBarrier);
+     * a new task
+     * @param currentBarrier the barrier known to the agent thread
+     * @param newAgent true if this is an agent thread's first call to WaitSlave
+     */
+    void WaitSlave(boost::barrier* &currentBarrier, bool newAgent);
 
 protected:
     /** cached reference to the GameControlServer */
@@ -112,11 +114,17 @@ protected:
     boost::thread_group mThreadGroup;
     int nThreads;
 
+    /** mutex to protect nThreads and mThreadBarrierNew */
+    std::mutex mThreadBarrierMutex;
+
+    /** list of new clients for which an agent thread has to be created */
+    std::vector<boost::shared_ptr<Client>> mNewClients;
+
     /** indicates what should happen in the agent thread right now */
     enum { STARTCYCLE, SENSEAGENT, ENDCYCLE } mThreadAction;
 };
 
-DECLARE_CLASS(AgentControl);
+DECLARE_CLASS(AgentControl)
 
 } // namespace oxygen
 

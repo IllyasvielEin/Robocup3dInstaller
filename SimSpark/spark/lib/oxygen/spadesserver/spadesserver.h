@@ -273,7 +273,7 @@ private:
     float mTimePerStep;
 };
 
-DECLARE_CLASS(SpadesServer);
+DECLARE_CLASS(SpadesServer)
 
 } // namespace oxygen
 

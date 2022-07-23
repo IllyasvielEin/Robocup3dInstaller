@@ -106,10 +106,10 @@ FUNCTION(ImagePerceptor, setOffScreen)
 
 void CLASS(ImagePerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
-    DEFINE_FUNCTION(setResolution);
-    DEFINE_FUNCTION(setFOV);
-    DEFINE_FUNCTION(setZNear);
-    DEFINE_FUNCTION(setZFar);
-    DEFINE_FUNCTION(setOffScreen);
+    DEFINE_BASECLASS(oxygen/Perceptor)
+    DEFINE_FUNCTION(setResolution)
+    DEFINE_FUNCTION(setFOV)
+    DEFINE_FUNCTION(setZNear)
+    DEFINE_FUNCTION(setZFar)
+    DEFINE_FUNCTION(setOffScreen)
 }

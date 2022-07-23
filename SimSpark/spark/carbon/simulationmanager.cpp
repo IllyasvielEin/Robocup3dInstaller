@@ -1271,7 +1271,6 @@ void SimulationManager::findFiles(QStringList& target, const QStringList& includ
     mIncludePathsMutex.lock();
 
     //Search in all include directories
-    bool found = false;
     QString foundPath("");
     for (QStringList::ConstIterator it = includeDirectories.begin(); it != includeDirectories.end(); it++)
     {
@@ -1817,9 +1816,6 @@ bool SimulationManager::loadSimulationSetupByDialog(bool loadFromSavePath, bool 
         QStringList files = dialog.selectedFiles();
         QString file = files.at(0);
 
-        int index = getSetupIndexByFilePath(file);
-        bool includepath = containsSetupIncludePath(file); //loading from an include pathw
-
         //Load setup from file
         return initializeSimulationFromFile(file, false, loadData);
     }
@@ -1834,7 +1830,6 @@ shared_ptr<SimulationSetup> SimulationManager::loadSimulationSetup(QDomDocument&
     QDomNode n = docElem.firstChild();
 
     bool hasName = false;
-    bool hasCaption = false;
     bool hasAddPlugins = false;
     bool hasRemovePlugins = false;
     bool hasTasks = false;
@@ -2396,7 +2391,6 @@ shared_ptr<SimulationSetup> SimulationManager::saveSimulationSetupProtected(Simu
 shared_ptr<SimulationSetup> SimulationManager::saveSimulationSetupProtected(boost::shared_ptr<SimulationSetup> setup, int& err, bool directOverwrite, bool rememberPath)
 {
     bool overwrite = false;
-    bool create = false;
 
     if (!setup->isToSave())
     {
@@ -2531,7 +2525,6 @@ shared_ptr<SimulationSetup> SimulationManager::saveSimulationSetupProtected(boos
     }
 
     QDir targetDir = info.absoluteDir();
-    bool returning = saveThis;
     if (saveThis)
     {
         bool renamed = targetDir.rename(info.fileName(), "tempsetup.tmp");
@@ -2822,13 +2815,17 @@ bool SimulationManager::removeIncludeDirectory(const QString& path)
     }
 
     if (returning == true)
-    if (mSettings->beginGroup("gui_SimulationManager", true)) //lock
     {
-        mSettings->setValue("mSetupPaths", mSetupIncludeDirectories);
-        mSettings->endGroup(true); //unlock
+        if (mSettings->beginGroup("gui_SimulationManager", true)) //lock
+        {
+            mSettings->setValue("mSetupPaths", mSetupIncludeDirectories);
+            mSettings->endGroup(true); //unlock
+        }
+        else
+        {
+            LOG_ERROR() << "Could not access settings object.";
+        }
     }
-    else
-        LOG_ERROR() << "Could not access settings object.";
 
     mIncludePathsMutex.unlock();
 
@@ -2850,13 +2847,17 @@ bool SimulationManager::removeIncludeFile(const QString& path)
     }
 
     if (returning == true)
-    if (mSettings->beginGroup("gui_SimulationManager", true)) //lock
     {
-        mSettings->setValue("mSetupFiles", mSetupIncludeFiles);
-        mSettings->endGroup(true); //unlock
+        if (mSettings->beginGroup("gui_SimulationManager", true)) //lock
+        {
+            mSettings->setValue("mSetupFiles", mSetupIncludeFiles);
+            mSettings->endGroup(true); //unlock
+        }
+        else
+        {
+            LOG_ERROR() << "Could not access settings object.";
+        }
     }
-    else
-        LOG_ERROR() << "Could not access settings object.";
 
     mIncludePathsMutex.unlock();
 
@@ -2865,9 +2866,7 @@ bool SimulationManager::removeIncludeFile(const QString& path)
 
 int SimulationManager::getNextTaskId()
 {
-    int returning = mNextTaskId;
-    mNextTaskId++;
-    return mNextTaskId;
+    return ++mNextTaskId;
 }
 
 //--------------------------------------------------------------
@@ -2908,7 +2907,6 @@ bool SimulationManager::chooseFile(SimulationSetup& setup, bool tryExistingFirst
             QString name = info.fileName();
 
             QString informative;
-            bool targetOk = false;
             {
                 int index = getSetupIndexByFilePath(file);
                 if (index != -1)

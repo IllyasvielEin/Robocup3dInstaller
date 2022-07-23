@@ -38,6 +38,6 @@ FUNCTION(FileSystem,setPath)
 
 void CLASS(FileSystem)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
-    DEFINE_FUNCTION(setPath);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
+    DEFINE_FUNCTION(setPath)
 }

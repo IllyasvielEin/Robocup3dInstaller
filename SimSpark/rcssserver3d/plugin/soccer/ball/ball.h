@@ -70,7 +70,7 @@ private:
     boost::shared_ptr<BallStateAspect> mBallStateAspect;
 };
 
-DECLARE_CLASS(Ball);
+DECLARE_CLASS(Ball)
 
 
 #endif // BALL_H

@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(MeshImporter)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

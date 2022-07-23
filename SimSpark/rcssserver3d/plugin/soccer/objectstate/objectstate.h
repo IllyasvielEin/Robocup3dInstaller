@@ -66,6 +66,6 @@ protected:
     TPerceptStringMap mIDs;
 };
 
-DECLARE_CLASS(ObjectState);
+DECLARE_CLASS(ObjectState)
 
 #endif // OBJECTSTATE_H

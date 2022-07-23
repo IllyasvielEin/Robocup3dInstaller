@@ -24,5 +24,5 @@
 void
 CLASS(OpenGLSystemSDL)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/OpenGLSystem);
+    DEFINE_BASECLASS(kerosin/OpenGLSystem)
 }

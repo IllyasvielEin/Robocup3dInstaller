@@ -22,9 +22,7 @@
 #ifndef OXYGEN_PROXYSERVER_H
 #define OXYGEN_PROXYSERVER_H
 
-#ifndef Q_MOC_RUN
 #include <boost/ptr_container/ptr_list.hpp>
-#endif
 #include <oxygen/oxygen_defines.h>
 #include <zeitgeist/class.h>
 #include <zeitgeist/leaf.h>
@@ -76,7 +74,7 @@ private:
     boost::ptr_list<AgentProxy> mClientProxyList;
 };
 
-DECLARE_CLASS(ProxyServer);
+DECLARE_CLASS(ProxyServer)
 
 } // namespace oxygen
 

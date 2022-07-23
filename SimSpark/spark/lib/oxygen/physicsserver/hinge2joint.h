@@ -62,7 +62,7 @@ private:
     static boost::shared_ptr<Hinge2JointInt> mHinge2JointImp;
 };
 
-DECLARE_CLASS(Hinge2Joint);
+DECLARE_CLASS(Hinge2Joint)
 
 } // namespace oxygen
 

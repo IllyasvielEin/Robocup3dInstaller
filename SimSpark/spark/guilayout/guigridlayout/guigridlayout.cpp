@@ -35,7 +35,7 @@
 // Public
 //--------------------------------------------------------------
 
-GuiGridLayout::GuiGridLayout(QWidget *parent, Qt::WFlags flags)
+GuiGridLayout::GuiGridLayout(QWidget *parent, Qt::WindowFlags flags)
     : QMainWindow(parent, flags)
 {
     WindowManager* windowManager = Carbon::get()->getWindowManager();

@@ -24,5 +24,5 @@
 void
 CLASS(SexpParser)::DefineClass()
 {
-        DEFINE_BASECLASS(oxygen/BaseParser);
+        DEFINE_BASECLASS(oxygen/BaseParser)
 }

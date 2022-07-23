@@ -63,7 +63,7 @@ protected:
     std::string mCommand;
 };
 
-DECLARE_ABSTRACTCLASS(Behavior);
+DECLARE_ABSTRACTCLASS(Behavior)
 
 } // namespace oxygen
 

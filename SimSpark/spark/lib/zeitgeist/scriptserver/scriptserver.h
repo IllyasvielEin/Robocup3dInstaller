@@ -206,7 +206,7 @@ protected:
 private:
   };
 
-DECLARE_CLASS(ScriptServer);
+DECLARE_CLASS(ScriptServer)
 
 } //namespace zeitgeist
 

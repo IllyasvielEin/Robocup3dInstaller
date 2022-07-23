@@ -55,6 +55,6 @@ private:
     bool mWantsToQuit;
 };
 
-DECLARE_CLASS(OpenGLSystemSDL);
+DECLARE_CLASS(OpenGLSystemSDL)
 
 #endif //OPENGLSYSTEMSDL_H__

@@ -55,7 +55,7 @@ protected:
     SceneDict* mSceneDict;
 };
 
-DECLARE_ABSTRACTCLASS(SceneImporter);
+DECLARE_ABSTRACTCLASS(SceneImporter)
 
 } // namespace oxygen
 

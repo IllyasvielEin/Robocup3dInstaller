@@ -40,8 +40,8 @@ void MatrixWidget::saveMatrix(const QMatrix4x4& mat)
 }
 
 QMatrix4x4 MatrixWidget::mZeroMatrix     = QMatrix4x4(0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0);
-QMatrix4x4 MatrixWidget::mOneMatrix      = QMatrix4x4(1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0);;
-QMatrix4x4 MatrixWidget::mIdentityMatrix = QMatrix4x4(1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0);;
+QMatrix4x4 MatrixWidget::mOneMatrix      = QMatrix4x4(1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0);
+QMatrix4x4 MatrixWidget::mIdentityMatrix = QMatrix4x4(1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,1.0);
 
 MatrixWidget::MatrixWidget(QWidget* parent) :
     QWidget(parent)

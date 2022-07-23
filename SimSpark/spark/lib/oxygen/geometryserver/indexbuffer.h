@@ -23,9 +23,7 @@
 #define OXYGEN_INDEXBUFFER_H
 
 #include <oxygen/oxygen_defines.h>
-#ifndef Q_MOC_RUN
 #include <boost/shared_array.hpp>
-#endif
 
 namespace oxygen
 {

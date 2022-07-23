@@ -124,17 +124,17 @@ bool ProxyServer::Run()
         } while (mRunning);
         success = true;
     }
-    catch (BindErr error)
+    catch (const BindErr& error)
     {
         GetLog()->Error() << "(ProxyServer) failed to bind socket with '"
                 << error.what() << "'" << endl;
     }
-    catch (ListenErr error)
+    catch (const ListenErr& error)
     {
         GetLog()->Error() << "(ProxyServer) failed to listen on socket with '"
                 << error.what() << "'" << endl;
     }
-    catch (AcceptErr error)
+    catch (const AcceptErr& error)
     {
         GetLog()->Error() << "(ProxyServer) '" << GetName()
                 << "' failed to accept TCP connection with '" << error.what()

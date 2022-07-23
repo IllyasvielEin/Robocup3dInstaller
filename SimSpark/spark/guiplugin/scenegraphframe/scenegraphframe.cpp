@@ -33,9 +33,7 @@
 #include <simulation.h>
 #include <sparkcontroller.h>
 
-#ifndef Q_MOC_RUN
 #include <boost/shared_ptr.hpp>
-#endif
 
 //--------------------------------------------------------------
 // Static
@@ -334,9 +332,6 @@ void SceneGraphFrame::chooseTask(int index)
 
 void SceneGraphFrame::updateTaskList()
 {
-    //Remember choice
-    int chosen = mCurrentTask;
-
     //Refill list
     initTaskList();
 

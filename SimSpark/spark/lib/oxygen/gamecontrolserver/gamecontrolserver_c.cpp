@@ -64,8 +64,8 @@ FUNCTION(GameControlServer,initControlAspect)
 
 void CLASS(GameControlServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(initParser);
-    DEFINE_FUNCTION(initEffector);
-    DEFINE_FUNCTION(initControlAspect);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(initParser)
+    DEFINE_FUNCTION(initEffector)
+    DEFINE_FUNCTION(initControlAspect)
 }

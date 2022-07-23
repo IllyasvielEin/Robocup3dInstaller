@@ -197,6 +197,6 @@ protected:
 
 };
 
-DECLARE_CLASS(AgentState);
+DECLARE_CLASS(AgentState)
 
 #endif // AGENTSTATE_H

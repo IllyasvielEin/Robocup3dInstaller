@@ -48,7 +48,7 @@ public:
      \param parent parent Widget
      \param flags QtWindowFlags
     */
-    GuiGridLayout(QWidget *parent = 0, Qt::WFlags flags = 0);
+    GuiGridLayout(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
     /*!
      \brief Basic destructor.

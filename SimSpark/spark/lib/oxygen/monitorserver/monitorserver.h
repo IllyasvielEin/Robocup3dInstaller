@@ -22,9 +22,7 @@
 #ifndef OXYGEN_MONITORSERVER_H
 #define OXYGEN_MONITORSERVER_H
 
-#ifndef Q_MOC_RUN
 #include <boost/thread/mutex.hpp>
-#endif
 #include <oxygen/oxygen_defines.h>
 #include <zeitgeist/class.h>
 #include <zeitgeist/node.h>
@@ -98,7 +96,7 @@ private:
     boost::mutex mMonitorMutex;
 };
 
-DECLARE_CLASS(MonitorServer);
+DECLARE_CLASS(MonitorServer)
 
 } // namespace oxygen
 

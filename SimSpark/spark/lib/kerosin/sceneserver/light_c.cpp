@@ -105,10 +105,10 @@ FUNCTION(Light,setSpecular)
 
 void CLASS(Light)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/BaseNode);
-    DEFINE_FUNCTION(setRadius);
-    DEFINE_FUNCTION(getRadius);
-    DEFINE_FUNCTION(setAmbient);
-    DEFINE_FUNCTION(setDiffuse);
-    DEFINE_FUNCTION(setSpecular);
+    DEFINE_BASECLASS(oxygen/BaseNode)
+    DEFINE_FUNCTION(setRadius)
+    DEFINE_FUNCTION(getRadius)
+    DEFINE_FUNCTION(setAmbient)
+    DEFINE_FUNCTION(setDiffuse)
+    DEFINE_FUNCTION(setSpecular)
 }

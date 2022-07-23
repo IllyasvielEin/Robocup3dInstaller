@@ -97,7 +97,7 @@ protected:
     boost::shared_ptr<oxygen::Camera> mCamera;
 };
 
-DECLARE_ABSTRACTCLASS(BaseRenderServer);
+DECLARE_ABSTRACTCLASS(BaseRenderServer)
 
 } //namespace kerosin
 

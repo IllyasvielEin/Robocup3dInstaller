@@ -41,6 +41,6 @@ FUNCTION(CatchEffector,setCatchMargin)
 
 void CLASS(CatchEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
-    DEFINE_FUNCTION(setCatchMargin);
+    DEFINE_BASECLASS(oxygen/Effector)
+    DEFINE_FUNCTION(setCatchMargin)
 }

@@ -47,7 +47,7 @@ FUNCTION(RenderControl,setActive)
 
 void CLASS(RenderControl)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/SimControlNode);
-    DEFINE_FUNCTION(getFramesRendered);
+    DEFINE_BASECLASS(oxygen/SimControlNode)
+    DEFINE_FUNCTION(getFramesRendered)
     DEFINE_FUNCTION(setActive)
 }

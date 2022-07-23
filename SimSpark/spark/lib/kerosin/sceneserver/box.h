@@ -51,7 +51,7 @@ protected:
     virtual void OnLink();
 };
 
-DECLARE_CLASS(Box);
+DECLARE_CLASS(Box)
 
 } //namespace kerosin
 

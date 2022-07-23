@@ -139,7 +139,7 @@ private:
     LogServerStreamBuf& GetStreamBuf();
 };
 
-DECLARE_CLASS(LogServer);
+DECLARE_CLASS(LogServer)
 
 } //namespace zeitgeist
 

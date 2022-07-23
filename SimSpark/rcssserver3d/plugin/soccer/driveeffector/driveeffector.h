@@ -108,6 +108,6 @@ protected:
     double mConsumption;
 };
 
-DECLARE_CLASS(DriveEffector);
+DECLARE_CLASS(DriveEffector)
 
 #endif // DRIVEEFFECTOR_H

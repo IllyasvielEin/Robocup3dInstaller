@@ -102,11 +102,11 @@ FUNCTION(CapsuleCollider,getPointDepth)
 
 void CLASS(CapsuleCollider)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/ConvexCollider);
-    DEFINE_FUNCTION(setParams);
-    DEFINE_FUNCTION(setRadius);
-    DEFINE_FUNCTION(setLength);
-    DEFINE_FUNCTION(getRadius);
-    DEFINE_FUNCTION(getLength);
-    DEFINE_FUNCTION(getPointDepth);
+    DEFINE_BASECLASS(oxygen/ConvexCollider)
+    DEFINE_FUNCTION(setParams)
+    DEFINE_FUNCTION(setRadius)
+    DEFINE_FUNCTION(setLength)
+    DEFINE_FUNCTION(getRadius)
+    DEFINE_FUNCTION(getLength)
+    DEFINE_FUNCTION(getPointDepth)
 }

@@ -18,6 +18,6 @@ FUNCTION(OpenGLServer,init)
 
 void CLASS(OpenGLServer)::DefineClass()
 {
-  DEFINE_BASECLASS(zeitgeist/Leaf);
-  DEFINE_FUNCTION(init);
+  DEFINE_BASECLASS(zeitgeist/Leaf)
+  DEFINE_FUNCTION(init)
 }

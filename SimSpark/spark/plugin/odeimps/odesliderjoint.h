@@ -40,6 +40,6 @@ public:
     void SetSliderAxis(salt::Vector3f& up, long jointID);
 };
 
-DECLARE_CLASS(SliderJointImp);
+DECLARE_CLASS(SliderJointImp)
 
 #endif //SLIDERJOINTINT_H

@@ -118,7 +118,6 @@ int init_servo_list() //!gives back
     base_data->servo_list_base[0] = pos - 1;
     return 0;
 }
-;
 
 void eval_set_echo_on_off(const char in[])
 /*! >E command one can turn on/off the echo */
@@ -129,7 +128,6 @@ void eval_set_echo_on_off(const char in[])
         base_data->echo_on = -1;
 
 }
-;
 
 void eval_send_gen_message(const char in[])
 /*! >$ command allows direct access to the servos */
@@ -140,10 +138,8 @@ void eval_send_gen_message(const char in[])
     {
         char me = hex2data(2, in + 2 + 2* i );
         sendBytetoMo(me);
-
-    };
+    }
 }
-;
 
 void eval_set_position_message(const char in[])
 /*! >P command  sets servo to position */
@@ -155,13 +151,11 @@ void eval_set_position_message(const char in[])
             - base_data->zero_pos_inits_feed[servoid];
     send_servo_to_pos(servoid, value);
 }
-;
 
 void eval_set_min_max_message(const char in[])
 //! >M message -- for setting up min and max values
 {
-    int servoid, minvalue, maxvalue;
-    servoid = hex2data(2, in);
+    int servoid = hex2data(2, in);
     base_data->servo_min_val[servoid] = hex2data(4, in + 2);
     base_data->servo_max_val[servoid] = hex2data(4, in + 6);
     char eins[5];
@@ -173,7 +167,6 @@ void eval_set_min_max_message(const char in[])
     sendMesg(eins);
     sendMesg("\n");
 }
-;
 
 void eval_set_state_message(const char in[])
 //! >S message
@@ -184,7 +177,6 @@ void eval_set_state_message(const char in[])
     write_int(base_data->op_state);
     sendMesg("\r\n");
 }
-;
 
 void eval_set_gain_message(const char in[])
 //! set gain for servo
@@ -195,7 +187,6 @@ void eval_set_gain_message(const char in[])
     send_servo_to_gain(servoid, value);
 
 }
-;
 
 void eval_set_time(const char in[])
 //! set time
@@ -203,7 +194,6 @@ void eval_set_time(const char in[])
     long time = hex2data(8, in);
     set_hmdl_time(time);
 }
-;
 
 void send_time()
 //! read time from HMDP and send it to the client
@@ -221,7 +211,6 @@ void send_time()
     sendMesg("\r\n");
 
 }
-;
 
 void eval_set_servo_on_off(const char in[])
 //! check for >ON or >OFF message both start with the the letter O
@@ -244,14 +233,13 @@ void eval_set_servo_on_off(const char in[])
     }
 
 }
-;
 
 void eval_get_jname(const char in[])
 /*! reads the name of the servo form the preprogrammed list defined in
  compatible.h */
 {
 
-    int servoid, position, i;
+    int servoid, i;
 
     sendByte('!'); //Data indikator
 
@@ -266,17 +254,14 @@ void eval_get_jname(const char in[])
 
                 sendMesg(jointnames[i]);
                 sendByte(':');
-
-            };
-
+            }
         }
         else
         {
             servoid = hex2data(2, &in[0]);
 
             sendMesg(jointnames[servoid]);
-
-        };
+        }
     }
     sendByte(13);
     sendByte(10);
@@ -306,7 +291,7 @@ void eval_get_pos_message(const char in[])
             data2hex(4, position, xx);
             sendMesg(xx);
 
-        };
+        }
         sendByte(13);
         sendByte(10);
 
@@ -325,9 +310,8 @@ void eval_get_pos_message(const char in[])
         //uart0SendByte('*');
         sendByte(13);
         sendByte(10);
-    };
+    }
 }
-;
 
 void eval_get_pos_set_message(const char in[])
 /*! <R get target value */
@@ -349,7 +333,7 @@ void eval_get_pos_set_message(const char in[])
             data2hex(4, position, xx);
             sendMesg(xx);
 
-        };
+        }
         //uart0SendByte('*');
         sendByte(13);
         sendByte(10);
@@ -368,7 +352,6 @@ void eval_get_pos_set_message(const char in[])
         sendByte(10);
     }
 }
-;
 
 void send_zero_pos()
 {
@@ -385,12 +368,12 @@ void send_zero_pos()
         data2hex(4, zeropos, xx);
         sendMesg(xx);
 
-    };
+    }
     sendByte(13);
     sendByte(10);
 
 }
-; // send zero pos feed
+// send zero pos feed
 
 
 void plastic_state()
@@ -405,9 +388,8 @@ void plastic_state()
         j = base_data->servo_list_base[i];
         val = read_back_pos(j);
         send_servo_to_pos(j, val);
-    };
+    }
 }
-;
 
 /* first level parser for base.c commands (<..., >...., @....)*/
 int eval_seq_base(const char in[])
@@ -487,7 +469,6 @@ int eval_seq_base(const char in[])
     }
     return found_command;
 }
-;
 
 /* sending motion to servo ...*/
 
@@ -498,21 +479,17 @@ void send_hmdp_motion_to_servo()
     {
 
         int ID = base_data->servo_list_base[i + 1];
-        int pos = base_data->zero_pos_inits[(int) base_data->servo_list_base[i
-                + 1]] + get_hmdl_servo_out(i);
+        int pos = base_data->zero_pos_inits[ID] + get_hmdl_servo_out(i);
 
-        send_servo_to_pos((int) base_data->servo_list_base[i + 1], pos);
-    };
-
+        send_servo_to_pos(ID, pos);
+    }
 }
-;
 
 /*! interrupt routine for plastic state */
 void inter_routine_state_2()
 {
     plastic_state();
 }
-;
 
 /*! interrupt routine for HMDP runnung */
 void inter_routine_state_1()
@@ -524,7 +501,6 @@ void inter_routine_state_1()
     motion_machine(calc_next_timer_value());
 
 }
-;
 
 /*! main interrupt routine */
 void inter_routine_base()
@@ -535,7 +511,6 @@ void inter_routine_base()
         inter_routine_state_2();
 
 }
-;
 
 int main_eval(char *buff)
 {
@@ -562,7 +537,7 @@ int parse_one_line()
     {
         //	led1_off();
         a = readByte();
-        ;
+        
         if (a != -1)
         {
             //	    led1_on();
@@ -572,8 +547,8 @@ int parse_one_line()
             if (base_data->echo_on == 0)
                 sendByte(a);
 
-        };
-    };
+        }
+    }
 
     if (buff_c > 5) //! Checksum feature
     {
@@ -594,11 +569,11 @@ int parse_one_line()
             else
             {
                 sendMesg("\r\nE\r\n");
-            };
+            }
             buff_c -= 3;
 
-        };
-    };
+        }
+    }
     if (buff_c > 1) //! Long message feature
     {
         if (base_data->buff[base_data->bbase + buff_c - 2] == '&')
@@ -629,7 +604,7 @@ int parse_one_line()
 
         main_eval(base_data->buff); // see base.c
         clearBuffer();
-    };
+    }
     return 0;
 }
 

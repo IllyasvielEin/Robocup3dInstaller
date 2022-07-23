@@ -265,7 +265,6 @@ void MonitorFrame::initRendering()
         LOG_ERROR() << "Could not access Settings object to read camera, server, renderServer and renderControl paths. Using default values.";
 
     //Create
-    OpenGLManager* manager = getCarbon()->getOpenGLManager();
     mGL->setUpdatesEnabled(false);
     mGL->getTimer().stop();
 

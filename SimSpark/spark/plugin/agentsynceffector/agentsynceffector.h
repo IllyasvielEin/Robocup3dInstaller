@@ -24,6 +24,11 @@
 
 #include <oxygen/agentaspect/effector.h>
 
+/**
+ * @class AgentSyncEffector
+ * @brief Effector for synchronizing agent think cycles.
+ * @ingroup effectors
+ */
 class AgentSyncEffector : public oxygen::Effector
 {
 public:
@@ -50,6 +55,6 @@ private:
     boost::shared_ptr<oxygen::AgentAspect> mAgentAspect;
 };
 
-DECLARE_CLASS(AgentSyncEffector);
+DECLARE_CLASS(AgentSyncEffector)
 
 #endif // AGENTSYNCEFFECTOR_H

@@ -29,5 +29,5 @@ using namespace oxygen;
 void
 CLASS(HMDPPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
+    DEFINE_BASECLASS(oxygen/Perceptor)
 }

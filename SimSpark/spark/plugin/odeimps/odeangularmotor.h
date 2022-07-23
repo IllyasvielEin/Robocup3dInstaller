@@ -52,6 +52,6 @@ public:
     float GetAxisAngleRate(int idx, long jointID);
 };
 
-DECLARE_CLASS(AngularMotorImp);
+DECLARE_CLASS(AngularMotorImp)
 
 #endif //ODEANGULARMOTOR_H

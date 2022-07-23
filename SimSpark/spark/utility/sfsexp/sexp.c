@@ -337,7 +337,6 @@ print_sexp_cstr (sexp_mem_t *smem, CSTRING **s, sexp_t *sx, int ss, int gs)
   sexp_t *fakehead;
   CSTRING *_s;
   char sbuf[32];
-  int i;
 
   if (sx == NULL) {
     fprintf(stderr,"print_sexp_cstr warning: s-expression is null.\n");
@@ -413,7 +412,7 @@ print_sexp_cstr (sexp_mem_t *smem, CSTRING **s, sexp_t *sx, int ss, int gs)
             assert(tdata->binlength > 0);
             sprintf(sbuf,"#b#%d#",tdata->binlength);
             _s = sadd(_s,sbuf);
-            for (i=0;i<tdata->binlength;i++)
+            for (unsigned int i=0;i<tdata->binlength;i++)
               _s = saddch(_s,tdata->bindata[i]);
             _s = saddch(_s,' ');
           } else {

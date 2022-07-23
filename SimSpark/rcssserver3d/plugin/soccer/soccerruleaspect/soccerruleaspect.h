@@ -22,6 +22,7 @@
 #ifndef SOCCERRULEASPECT_H
 #define SOCCERRULEASPECT_H
 
+#include <random>
 #include <vector>
 
 #include <soccercontrolaspect/soccercontrolaspect.h>
@@ -714,12 +715,15 @@ protected:
     /** Output file stream for writing self collision information */
     std::ofstream selfCollisionsFile;
 
+    /** Random number generator for use with the shuffle function */
+    std::mt19937 mRng;
+
 #ifdef RVDRAW
     boost::shared_ptr<RVSender> mRVSender;
 #endif // RVDRAW
 };
 
-DECLARE_CLASS(SoccerRuleAspect);
+DECLARE_CLASS(SoccerRuleAspect)
 
 
 #endif // SOCCERRULEASPECT_H

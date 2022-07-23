@@ -51,7 +51,7 @@ public:
     void GetControlAspect(zeitgeist::Core::CachedLeafPath& aspect, const std::string& name);
 };
 
-DECLARE_ABSTRACTCLASS(ControlAspect);
+DECLARE_ABSTRACTCLASS(ControlAspect)
 
 } // namespace oxygen
 

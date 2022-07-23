@@ -109,11 +109,11 @@ FUNCTION(InputServer,addCode)
 
 void CLASS(InputServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
-    DEFINE_FUNCTION(init);
-    DEFINE_FUNCTION(createDevice);
-    DEFINE_FUNCTION(reset);
-    DEFINE_FUNCTION(bindCommand);
-    DEFINE_FUNCTION(setScanCodeMapping);
-    DEFINE_FUNCTION(addCode);
+    DEFINE_BASECLASS(zeitgeist/Node)
+    DEFINE_FUNCTION(init)
+    DEFINE_FUNCTION(createDevice)
+    DEFINE_FUNCTION(reset)
+    DEFINE_FUNCTION(bindCommand)
+    DEFINE_FUNCTION(setScanCodeMapping)
+    DEFINE_FUNCTION(addCode)
 }

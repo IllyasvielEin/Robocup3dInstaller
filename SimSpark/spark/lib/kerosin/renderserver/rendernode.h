@@ -56,7 +56,7 @@ private:
     bool mVisibleToggled;
 };
 
-DECLARE_ABSTRACTCLASS(RenderNode);
+DECLARE_ABSTRACTCLASS(RenderNode)
 
 } //namespace kerosin
 

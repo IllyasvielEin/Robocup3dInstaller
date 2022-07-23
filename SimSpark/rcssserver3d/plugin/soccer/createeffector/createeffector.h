@@ -42,7 +42,7 @@ protected:
     virtual void PrePhysicsUpdateInternal(float deltaTime);
 };
 
-DECLARE_CLASS(CreateEffector);
+DECLARE_CLASS(CreateEffector)
 
 #endif // CREATEEFFECTOR_H
 

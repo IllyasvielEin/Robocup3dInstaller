@@ -246,6 +246,6 @@ protected:
     bool mPassModeClearedToScore[2];
 };
 
-DECLARE_CLASS(GameStateAspect);
+DECLARE_CLASS(GameStateAspect)
 
 #endif // GAMESTATEASPECT_H

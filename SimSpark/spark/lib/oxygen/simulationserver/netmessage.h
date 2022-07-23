@@ -60,7 +60,7 @@ public:
     virtual bool Extract(boost::shared_ptr<NetBuffer> buffer, std::string& msg);
 };
 
-DECLARE_CLASS(NetMessage);
+DECLARE_CLASS(NetMessage)
 
 } // namespace oxygen
 

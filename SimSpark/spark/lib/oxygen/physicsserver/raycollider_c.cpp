@@ -49,6 +49,6 @@ FUNCTION(RayCollider,setParams)
 
 void CLASS(RayCollider)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Collider);
-    DEFINE_FUNCTION(setParams);
+    DEFINE_BASECLASS(oxygen/Collider)
+    DEFINE_FUNCTION(setParams)
 }

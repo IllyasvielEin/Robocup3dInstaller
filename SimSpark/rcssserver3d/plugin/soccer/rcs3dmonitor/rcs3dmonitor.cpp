@@ -195,13 +195,16 @@ void RCS3DMonitor::DescribeLight(stringstream& ss, boost::shared_ptr<Light> ligh
 void RCS3DMonitor::DescribeTransform(stringstream& ss, NodeCache& entry, boost::shared_ptr<Transform> transform, bool prefix)
 {
     if (prefix)
-      if (mFullState)
-          {
-              ss << "(nd TRF";
-          } else
-              {
-                  ss << "(nd";
-              }
+        {
+            if (mFullState)
+            {
+                ss << "(nd TRF";
+            }
+            else
+            {
+                ss << "(nd";
+            }
+        }
 
     // include transform data only for fullstate or a modified
     // transform node
@@ -253,16 +256,19 @@ void RCS3DMonitor::DescribeMesh(stringstream& ss, boost::shared_ptr<StaticMesh> 
     if (singleMat.get() != 0)
         {
             ss << "(nd SMN";
-        } else
-            {
-                ss << "(nd StaticMesh";
-            }
+        }
+        else
+        {
+            ss << "(nd StaticMesh";
+        }
 
     if (mFullState || mesh->VisibleToggled())
-        if (mesh->IsVisible())
-            ss << " (setVisible 1)";
-        else
-            ss << " (setVisible 0)";
+        {
+            if (mesh->IsVisible())
+                ss << " (setVisible 1)";
+            else
+                ss << " (setVisible 0)";
+        }
         
     if (! mFullState)
       return;
@@ -398,7 +404,8 @@ bool RCS3DMonitor::DescribeNode(stringstream& ss, boost::shared_ptr<BaseNode> no
         case NT_BALL:
             DescribeBall
                 (ss, (*entry), static_pointer_cast<Ball>(node));
-        
+            return true;
+
         case NT_TRANSFORM:
             DescribeTransform
                 (ss, (*entry), static_pointer_cast<Transform>(node));

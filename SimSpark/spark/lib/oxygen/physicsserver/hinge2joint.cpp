@@ -74,15 +74,11 @@ Vector3f Hinge2Joint::GetAnchor(EBodyIndex idx)
     switch (idx)
         {
         case BI_FIRST:
-            {
-                pos = mHinge2JointImp->GetAnchor1(mJointID);
-            }
-
+            pos = mHinge2JointImp->GetAnchor1(mJointID);
+            break;
         case BI_SECOND:
-            {
-                pos = mHinge2JointImp->GetAnchor2(mJointID);
-            }
-
+            pos = mHinge2JointImp->GetAnchor2(mJointID);
+            break;
         default:
             break;
         }

@@ -26,5 +26,5 @@ using namespace kerosin;
 void
 CLASS(OpenGLSystem)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Node);
+    DEFINE_BASECLASS(zeitgeist/Node)
 }

@@ -533,7 +533,7 @@ MenuSystem::File* MenuManager::provideSourceFile(const AbstractPlugin* caller, c
     if (!assertProvidedParameters(caller, containerName, 0, MOT_FILE))
         return 0;
 
-    MenuSystem::File* newObj;
+    MenuSystem::File* newObj = nullptr;
 
     //Does the ToolBar object already exist?
     MenuSystem::MenuObject* foundMenuObject = findMenuObject(caller, containerName, MOL_LOCAL, MOT_FILE);

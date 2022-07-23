@@ -120,12 +120,12 @@ private:
     // private members
 
     AbstractPlugin* mPlugin;    /*!< Plugin pointer. */
-    QObject* mObject;           /*!< QObject pointer to connect with. */
     std::string mInterfaceName; /*!< Name of signal or slot to connect with. */
-    CommunicationManager::ETopicConnectionType mConnectionType; /*!< Type of connection to use. */
     int mMaxConnectionCount;    /*!< Maximum amount of connections for this registration. */
+    CommunicationManager::ETopicConnectionType mConnectionType; /*!< Type of connection to use. */
     int mConnectionCount;       /*!< Current amount of connections for this registration. */
     bool mInvalid;              /*!< True after setInvalid(). Plugin and QObject pointer wont be dereferenced anymore. */
+    QObject* mObject;           /*!< QObject pointer to connect with. */
 
     bool mChanged;              /*!< True after data was changed, until updated() call. */
 };

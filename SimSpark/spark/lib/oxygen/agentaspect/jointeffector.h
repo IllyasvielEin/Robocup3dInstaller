@@ -25,6 +25,11 @@
 namespace oxygen
 {
 
+/**
+ * @class JointEffector
+ * @brief Base class for joint effectors.
+ * @ingroup effectors
+ */
 template<typename _JOINT>
 class JointEffector : public oxygen::Effector
 {

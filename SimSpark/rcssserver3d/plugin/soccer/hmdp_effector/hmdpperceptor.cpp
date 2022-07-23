@@ -69,8 +69,8 @@ bool HMDPPerceptor::Percept(boost::shared_ptr<PredicateList> predList)
 
     while (messageOut != "")
     {
-        int i1 = messageOut.find(";");
-        if (i1 < 0)
+        std::size_t i1 = messageOut.find(";");
+        if (i1 == std::string::npos)
             i1 = messageOut.size();
         std::string out = messageOut.substr(0, i1);
         if ((i1 + 1) < messageOut.size())

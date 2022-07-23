@@ -10,10 +10,6 @@ set(sparkgui_SOURCES
 set(QT_USE_QTOPENGL TRUE)
 set(QT_USE_QTXML TRUE)
 
-#Include qt properties
-include(${QT_USE_FILE})	
-add_definitions(${QT_DEFINITIONS})
-
 ########### definitions for config file ###############
 
 set(GUI_LAYOUT_DIR ${carbonlayoutlibdir})
@@ -36,7 +32,7 @@ endif (APPLE)
 
 include_directories(${SDL_INCLUDE_DIR} )
 
-set(sparkgui_LIBS ${OPENGL_LIBRARIES} ${QT_LIBRARIES} ${SDL_LINK_LIBS} ${RCSSNET3D_LIBRARY})
+set(sparkgui_LIBS ${OPENGL_LIBRARIES} ${Qt5Widgets_LIBRARIES} ${SDL_LINK_LIBS} ${RCSSNET3D_LIBRARY})
 set(sparkgui_DEBUG_LIBS ${SPARK_LIBRARY_DEBUG} ${SALT_LIBRARY_DEBUG}
    	${ZEITGEIST_LIBRARY_DEBUG} ${OXYGEN_LIBRARY_DEBUG} ${KEROSIN_LIBRARY_DEBUG} 
 	${CARBON_LIBRARY_DEBUG})
@@ -54,7 +50,6 @@ ENDFOREACH(LIB)
 
 target_link_libraries(sparkgui ${Boost_LIBRARIES})
 
-set_target_properties(sparkgui PROPERTIES INSTALL_RPATH "${RPATH_DIRECTORIES}")
 install(TARGETS sparkgui DESTINATION ${BINDIR})
 
 execute_process(COMMAND ${CMAKE_COMMAND} -E create_symlink 

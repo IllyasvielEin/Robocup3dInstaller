@@ -65,7 +65,7 @@ protected:
     InputSystem* mInputSystem;
 };
 
-DECLARE_CLASS(InputDevice);
+DECLARE_CLASS(InputDevice)
 
 } //namespace kerosin
 

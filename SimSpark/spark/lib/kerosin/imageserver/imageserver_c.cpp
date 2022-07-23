@@ -27,5 +27,5 @@ using namespace zeitgeist;
 
 void CLASS(ImageServer)::DefineClass()
 {
-	DEFINE_BASECLASS(zeitgeist/Leaf);
+	DEFINE_BASECLASS(zeitgeist/Leaf)
 }

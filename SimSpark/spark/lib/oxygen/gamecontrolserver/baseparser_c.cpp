@@ -26,5 +26,5 @@ using namespace oxygen;
 void
 CLASS(BaseParser)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

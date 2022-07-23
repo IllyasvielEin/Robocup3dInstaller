@@ -27,7 +27,7 @@
 namespace zeitgeist
 {
 
-DECLARE_CLASS(Object);
+DECLARE_CLASS(Object)
 
 }
 

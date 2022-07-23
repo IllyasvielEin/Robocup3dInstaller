@@ -200,15 +200,15 @@ FUNCTION(RestrictedVisionPerceptor,setSenseLine)
 
 void CLASS(RestrictedVisionPerceptor)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Perceptor);
-    DEFINE_FUNCTION(setNoiseParams);
-    DEFINE_FUNCTION(addNoise);
-    DEFINE_FUNCTION(setSenseMyPos);
-    DEFINE_FUNCTION(setSenseMyOrien);
-    DEFINE_FUNCTION(setSenseBallPos);
-    DEFINE_FUNCTION(setStaticSenseAxis);
-    DEFINE_FUNCTION(setViewCones);
-    DEFINE_FUNCTION(setPanRange);
-    DEFINE_FUNCTION(setTiltRange);
-    DEFINE_FUNCTION(setSenseLine);
+    DEFINE_BASECLASS(oxygen/Perceptor)
+    DEFINE_FUNCTION(setNoiseParams)
+    DEFINE_FUNCTION(addNoise)
+    DEFINE_FUNCTION(setSenseMyPos)
+    DEFINE_FUNCTION(setSenseMyOrien)
+    DEFINE_FUNCTION(setSenseBallPos)
+    DEFINE_FUNCTION(setStaticSenseAxis)
+    DEFINE_FUNCTION(setViewCones)
+    DEFINE_FUNCTION(setPanRange)
+    DEFINE_FUNCTION(setTiltRange)
+    DEFINE_FUNCTION(setSenseLine)
 }

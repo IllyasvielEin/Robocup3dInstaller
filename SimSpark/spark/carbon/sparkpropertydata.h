@@ -104,6 +104,11 @@ public:
     //public functions
 
     /*!
+     \brief Destructor.
+    */
+    virtual ~Data();
+
+    /*!
      \brief Copy operator.
 
      Will fail if data types do not match.
@@ -263,6 +268,11 @@ public:
     DBool(bool val) :
       Data(DT_BOOL), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DBool();
+
 public:
     //public virtual functions
 
@@ -301,6 +311,11 @@ public:
     */
     DInt(int val) :
       Data(DT_INT), mValue(val){}
+
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DInt();
 
 public:
     //public virtual functions
@@ -341,6 +356,11 @@ public:
     DLong(long val) :
       Data(DT_LONG), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DLong();
+
 public:
     //public virtual functions
 
@@ -380,6 +400,11 @@ public:
     DFloat(float val) :
       Data(DT_FLOAT), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DFloat();
+
 public:
     //public virtual functions
 
@@ -418,6 +443,11 @@ public:
     */
     DDouble(double val) :
       Data(DT_DOUBLE), mValue(val){}
+
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DDouble();
 
 public:
     //public virtual functions
@@ -465,6 +495,11 @@ public:
     DString(const std::string& val) :
       Data(DT_STRING), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DString();
+
 public:
     //public virtual functions
 
@@ -503,6 +538,11 @@ public:
     */
     DVector3f(const salt::Vector3f& val) :
       Data(DT_VEC3F), mValue(val){}
+
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DVector3f();
 
 public:
     //public virtual functions
@@ -543,6 +583,11 @@ public:
     DRGBA(const kerosin::RGBA& val) :
       Data(DT_RGBA), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DRGBA();
+
 public:
     //public virtual functions
 
@@ -582,6 +627,11 @@ public:
     DAABB3(const salt::AABB3& val) :
       Data(DT_AABB3), mValue(val){}
 
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DAABB3();
+
 public:
     //public virtual functions
 
@@ -620,6 +670,11 @@ public:
     */
     DMat4x4(const salt::Matrix& val) :
       Data(DT_MAT4X4), mValue(val){}
+
+    /*!
+     \brief Destructor.
+    */
+    virtual ~DMat4x4();
 
 public:
     //public virtual functions

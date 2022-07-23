@@ -48,6 +48,6 @@ protected:
 protected:
 };
 
-DECLARE_CLASS(InputSystemQt);
+DECLARE_CLASS(InputSystemQt)
 
 #endif //INPUTSYSTEMQT_H__

@@ -37,7 +37,7 @@ FUNCTION(SliderJoint,getPositionRate)
 
 void CLASS(SliderJoint)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
-    DEFINE_FUNCTION(getPosition);
-    DEFINE_FUNCTION(getPositionRate);
+    DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
+    DEFINE_FUNCTION(getPosition)
+    DEFINE_FUNCTION(getPositionRate)
 }

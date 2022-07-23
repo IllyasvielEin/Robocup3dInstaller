@@ -88,7 +88,7 @@ private:
     TTextureCache mTextureCache;
 };
 
-DECLARE_CLASS(TextureServer);
+DECLARE_CLASS(TextureServer)
 
 } //kerosin
 

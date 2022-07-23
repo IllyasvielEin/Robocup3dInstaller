@@ -80,7 +80,7 @@ private:
     static boost::shared_ptr<PlaneColliderInt> mPlaneColliderImp;
 };
 
-DECLARE_CLASS(PlaneCollider);
+DECLARE_CLASS(PlaneCollider)
 
 } //namespace oxygen
 

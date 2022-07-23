@@ -23,6 +23,11 @@
 #include <oxygen/agentaspect/jointperceptor.h>
 #include <oxygen/physicsserver/universaljoint.h>
 
+/**
+ * @class UniversalJointPerceptor
+ * @brief Perceptor for the universal joint configuration.
+ * @ingroup perceptors
+ */
 class UniversalJointPerceptor : public oxygen::JointPerceptor<oxygen::UniversalJoint>
 {
 public:
@@ -37,6 +42,6 @@ protected:
     void InsertAxisRate(oxygen::Predicate& predicate, oxygen::Joint::EAxisIndex idx);
 };
 
-DECLARE_CLASS(UniversalJointPerceptor);
+DECLARE_CLASS(UniversalJointPerceptor)
 
 #endif //UNIVERSALJOINTPERCEPTOR_H

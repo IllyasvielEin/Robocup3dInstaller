@@ -108,10 +108,10 @@ FUNCTION(UniversalJoint,getAngleRate)
 
 void CLASS(UniversalJoint)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Generic6DOFJoint);
-    DEFINE_FUNCTION(setAnchor);
-    DEFINE_FUNCTION(setAxis1);
-    DEFINE_FUNCTION(setAxis2);
-    DEFINE_FUNCTION(getAngle);
-    DEFINE_FUNCTION(getAngleRate);
+    DEFINE_BASECLASS(oxygen/Generic6DOFJoint)
+    DEFINE_FUNCTION(setAnchor)
+    DEFINE_FUNCTION(setAxis1)
+    DEFINE_FUNCTION(setAxis2)
+    DEFINE_FUNCTION(getAngle)
+    DEFINE_FUNCTION(getAngleRate)
 }

@@ -55,7 +55,7 @@ public:
     (const std::string& name, const zeitgeist::ParameterList& parameter);
 };
 
-DECLARE_ABSTRACTCLASS(MeshImporter);
+DECLARE_ABSTRACTCLASS(MeshImporter)
 
 } // namespace oxgen
 

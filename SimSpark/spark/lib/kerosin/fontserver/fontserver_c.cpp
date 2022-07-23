@@ -45,6 +45,6 @@ FUNCTION(FontServer,getFont)
 
 void CLASS(FontServer)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
-    DEFINE_FUNCTION(getFont);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
+    DEFINE_FUNCTION(getFont)
 }

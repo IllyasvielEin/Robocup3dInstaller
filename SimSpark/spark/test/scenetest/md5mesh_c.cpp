@@ -54,7 +54,7 @@ FUNCTION(MD5Mesh,loadAnimation)
 void
 CLASS(MD5Mesh)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/BaseNode);
-    DEFINE_FUNCTION(load);
-    DEFINE_FUNCTION(loadAnimation);
+    DEFINE_BASECLASS(kerosin/BaseNode)
+    DEFINE_FUNCTION(load)
+    DEFINE_FUNCTION(loadAnimation)
 }

@@ -369,70 +369,78 @@ bool MD5Mesh::LoadAnimation(const std::string &name)
                                 if (keyLeft>=8)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f %f %f %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2],
+                                                &channel.keys[k+3],
+                                                &channel.keys[k+4],
+                                                &channel.keys[k+5],
+                                                &channel.keys[k+6],
+                                                &channel.keys[k+7]);
+                                        k += 8;
                                         keyLeft-=8;
                                 }else if (keyLeft==7)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f %f %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2],
+                                                &channel.keys[k+3],
+                                                &channel.keys[k+4],
+                                                &channel.keys[k+5],
+                                                &channel.keys[k+6]);
+                                        k += 7;
                                         keyLeft-=7;
                                 }else if (keyLeft==6)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2],
+                                                &channel.keys[k+3],
+                                                &channel.keys[k+4],
+                                                &channel.keys[k+5]);
+                                        k += 6;
                                         keyLeft-=6;
                                 }else if (keyLeft==5)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2],
+                                                &channel.keys[k+3],
+                                                &channel.keys[k+4]);
+                                        k += 5;
                                         keyLeft-=5;
                                 }else  if (keyLeft==4)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2],
+                                                &channel.keys[k+3]);
+                                        k += 4;
                                         keyLeft-=4;
                                 }else  if (keyLeft==3)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1],
+                                                &channel.keys[k+2]);
+                                        k += 3;
                                         keyLeft-=3;
                                 }else if (keyLeft==2)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f %f",
-                                                &channel.keys[k++],
-                                                &channel.keys[k++]);
+                                                &channel.keys[k],
+                                                &channel.keys[k+1]);
+                                        k += 2;
                                         keyLeft-=2;
                                 }else  if (keyLeft==1)
                                 {
                                         sscanf(gCurrentReadLine, "\t\t %f",
-                                                &channel.keys[k++]);
+                                                &channel.keys[k]);
+                                        k += 1;
                                         keyLeft-=1;
                                 }
                         }
@@ -449,14 +457,12 @@ void MD5Mesh::RenderInternal()
 {
         if (mMeshes!=0)
         {
-                const salt::Matrix &mat = GetWorldTransform();
-
 #ifndef WIN32
 #warning "Commented out calls to glProgramLocalParameter4fARB"
 #endif
 
 #if 0
-
+                const salt::Matrix &mat = GetWorldTransform();
                 glProgramLocalParameter4fARB(GL_VERTEX_PROGRAM_ARB, 0, mat(0,0), mat(0,1), mat(0,2), mat(0,3));
                 glProgramLocalParameter4fARB(GL_VERTEX_PROGRAM_ARB, 1, mat(1,0), mat(1,1), mat(1,2), mat(1,3));
                 glProgramLocalParameter4fARB(GL_VERTEX_PROGRAM_ARB, 2, mat(2,0), mat(2,1), mat(2,2), mat(2,3));

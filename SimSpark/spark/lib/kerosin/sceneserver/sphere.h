@@ -52,7 +52,7 @@ protected:
     virtual void OnLink();
 };
 
-DECLARE_CLASS(Sphere);
+DECLARE_CLASS(Sphere)
 
 } //namespace kerosin
 

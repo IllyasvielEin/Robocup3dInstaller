@@ -267,6 +267,7 @@ QDoubleValidator* Data::doubleValidator(double min, double max, int decimals)
 //--------------------------------------------------------------
 // Data
 //--------------------------------------------------------------
+Data::~Data() = default;
 
 Data& Data::operator=(const Data& rhs)
 {
@@ -294,7 +295,7 @@ Data& Data::operator=(const Data& rhs)
     }
 
     return *this;
-};
+}
 
 boost::shared_ptr<Data> Data::createData(EDataType type)
 {
@@ -327,6 +328,17 @@ boost::shared_ptr<Data> Data::createData(EDataType type, const QString& dataStri
 //--------------------------------------------------------------
 // Others
 //--------------------------------------------------------------
+DBool::~DBool() = default;
+DInt::~DInt() = default;
+DLong::~DLong() = default;
+DFloat::~DFloat() = default;
+DDouble::~DDouble() = default;
+DString::~DString() = default;
+DVector3f::~DVector3f() = default;
+DAABB3::~DAABB3() = default;
+DRGBA::~DRGBA() = default;
+DMat4x4::~DMat4x4() = default;
+
 
 QString DBool::toString() const
 {

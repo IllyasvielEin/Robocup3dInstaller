@@ -38,6 +38,6 @@ public:
     long CreateBox();
 };
 
-DECLARE_CLASS(BoxColliderImp);
+DECLARE_CLASS(BoxColliderImp)
 
 #endif //ODEBOXCOLLIDER_H

@@ -24,5 +24,5 @@
 
 void CLASS(FileSystemZIP)::DefineClass()
 {
-        DEFINE_BASECLASS(zeitgeist/FileSystem);
+        DEFINE_BASECLASS(zeitgeist/FileSystem)
 }

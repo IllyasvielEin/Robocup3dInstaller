@@ -42,6 +42,7 @@ public:
     void DestroySpace(long contactGroup, long spaceID);
     long GetParentSpaceID(long spaceID);
     long CreateContactGroup();
+    using PhysicsObjectImp::PostPhysicsUpdateInternal;
     void PostPhysicsUpdateInternal(long contactGroup);
     void Collide(long spaceID, oxygen::Space* callee);
     void Collide2(long obj1, long obj2, oxygen::Space* callee);
@@ -57,6 +58,6 @@ private:
     static void collisionNearCallback(void* data, dGeomID obj1, dGeomID obj2);
 };
 
-DECLARE_CLASS(SpaceImp);
+DECLARE_CLASS(SpaceImp)
 
 #endif //ODESPACE_H

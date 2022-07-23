@@ -24,5 +24,5 @@ using namespace oxygen;
 
 void CLASS(TimerSystem)::DefineClass()
 {
-    DEFINE_BASECLASS(zeitgeist/Leaf);
+    DEFINE_BASECLASS(zeitgeist/Leaf)
 }

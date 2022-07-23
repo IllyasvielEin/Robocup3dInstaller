@@ -26,5 +26,5 @@ using namespace oxygen;
 
 void CLASS(InitEffector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
+    DEFINE_BASECLASS(oxygen/Effector)
 }

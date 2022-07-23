@@ -50,7 +50,7 @@ public:
     boost::shared_ptr<Material> GetMaterial();
 };
 
-DECLARE_CLASS(SingleMatNode);
+DECLARE_CLASS(SingleMatNode)
 
 } //namespace kerosin
 

@@ -22,5 +22,5 @@
 
 void CLASS(ImageRender)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/CustomRender);
+    DEFINE_BASECLASS(kerosin/CustomRender)
 }

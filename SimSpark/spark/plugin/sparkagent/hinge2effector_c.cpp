@@ -24,5 +24,5 @@
 
 void CLASS(Hinge2Effector)::DefineClass()
 {
-    DEFINE_BASECLASS(oxygen/Effector);
+    DEFINE_BASECLASS(oxygen/Effector)
 }

@@ -24,5 +24,5 @@
 void
 CLASS(InputDeviceSDL)::DefineClass()
 {
-    DEFINE_BASECLASS(kerosin/InputDevice);
+    DEFINE_BASECLASS(kerosin/InputDevice)
 }

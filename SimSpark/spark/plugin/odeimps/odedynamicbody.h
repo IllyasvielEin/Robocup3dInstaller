@@ -31,6 +31,6 @@ public:
     DynamicBodyImp();
 };
 
-DECLARE_CLASS(DynamicBodyImp);
+DECLARE_CLASS(DynamicBodyImp)
 
 #endif //ODEDYNAMICBODY_H
