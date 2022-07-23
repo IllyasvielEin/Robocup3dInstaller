@@ -21,10 +21,10 @@ make -j$(nproc)
 sudo make install
 cd ..
 
-./install_simspark.sh --source
+bash ./install_simspark.sh --source
 
 chmod 777 -R RoboViz
 
-./bind.sh --source
+bash ./bind.sh --source
  
 echo "Installation Done"
