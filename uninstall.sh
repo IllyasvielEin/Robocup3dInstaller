@@ -4,6 +4,8 @@ dir="/usr/local/"
 
 shopt -s extglob
 
+sudo rm -rf ~/.simspark
+
 cd ${dir}/bin
 sudo rm -rf rcs* salt-config *spark* zei* kerosin-config 
 cd ..
