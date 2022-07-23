@@ -9,7 +9,7 @@ sudo apt install git -y
 
 sudo apt install build-essential subversion cmake make libfreetype6-dev libsdl1.2-dev ruby-dev libdevil-dev libboost-dev libboost-thread-dev libboost-regex-dev libboost-system-dev qt5-default openjdk-8-jdk -y
 
-git submodule update --init
+git clone https://gitee.com/doot/ode-tbb.git
 
 chmod +x -R *.sh
 
